@@ -1,0 +1,1 @@
+for file in `ls -1 *_*.png`; do name=`basename $file .png`; convert -rotate "90" $file ${name}_r90.png; convert -rotate "180" $file ${name}_r180.png; convert -rotate "270" $file ${name}_r270.png; done
