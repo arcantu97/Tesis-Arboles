@@ -1,73 +1,118 @@
 \chapter{Introducción}
-Analizar y cuantificar todo un inventario forestal puede tomar mucho tiempo, puede tender a fallar por una u otra razón, por lo que la falla humana esta presente en todo momento, más sin embargo, las tecnologías que hoy en día se han desarrollado además de distintos ámbitos de la ciencia nos pueden ayudar a automatizar tareas y reducir el índice de error humano.
+Analizar y cuantificar todo un inventario forestal puede tomar mucho tiempo, puede tender a fallar por una u otra razón, por lo que la falla humana está presente en todo momento, más sin embargo, las tecnologías que hoy en día se han desarrollado además de distintos ámbitos de la ciencia nos pueden ayudar a automatizar tareas y reducir el índice de error humano.
 
-El \footnotemark{Machine Learning} (ML)  \footnotetext{Machine Learning: Campo de la AI que desarrolla algoritmos capaces de aprender por medio de información.}  es precisamente uno de los campos de la \footnotemark{Inteligencia Artificial} \footnotetext {Inteligencia Artificial: Ciencia encargada de desarrollar algoritmos capaces de imitar capacidades humanas.} (AI) que nos permite resolver esta clase de problemas, ya que gracias al aprendizaje supervisado podemos usar técnicas de agrupamiento para clasificar distintas especies de árboles por medio de muestras recolectadas. En el caso del análisis de recorridos por drones, se tiene un enfoque práctico en el área forestal dado que se podrá utilizar el ML para la gestión del inventario forestal, ayudando a reducir el fallo humano y optimizando las tareas de clasificación de especies arbóreas.
+El \emph{aprendizaje máquina}\footnote{Campo de la inteligencia artificial que desarrolla algoritmos capaces de aprender por medio de información.} es precisamente uno de los campos de la \emph{inteligencia artificial}\footnote{Ciencia encargada de desarrollar algoritmos capaces de imitar capacidades humanas.} que nos permite resolver esta clase de problemas, ya que gracias al aprendizaje supervisado podemos usar técnicas de agrupamiento para clasificar distintas especies de árboles por medio de muestras recolectadas. En el caso del análisis de recorridos por drones, el enfoque está dirigido al área forestal dado que se podrá utilizar el aprendizaje máquina para la gestión del inventario forestal, ayudando a reducir el fallo humano y optimizando las tareas de clasificación de especies arbóreas.
 
 \section{Motivación}
-Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocará puramente en la detección de especies arbóreas utilizando muestras recolectadas previamente por un dron en las zonas del Cilandrillo y Trinidad.
+Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocará puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilandrillo y Trinidad.
 
-Cabe recalcar también, que las investigaciones previamente realizadas para los inventarios forestales cuentan con algunas características que otras no, sin embargo, no podemos afirmar que ninguna de ella sea menos valiosa que otra, debido a que cada una tiene su grado de su complejidad. En realidad lo que tratamos de hacer con el desarrollo de esta investigación es aportar un sentido más allá de la innovación, un sentido práctico en el área de la visión computacional, haciendo uso de la AI para poder primero, hacer una detección de objetos por medio de la caracterización de objetos por medio de patrones proporcionados por un set de especies arbóreas y posteriormente, hacer una detección oportuna de las especies por medio de algoritmos que tienen la finalidad de resolver esta clase de problemas.
+\section{Hipótesis}
+Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en
+la búsqueda de un elemento en particular, en nuestro caso las especies arbóreas; se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
 
-Por otro lado, el inventario forestal tiene un propósito más practico que técnico, y es que esto permitiría quienes se encarguen de hacer el análisis de las zonas forestales, reducir el tiempo invertido en recorrer manualmente todo una zona a poder hacerlo mediante el recorrido de un dron y a su vez, analizarlo por medio de AI para que nos indique especies están ubicadas en determinada zona.
+\section{Objetivos}
+En esta sección se establece el objetivo general y los objetivos específicos sobre los que se enfoca la tesis.
+
+\subsection{Objetivo General}
+El objetivo de realizar el inventario forestal por medio del procesamiento de
+imágenes tiene un propósito más práctico que técnico. El algoritmo permitiría a quienes se encarguen de analizar las zonas forestales, reducir el tiempo invertido en aplicar técnicas tradicionales por técnicas de procesamiento de imágenes.
+
+Estas técnicas  basadas en el aprendizaje máquina, el cual permitir
+generar un inventario forestal mediante el recorrido de un dron y a su vez, analizarlo por medio de la inteligencia artificial con la finalidad de indicar las cantidad de especies reconocidas sobre una zona.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+\item Realizar un algoritmo capaz de detectar específicamente los árboles y su especie arbórea.
+\end{itemize}
+
+\begin{itemize}
+\item El algoritmo debe extraer la información de un set de especies arbóreas, mismas que servirían como modelo para una fase posterior de detección de especies arbóreas.
+\end{itemize}
+
+\begin{itemize}
+\item El algoritmo debe ser capaz de detectar por si mismo las especies encontradas en cada una de las muestras recolectadas.
+\end{itemize}
+
+\pagebreak
+
+\section{Estructura}
+En el capítulo 2 se muestran algunos antecedentes que han surgido a lo largo
+de la historia respecto a los inventarios forestales, así como las características más importantes sobre las que trabaja el procesamiento de imágenes.
+
+En el capítulo 3 se exponen algunos trabajos relacionados a la detección de
+objetos y el procesamiento de imágenes, también se explica un poco cuales son los aspectos fundamentales que se desarrollarán en la investigación.
+
+En el capítulo 4 se hace un vistazo a las muestras sobre las que se está trabajando además de la explicación de la primera fase de la investigación, el procesamiento de muestras.
+
+En el capítulo 5, se exponen las fases restantes de la investigación, las cuales corresponden a el entrenamiento, la detección y la combinación respectivamente.
+
+En el capítulo 6 se presentan los resultados posteriores a la ejecución del algoritmo.
+
+Por último en el capítulo 7, se da una conclusión respecto a la investigación.
 
 \chapter{Antecedentes}
+Hoy en día existen diversas tecnologías que acaparan la atención por su funcionalidad y la interacción que tienen con procesos cotidianos, pero también existen tecnologías capaces de sustituir habilidades que sólo podrían ser propias de un ser humano, es por eso que en la presente investigación se está trabajando con el aprendizaje máquina y su aplicación en el análisis de zonas forestales.
 
-Hoy en día existen diversas tecnologías que acaparan la atención por su funcionalidad y la interacción que tienen con procesos cotidianos, pero también existen tecnologías capaces de sustituir habilidades que sólo podían ser propias de un ser humano, es por esto que en la presente investigación se estará trabajando con el Machine Learning y su aplicación en un análisis de zonas forestales.
+Como se mencionó antes, el aprendizaje máquina hace uso de muestras para identificar las especies arbóreas según su clase, sin embargo, el proceso de etiquetar o identificar objetos por medio de aprendizaje máquina lleva por nombre \emph{clasificación de imágenes}\footnote{Es una técnica del aprendizaje máquina que consiste en identificar un objeto por medio de propiedades o características propias de un elemento.}.
 
-Como se mencionó antes, el aprendizaje maquina hace uso de muestras para identificar las especies arbóreas según su clase, sin embargo, el proceso de etiquetar o identificar objetos por medio de aprendizaje máquina lleva por nombre \footnotemark{Clasificación de imágenes} \footnotetext {Clasificación de imágenes: Es una técnica del aprendizaje máquina que consiste en identificar un objeto por medio de propiedades o características propias de un elemento.}
-
-La clasificación de imágenes es un proceso que viene del procesamiento de imágenes, dicho proceso se basa en capturar y procesar por medio de características, la información más relevante, como lo son: \textit{Forma, Color, Bordes, Textura}, entre otras. Sin embargo, las características dependerán en gran medida del objetivo dado que no todas las características serán de utilidad mientras no aporten información relevante para el procesamiento y clasificación; las características utilizadas en el análisis de especies arbóreas serán clasificadas en características locales y globales. 
+El procesamiento de imágenes es un proceso derivado de la inteligencia artificial, dicho proceso se basa en capturar y procesar por medio de características, la información más relevante, como lo son: \emph{forma, color, bordes, textura}, entre otras. Sin embargo, las características dependerán en gran medida del objetivo ya que no todas las características aportan información relevante para el procesamiento y clasificación. Las características utilizadas en el análisis de especies arbóreas serán clasificadas en características locales y características globales.
 
 \section{Antecedentes históricos}
-El \footnotemark{procesamiento de imágenes} surge  en el año 1920 de los primeros intentos de transmisión de imágenes \cite{rf4} por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en 5 niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a 15 niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos. 
+El \emph{procesamiento de imágenes}\footnote{Es el proceso de obtención de información relevante de las imágenes.} surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \cite{rf4}. 
 
-El Machine Learning \cite{rf5} surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones. 
+El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \cite{rf5}. 
 
-Por otro lado, la visión computacional \cite{rf6} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, más delante en los descriptores de características, se explicarán a detalle como es que la visión computacional hace uso de ellas.
+La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, más delante en los descriptores de características, se explicarán a detalle como es que la visión computacional hace uso de ellas \cite{rf6}.
 
-\footnotetext{Procesamiento de imágenes: Es el proceso de obtención de información relevante de las imágenes.} 
-
-\break
+Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como "sistemas de recolección y registros cuali-cuantitativos de los árboles y de las características del área sobre la cual se desarrolla el bosque, de acuerdo con objetivos previstos y con base en métodos apropiados y confiables"\cite{rf7}.
 
 \section{Descriptores de características globales}
-
-Si bien podríamos pensar que el color presente en las muestras de árboles es el único criterio para poder diferenciar un árbol de otro, existen otros criterios que nos ayudan a poder apreciar mejor y a su vez, nos ayudarán en el clasificador de árboles.
+La idea de que el color presente en las muestras recolectadas sea el único diferenciador de una especie respecto a otra es un pensamiento incorrecto debido a que además de este criterio, existen otros criterios que nos permiten apreciar e identificar las características de una especie arbórea, no obstante, estas características pueden ser útiles en otras fases de la investigación. 
 
 \subsection{Color}
-La característica de clasificación de color se hace uso del \footnotemark{Histograma de color} \footnotetext{Histograma de color: Cantidad de pixeles en listas de rangos de colores presentes en una imagen.} , aunque también se puede hacer uso de \footnotemark{Estadística de canal de color} \footnotetext{Estadística de canal de color: Muestran la distribución de píxeles presentes en una imágen.} pero en nuestro caso, omitiremos esta última.
+La característica de clasificación de color hace uso del \emph{Histograma de color}\footnote{Cantidad de pixeles en listas de rangos de colores presentes en una imagen.}, aunque también se puede hacer uso de la \emph{estadística de canal de color}\footnote{Muestran la distribución de píxeles presentes en una imágen.} aunque en este caso, se omite la última.
 
-Los histogramas de colores suelen ser utilizados por ejemplo, en motores de búsqueda de imágenes para poder correlacionar la imagen con otra que contenga distribuciones de colores similares. También pueden ser visualizados en forma de gráficas de intensidad de la distribución del valor de un \footnotemark{pixel}.\footnotetext{Píxel: Es la unidad básica más pequeña de las imágenes.} 
+Los histogramas de color suelen ser utilizados por ejemplo, en motores de búsqueda de imágenes para encontrar correlaciones de distribuciones de colores similares. También pueden ser visualizados en forma de gráficas de intensidad de la distribución del valor de un \emph{pixel}\footnote{Es la unidad básica más pequeña de las imágenes.}.
 
 \subsection{Forma}
-La característica de forma existen también varias métricas, sin embargo nos enfocaremos en la de \textbf{Momentos de una imagen}. 
-Los momentos de una imagen son los pesos promedio de la intensidad de pixel para una imagen. Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,y)$ dados por la ecuación $I(x,y)$ donde $I(x,y)$ hace referencia una imagen binaria donde sólo es posible tomar un valor 0 o 1. 
+La característica de forma cuenta también con varias métricas, se hace énfasis en los \emph{momentos de una imagen}. 
+Los momentos de una imagen son los pesos promedio de la intensidad de píxel sobre una imagen.  
+
+\pagebreak
+Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,y)$ dados por la ecuación $I(x,y)$ donde $I(x,y)$ hace referencia una imagen binaria donde sólo es posible tomar un valor cero o uno. 
 
 En otras palabras, los momentos de una imagen son un conjunto de siete números calculados del movimiento central que son invariantes para las transformaciones de una imagen. La forma más sencilla de describir los momentos de una imagen es por medio de la siguiente ecuación: \begin{equation}
- M = \sum_{x}\sum_{y} I(x,y) 
+\label{eq:2.1}
+ M = \sum_{x}\sum_{y} I(x,y).
 \end{equation}
 
-La ecuación de antes nos ayuda a obtener la sumatoria de la intensidad de todos los pixeles, es decir que la sumatoria se hace con base únicamente en la intensidad y no en la posición dentro de una imagen.
+La ecuación \ref{eq:2.1} nos ayuda a obtener la sumatoria de la intensidad de todos los pixeles, es decir que la sumatoria se hace con base únicamente en la intensidad y no en la posición dentro de una imagen.
 
 \subsection{Textura} 
-Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en nuestro caso, al identificar las muestras de los árboles. En este caso haremos uso de la métrica de \textbf{Texturas de Haralick}.
+Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en nuestro caso, al identificar las muestras de los árboles. En este caso haremos uso de la métrica de \emph{textura de Haralick}.
 
-La textura de Haralick no sólo se basa en identificar texturas, sino obtener un análisis del ciclo de textura, el tamaño de los elementos repetidos que la componen y los parámetros de comparación de medias sobre regiones cuadradas de distintos tamaños. Esto último es representado por la superficie mínima representativa (\textbf{SMR}).
+La textura de Haralick no sólo se basa en identificar texturas, sino obtener un análisis del ciclo de textura, el tamaño de los elementos repetidos que la componen y los parámetros de comparación de medias sobre regiones cuadradas de distintos tamaños. Esto último es representado por la superficie mínima representativa (SMR).
+
 
 \section{Descriptores de características locales}
-Las características anteriormente mencionadas cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor será el óptimo para describir los puntos de interés de una imagen completa o de las regiones de interés que se considerarán para un análisis. 
+Las características anteriormente mencionadas cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor será el óptimo para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. 
 
-\subsection{SIFT (Característica de transformación de escala invariante)}
- Esta característica nos permite extraer características de una imagen que tengan algunas propiedades que permitan hacerlas más adecuadas al momento de compararlas con diferentes imágenes de un objeto o escena.
+\begin{description}
+\item[SIFT (Característica de transformación de escala invariante)]{Extra la información de una imagen para posteriormente, permita adecuarla cuando se desee compararla con diferentes muestras de un objeto o escena.}
+\end{description}
+
+\begin{description}
+\item[SURF (Característica de acelerado robusto)]{Toma un vecino al rededor del punto seleccionado en la imagen y es dividido en sub-regiones para cada sub-región, la respuesta de la transformada de Wavelet es tomada y representada por esta característica.}
+\end{description}
  
-\subsection{SURF (Característica de acelerado robusto)}
-Esta característica esta basada en la matriz hessiana que busca los puntos de interés, para asignaciones de orientación se usa la transformada de Wavelets tanto para la dirección horizontal como vertical aplicando los pesos Gaussianos adecuados. En está característica también se toma un vecino al rededor del punto seleccionado y dividido en sub regiones para cada sub región, la respuesta de la transformada de Wavelet es tomada y representada por esta característica.
+\begin{description}
+\item[BRIEF (Características elementales  independientemente binarias robustas)]{Se enfoca en la orientación de una imagen y depende del menor numero de diferencias (puntos) a su alrededor.}
+\end{description}
 
-\subsection{BRIEF (Características elementales  independientemente binarias robustas)}
-Esta característica está mal realizada si es implementada en una rotación plana. Los descriptores de esta misma, son dirigidas de acuerdo a la orientación.
-
-\subsection{ORB (BRIEF Rotada y orientada rápida)}
-Esta característica está muy relacionada con BRIEF directamente debido a que está es una fusión de la ya mencionada con un punto detector clave rápido. Para determinar estos puntos clave rápido, se usa FAST, luego la medida de esquinado de Harris es aplicado para encontrar los N puntos mas alto, a su vez, FAST no computa la orientación y tiene una rotación variante. Sin embargo, esta registra la intensidad ponderada del centroide localizada en la esquina de un centro. La dirección del vector de la esquina de este punto de centroide nos da la orientación. Los momentos de orientación son implementados para obtener la orientación de los puntos.
-
+\begin{description}
+\item[ORB (BRIEF Rotada y orientada rápida)]{Se relaciona con BRIEF debido a
+que esta es una fusión de la ya mencionada con un punto detector clave rápido (FAST). Para determinar estos puntos clave rápido, se utiliza FAST y posteriormente, la medida de esquinado de Harris es aplicada para encontrar los $n$ puntos más altos. En concreto, esta característica registra la intensidad ponderada del centroide la cual está localizada en la esquina de un centro.}
+\end{description}
 
 \section{Uso de los descriptores}
 Existen varias formas de utilizar los descriptores pero hay dos maneras de mezclar las características de vectores.
@@ -76,19 +121,20 @@ Existen varias formas de utilizar los descriptores pero hay dos maneras de mezcl
 
 \paragraph{•} Para las características locales del vector también puede hacerse una combinación de las características locales y globales del vector, pero necesitaremos algo llamado \textbf{Modelo de la bolsa de palabras} (BOVW). Este enfoque se utiliza normalmente en constructores de vocabularios, Clustering de K-media, etc.
 
-\chapter{Estado del arte}
-En este capítulo se tratarán de explicar investigaciones con vínculos con la investigación desarrollada, tópicos que tienen que ver con la visión computacional y algunos de los criterios más importantes que se discuten en el desarrollo de la investigación.
+%\paragraph{•}  scaling/normalization
 
+\chapter{Estado del arte}
+En este capítulo se explica la relación con investigaciones de otros autores, la importancia-relación de la visión computacional y los inventarios forestales en nuestra investigación así como los apartados que se desarrollan en la investigación.
 
 \section{Investigaciones relacionadas}
 Existen algunos trabajos que no están completamente relacionado con el objetivo de identificar zonas de bosques, pero sí tratan con el mismo objeto de investigación que es analizar el inventario de zonas boscosas.
 
 
-\cite{rf1} Este artículo nos menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escaneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda de OBIA \textit{Análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies forestales y la determinación de atributos estructurales a nivel de árbol. Se podría decir que este trabajo está completamente relacionado con el nuestro, más sin embargo, estos hacen uso de inputs más avanzados, como lo  son los escaneres laser, además de que se basan en posiciones relativas a cada tipo de especie y no hacen un entrenamiento para identificar autónomamente como lo es nuestro caso.
+Este artículo nos menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{Análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. Se relaciona este trabajo debido a que utiliza una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales \cite{rf1}.
  
-\cite{rf2} Este artículo sigue tratando con un objetivo similar, que es tratar con especies arbolarias, más sin embargo este corresponde más a otra meta, la cual es evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con Inteligencia Artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
+Este artículo sigue tratando con un objetivo similar, que es tratar con especies arbolarias, más sin embargo este corresponde más a otra meta, la cual es evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con Inteligencia Artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles \cite{rf2}.
 
-\cite{rf3} Este trabajo tiene mucha relación con el desarrollado a lo largo de esta investigación, pero va enfocada a otro objetivo, el cual es detectar objetos y no árboles en concreto. Este hace uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización. 
+Este trabajo tiene mucha relación con el desarrollado a lo largo de esta investigación, pero va enfocada a otro objetivo, el cual es detectar objetos y no árboles en concreto. Este hace uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización \cite{rf3}. 
  
 \section{Comparación de trabajos}
 La mayoría de los trabajos citados hacen uso de otra clase de tecnología que no tiene que ver directamente con la utilizada en nuestra investigación, más sin embargo, algunos de los aspectos clave que se presentan en nuestra investigación con respecto a las investigaciones encontradas son:
