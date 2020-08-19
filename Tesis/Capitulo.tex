@@ -3,6 +3,28 @@ Analizar y cuantificar todo un inventario forestal puede tomar mucho tiempo, pue
 
 El \emph{aprendizaje máquina}\footnote{Campo de la inteligencia artificial que desarrolla algoritmos capaces de aprender por medio de información.} es precisamente uno de los campos de la \emph{inteligencia artificial}\footnote{Ciencia encargada de desarrollar algoritmos capaces de imitar capacidades humanas.} que nos permite resolver esta clase de problemas, ya que gracias al aprendizaje supervisado podemos usar técnicas de agrupamiento para clasificar distintas especies de árboles por medio de muestras recolectadas. En el caso del análisis de recorridos por drones, el enfoque está dirigido al área forestal dado que se podrá utilizar el aprendizaje máquina para la gestión del inventario forestal, ayudando a reducir el fallo humano y optimizando las tareas de clasificación de especies arbóreas.
 
+Para llevar a cabo la tarea de clasificar las especies arbóreas, se recolectaron muestras de las zonas del Cilantrillo y La Trinidad en Nuevo León. Estas zonas cuentan con distintas zonas especies arbóreas como lo son: \emph{Abies, Encino y Pino}.
+\newpage
+\bigskip
+\hspace{5 cm}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{cilantrillo-zona}
+    \caption{El Cilantrillo, Montemorelos, Nuevo León.}
+  \end{minipage}
+\end{figure}
+\hspace{2 cm}
+\begin{figure}[h!]
+  \centering
+  \begin{minipage}[b]{0.7\textwidth}
+    \includegraphics[width=\textwidth]{trinidad-zona}
+    \caption{La Trinidad, Santiago, Nuevo León.}
+  \end{minipage}
+\end{figure}
+
+\newpage
+
 \section{Motivación}
 Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocará puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilandrillo y Trinidad.
 
@@ -13,14 +35,14 @@ la búsqueda de un elemento en particular, en nuestro caso las especies arbórea
 \section{Objetivos}
 En esta sección se establece el objetivo general y los objetivos específicos sobre los que se enfoca la tesis.
 
-\subsection{Objetivo General}
+\subsection{Objetivo general}
 El objetivo de realizar el inventario forestal por medio del procesamiento de
 imágenes tiene un propósito más práctico que técnico. El algoritmo permitiría a quienes se encarguen de analizar las zonas forestales, reducir el tiempo invertido en aplicar técnicas tradicionales por técnicas de procesamiento de imágenes.
 
 Estas técnicas  basadas en el aprendizaje máquina, el cual permitir
 generar un inventario forestal mediante el recorrido de un dron y a su vez, analizarlo por medio de la inteligencia artificial con la finalidad de indicar las cantidad de especies reconocidas sobre una zona.
 
-\subsection{Objetivos Específicos}
+\subsection{Objetivos específicos}
 \begin{itemize}
 \item Realizar un algoritmo capaz de detectar específicamente los árboles y su especie arbórea.
 \end{itemize}
@@ -55,29 +77,27 @@ Hoy en día existen diversas tecnologías que acaparan la atención por su funci
 
 Como se mencionó antes, el aprendizaje máquina hace uso de muestras para identificar las especies arbóreas según su clase, sin embargo, el proceso de etiquetar o identificar objetos por medio de aprendizaje máquina lleva por nombre \emph{clasificación de imágenes}\footnote{Es una técnica del aprendizaje máquina que consiste en identificar un objeto por medio de propiedades o características propias de un elemento.}.
 
-El procesamiento de imágenes es un proceso derivado de la inteligencia artificial, dicho proceso se basa en capturar y procesar por medio de características, la información más relevante, como lo son: \emph{forma, color, bordes, textura}, entre otras. Sin embargo, las características dependerán en gran medida del objetivo ya que no todas las características aportan información relevante para el procesamiento y clasificación. Las características utilizadas en el análisis de especies arbóreas serán clasificadas en características locales y características globales.
+El \emph{procesamiento de imágenes}\footnote{Su función es capturar y procesar por medio de imágenes la información más relevante.} analiza por medio de características como: \emph{forma, color, bordes, textura} cuando se utiliza en conjunto con el aprendizaje máquina. Sin embargo, las características dependerán en gran medida del objetivo ya que no todas las características aportan información relevante para el procesamiento y clasificación. Las características utilizadas en el análisis de especies arbóreas serán clasificadas en características locales y características globales.
 
 \section{Antecedentes históricos}
-El \emph{procesamiento de imágenes}\footnote{Es el proceso de obtención de información relevante de las imágenes.} surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \cite{rf4}. 
+El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \cite{rf4}. 
 
 El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \cite{rf5}. 
 
 La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, más delante en los descriptores de características, se explicarán a detalle como es que la visión computacional hace uso de ellas \cite{rf6}.
 
-Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como "sistemas de recolección y registros cuali-cuantitativos de los árboles y de las características del área sobre la cual se desarrolla el bosque, de acuerdo con objetivos previstos y con base en métodos apropiados y confiables"\cite{rf7}.
+Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como ``sistemas de recolección y registros cuali-cuantitativos de los árboles y de las características del área sobre la cual se desarrolla el bosque, de acuerdo con objetivos previstos y con base en métodos apropiados y confiables"\cite{rf7}.
 
 \section{Descriptores de características globales}
 La idea de que el color presente en las muestras recolectadas sea el único diferenciador de una especie respecto a otra es un pensamiento incorrecto debido a que además de este criterio, existen otros criterios que nos permiten apreciar e identificar las características de una especie arbórea, no obstante, estas características pueden ser útiles en otras fases de la investigación. 
 
 \subsection{Color}
-La característica de clasificación de color hace uso del \emph{Histograma de color}\footnote{Cantidad de pixeles en listas de rangos de colores presentes en una imagen.}, aunque también se puede hacer uso de la \emph{estadística de canal de color}\footnote{Muestran la distribución de píxeles presentes en una imágen.} aunque en este caso, se omite la última.
-
-Los histogramas de color suelen ser utilizados por ejemplo, en motores de búsqueda de imágenes para encontrar correlaciones de distribuciones de colores similares. También pueden ser visualizados en forma de gráficas de intensidad de la distribución del valor de un \emph{pixel}\footnote{Es la unidad básica más pequeña de las imágenes.}.
+La característica de clasificación de color hace uso del \emph{histograma de color}\footnote{Cantidad de pixeles en listas de rangos de colores presentes en una imagen.}, aunque también se puede hacer uso de la \emph{estadística de canal de color}\footnote{Muestran la distribución de píxeles presentes en una imágen.} aunque en este caso, se omite la última. Los histogramas de color suelen ser utilizados por ejemplo, en motores de búsqueda de imágenes para encontrar correlaciones de distribuciones de colores similares. También pueden ser visualizados en forma de gráficas de intensidad de la distribución del valor de un \emph{pixel}\footnote{Es la unidad básica más pequeña de las imágenes.}.
 
 
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.4\textwidth}
+  \begin{minipage}[b]{0.7\textwidth}
     \includegraphics[width=\textwidth]{histograma-color}
     \caption{Intensidad de color}
   \end{minipage}
