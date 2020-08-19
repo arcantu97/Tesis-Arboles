@@ -94,53 +94,50 @@ La idea de que el color presente en las muestras recolectadas sea el único dife
 \subsection{Color}
 La característica de clasificación de color hace uso del \emph{histograma de color}\footnote{Cantidad de pixeles en listas de rangos de colores presentes en una imagen.}, aunque también se puede hacer uso de la \emph{estadística de canal de color}\footnote{Muestran la distribución de píxeles presentes en una imágen.} aunque en este caso, se omite la última. Los histogramas de color suelen ser utilizados por ejemplo, en motores de búsqueda de imágenes para encontrar correlaciones de distribuciones de colores similares. También pueden ser visualizados en forma de gráficas de intensidad de la distribución del valor de un \emph{pixel}\footnote{Es la unidad básica más pequeña de las imágenes.}.
 
-
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.7\textwidth}
-    \includegraphics[width=\textwidth]{histograma-color}
-    \caption{Intensidad de color}
+  \begin{minipage}[b]{1.0\textwidth}
+    \includegraphics[width=\textwidth]{histogram}
+    \caption{Histograma generado con las bibliotecas matplotlib y openCV.}
   \end{minipage}
 \end{figure}
 
 
+\newpage
 \subsection{Forma}
 La característica de forma cuenta también con varias métricas, se hace énfasis en los \emph{momentos de una imagen}. 
 Los momentos de una imagen son los pesos promedio de la intensidad de píxel sobre una imagen.  
 
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.4\textwidth}
+  \begin{minipage}[b]{0.8\textwidth}
     \includegraphics[width=\textwidth]{Anotaciones-ex}
-    \caption{Formas en especies}
+    \caption{Formas de cada especie arbórea (Verde: Abies, Azúl: Pino, Amarillo: Encino).}
   \end{minipage}
 \end{figure}
 
-Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,y)$ dados por la ecuación $I(x,y)$ donde $I(x,y)$ hace referencia una imagen binaria donde sólo es posible tomar un valor cero o uno. 
+Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,y)$ dados por la ecuación $I(x,y)$ donde $I(x,y)$ hace referencia una imagen binaria donde sólo es posible tomar un valor cero o uno. En otras palabras, los momentos de una imagen son un conjunto de siete números calculados del movimiento central que son invariantes para las transformaciones de una imagen. 
 
-En otras palabras, los momentos de una imagen son un conjunto de siete números calculados del movimiento central que son invariantes para las transformaciones de una imagen. La forma más sencilla de describir los momentos de una imagen es por medio de la siguiente ecuación: \begin{equation}
+\newpage
+La forma más sencilla de describir los momentos de una imagen es por medio de la siguiente ecuación: \begin{equation}
 \label{eq:2.1}
  M = \sum_{x}\sum_{y} I(x,y).
 \end{equation}
 
-La ecuación \ref{eq:2.1} nos ayuda a obtener la sumatoria de la intensidad de todos los pixeles, es decir que la sumatoria se hace con base únicamente en la intensidad y no en la posición dentro de una imagen.
+La ecuación \ref{eq:2.1} obtiene la sumatoria de la intensidad de todos los píxeles, es decir, la sumatoria se hace con base únicamente en la intensidad de los píxeles y no con la posición dentro de una imagen.
 
 \subsection{Textura} 
-Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en nuestro caso, al identificar las muestras de los árboles. En este caso haremos uso de la métrica de \emph{textura de Haralick}.
+Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en nuestro caso, al identificar las muestras de los árboles. En este caso haremos uso de la métrica de \emph{textura de Haralick}. 
 
-La textura de Haralick no sólo se basa en identificar texturas, sino obtener un análisis del ciclo de textura, el tamaño de los elementos repetidos que la componen y los parámetros de comparación de medias sobre regiones cuadradas de distintos tamaños. Esto último es representado por la superficie mínima representativa (SMR).
+La Figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas en la imagen, a simple vista algunos colores denotan ser de una especie distinta si se hace un análisis minucioso, pero en este caso, la característica de textura puede ser utilizada para diferenciar entre especies arbóreas.
 
-\bigskip
 \begin{figure}[h!]
   \centering
   \begin{minipage}[b]{0.7\textwidth}
-    \includegraphics[width=\textwidth]{textura-caracteristica}
-    \caption{Textura de especies}
+    \includegraphics[width=\textwidth]{textura-cil}
+    \caption{Texturas en muestra del Cilantrillo}
   \end{minipage}
 \end{figure}
-
-La Figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas en la imagen, a simple vista algunos colores denotan ser de una especie distinta si se hace un análisis minucioso, pero en este caso, la característica de textura puede ser utilizada para diferenciar entre especies arbóreas.
-\pagebreak
 
 \section{Descriptores de características locales}
 Las características anteriormente mencionadas cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor será el óptimo para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. 
@@ -167,78 +164,101 @@ Existen varias formas de utilizar los descriptores pero hay dos maneras de mezcl
 
 \paragraph{•} Para las características globales de vector, nosotros sólo concatenaremos cada característica del vector para formar a una característica global del vector simple. Este enfoque será el utilizado en el desarrollo de este algoritmo.
 
-\paragraph{•} Para las características locales del vector también puede hacerse una combinación de las características locales y globales del vector, pero necesitaremos algo llamado \emph{Modelo de la bolsa de palabras} (BOVW). Este enfoque se utiliza normalmente en constructores de vocabularios, Clustering de K-media, etc.
+\paragraph{•} Para las características locales del vector también puede hacerse una combinación de las características locales y globales del vector, pero necesitaremos algo llamado \emph{modelo de la bolsa de palabras} (BOVW). Este enfoque se utiliza normalmente en constructores de vocabularios, Clustering de K-media, etc.
 
 \paragraph{•} El \emph{escalamiento} es también otra de los descriptores utilizados en las características de los vectores, este sirve para transformar los datos de las características en rangos específicos de cero a uno, por ejemplo. Esta característica suele ser bastante usada en máquina de soporte vectorial y en el \emph{K-vecinos cercanos} (KNN) donde la distancia entre dos puntos es importante.
 
-\paragraph{•} La \emph{normalización} es utilizada en los descriptores también, esta última es una técnica donde los valores son desplazados y re-escalados  para que puedan alcanzar un rango entre cero y uno, a esta característica también se le conoce como \emph{Escalamiento mínimo - máximo}.
+\paragraph{•} La \emph{normalización} es utilizada en los descriptores también, esta última es una técnica donde los valores son desplazados y re-escalados  para que puedan alcanzar un rango entre cero y uno, a esta característica también se le conoce como \emph{escalamiento mínimo-máximo}.
 
 \chapter{Estado del arte}
-En este capítulo se explica la relación de la investigación en curso con investigaciones de otros autores, la importancia-relación de la visión computacional y los inventarios forestales en nuestra investigación, así como los apartados que se desarrollan durante la investigación.
+En este capítulo se explica la relación de la investigación en curso con investigaciones de otros autores, la importancia de la visión computacional y su relación con los inventarios forestales, así como los apartados que se desarrollan durante la investigación.
 
 \section{Investigaciones relacionadas}
 Existen algunos trabajos que no están completamente relacionados con el objetivo de identificar especies arbóreas, pero si existen investigaciones que toman como objetivo el analizar zonas forestales.
 
-Este artículo nos menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{Análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. 
+Este artículo nos menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. 
 \newline
 \break
 
-Se relaciona este trabajo debido a que utiliza una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales \cite{rf1}.
+
+\citep{rf1} Utiliza una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales .
  
-Este artículo sigue tratando con un objetivo similar, que es tratar con especies arbolarias, más sin embargo este corresponde más a otra meta, la cual es evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con Inteligencia Artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles \cite{rf2}.
+\citep{rf2} tiene como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con Inteligencia Artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
 
-Este trabajo tiene mucha relación con el desarrollado a lo largo de esta investigación, pero va enfocada a otro objetivo, el cual es detectar objetos y no árboles en concreto. Este hace uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización \cite{rf3}.
+\citep{rf3} tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. %El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización.
 
-Este artículo trata de como se hacen simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.\cite{rf9}
+\citep{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
 
-Este artículo tiene una relación directa con la investigación debido a que hace uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó. \cite{rf10}
+\citep{rf10} hace uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó.
 
 \pagebreak
  
 \section{Comparación de trabajos}
 La mayoría de los trabajos citados hacen uso de otra clase de tecnología que no tiene que ver directamente con la utilizada en nuestra investigación, más sin embargo, algunos de los aspectos clave que se presentan en nuestra investigación con respecto a las investigaciones encontradas son:
 
+\begin{description}
+\item[Inventarios forestales]{ Son aquellos que nos permiten tener un control de las especies que pueblan una zona específica.}
+\end{description}
 
-\paragraph{•} Inventarios forestales: Son aquellos que nos permiten tener un control de las especies que pueblan una zona específica.
+\begin{description}
+\item[Análisis de imágenes]{Es una técnica bastante utilizada hoy en día por la visión computacional para extraer datos e información de imágenes.}
+\end{description}
 
-\paragraph{•} Análisis de imágenes: Es una técnica bastante utilizada hoy en día por la visión computacional para extraer datos e información de imágenes. 
+\begin{description}
+\item[Visión computacional]{Este concepto está completamente relacionado con la Inteligencia Artificial, dado que es una  técnica del aprendizaje máquina que busca encontrar objetos emulando la capacidad humana del reconocimiento.}
+\end{description}
 
-\paragraph{•} Visión Computacional: Este concepto está completamente relacionado con la Inteligencia Artificial, dado que es una  técnica del aprendizaje máquina que busca encontrar objetos emulando la capacidad humana del reconocimiento.
+\begin{description}
+\item[Clasificación]{Es el acto de separar u ordenar bajo un criterio específico.}
+\end{description}
 
-\paragraph{•} Clasificación: Es el acto de separar u ordenar bajo un criterio específico.
+\begin{description}
+\item[Especies]{Son los distintas categorías o  clases de algún objeto en particular.}
+\end{description}
 
-\paragraph{•} Especies: Son los distintas categorías o  clases de algún objeto en particular.
- 
-\paragraph{•} Zonas : Es algún sector o delimitación de territorio de algún sitio, ciudad, país.
+\begin{description}
+\item[Zonas]{Es algún sector o delimitación de territorio de algún sitio, ciudad, país.}
+\end{description}
 
-\paragraph{•} Detección de objetos: Es una técnica del Aprendizaje Máquina que emula la capacidad humana de detectar por si sola, algún objeto por medio de la vista.
+\begin{description}
+\item[Detección de objetos]{Es una técnica del Aprendizaje Máquina que emula la capacidad humana de detectar por si sola, algún objeto por medio de la vista.}
+\end{description}
 
-%\subsection{Comparaciones}
-%En la siguiente tabla, podemos apreciar que características podemos encontrar en las investigaciones citadas anteriormente y su relación con la investigación con la que se está trabajando actualmente.\\
-%\pagebreak
-%
-%\begin{landscape}
-%\begin{table}[hb]
-%	{\centering
-%		\begin{tabular}{|c|c|c|c|c|c|}
-%			\hline
-%			Trabajo &  Inventarios forestales & Análisis de imágenes &  Visión Computacional & Clasificación & Detección de objetos\\
-%			\hline
-%			Investigación & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
-%			\hline
-%			\cite{rf1} & \checkmark & \checkmark & $\times$ & \checkmark & \checkmark \\
-%			\hline
-%			\cite{rf2}&  \checkmark  &  $\times$ &  $\times$ & \checkmark & %$\times$  \\
-%			\hline
-%			\cite{rf3}& $\times$ & \checkmark & \checkmark & $\times$ & %\checkmark  \\
-%			\hline	
-%		\end{tabular}
-%	\caption{Comparación de trabajos frente al desarrollado}
-%	\label{tab:Comparación de trabajos frente al desarrollado}
-%	}
-%\end{table}
-%\end{landscape}
-%
+\newpage
+
+\subsection{Comparaciones}
+En la siguiente tabla, podemos apreciar que características podemos encontrar en las investigaciones citadas anteriormente y su relación con la investigación con la que se está trabajando actualmente.\\
+
+\begin{table}[hbt!]
+	{\centering
+	\begin{adjustbox}{width=\textwidth}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Trabajo &  Inventarios forestales &  Visión Computacional & Detección de objetos\\
+			\hline
+			Investigación & \checkmark & \checkmark & \checkmark \\
+			\hline
+			\cite{rf1} & \checkmark & $\times$ & \checkmark \\
+			\hline
+			\cite{rf2}&  \checkmark  &  $\times$ & $\times$  \\
+			\hline
+			\cite{rf3}& $\times$ & \checkmark & \checkmark  \\
+			\hline	
+			\cite{rf9}& \checkmark & \checkmark & \checkmark  \\
+			\hline
+			\cite{rf10}& $\times$ & \checkmark & \checkmark  \\
+			\hline
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Comparación de trabajos frente al desarrollado}
+	\label{tab:Comparación de trabajos frente al desarrollado}}
+\end{table}
+
+\subsection{Áreas de oportunidad}
+En la tabla 3.1 se puede apreciar que características tiene la investigación que se trabaja con respecto a la de otros autores, y es que, a simple vista pudiera ser que otros trabajos tengan las mismas características o al menos casi todas, pero por lo que respecta a la investigación, la ventaja que tiene es que, además de ser un código libre para que cualquier persona pueda verlo, es que la investigación se está aplicando sobre un problema real, es decir, generar los inventarios forestales. 
+
+Por otro lado, también se puede apreciar que el trabajo de \citep{rf10} tiene las mismas características que nuestro trabajo pero va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
+
 \section{Apartados fundamentales a desarrollar}
 En lo que respecta a los aspectos fundamentales de la investigación, podemos destacar el aprendizaje máquina (ML) y la visión computacional como herramientas clave. Primeramente, el ML nos ayudará para poder entrenar un algoritmo cuyo producto será bastante relevante en el proceso de clasificación durante la investigación.
 
