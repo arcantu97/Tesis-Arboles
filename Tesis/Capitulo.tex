@@ -5,22 +5,35 @@ El \emph{aprendizaje máquina}\footnote{Campo de la inteligencia artificial que 
 
 Para llevar a cabo la tarea de clasificar las especies arbóreas, se recolectaron muestras de las zonas del Cilantrillo y La Trinidad en Nuevo León. Estas zonas cuentan con distintas zonas especies arbóreas como lo son: \emph{Abies, Encino y Pino}.
 \newpage
-\bigskip
-\hspace{5 cm}
+
+\vspace*{3\baselineskip}
+
+En las figura \ref{Zona-trinidad} se aprecia la zona de Trinidad desde distintas alturas en el mapa, el rectángulo azúl en la figura es la zona sobre la que se hizo el recorrido.
+
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.7\textwidth}
-    \includegraphics[width=\textwidth]{cilantrillo-zona}
-    \caption{El Cilantrillo, Montemorelos, Nuevo León.}
-  \end{minipage}
+\begin{tabular}{@{}ccc@{}}
+\subfloat[Local]{\includegraphics[width=0.35\textwidth]{Cerca_t}} & 
+\subfloat[Municipal]{\includegraphics[width=0.35\textwidth]{Medio_t}} &
+\subfloat[Estatal]{\includegraphics[width=0.35\textwidth]{Lejos_t}}
+  \end{tabular}
+  \caption[Mapa de Trinidad.]{La Trinidad, Santiago, Nuevo León (25.225939, -100.1431609).}
+  \label{Zona-trinidad}
 \end{figure}
-\hspace{2 cm}
+
+\hspace{15 cm}
+
+En las figura \ref{Zona-cilantrillo} se aprecia la zona de Trinidad desde distintas alturas en el mapa, el rectángulo azúl en la figura es la zona sobre la que se hizo el recorrido.
+
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.7\textwidth}
-    \includegraphics[width=\textwidth]{trinidad-zona}
-    \caption{La Trinidad, Santiago, Nuevo León.}
-  \end{minipage}
+\begin{tabular}{@{}ccc@{}}
+\subfloat[Local]{\includegraphics[width=0.35\textwidth]{Cerca_C}} & 
+\subfloat[Municipal]{\includegraphics[width=0.35\textwidth]{Medio_C}} &
+\subfloat[Estatal]{\includegraphics[width=0.35\textwidth]{Lejos_C}}
+  \end{tabular}
+  \caption[Mapa de Cilantrillo]{El Cilantrillo, Montemorelos, Nuevo León (25.3523418, -100.3463186).}
+   \label{Zona-cilantrillo}
 \end{figure}
 
 \newpage
@@ -80,13 +93,13 @@ Como se mencionó antes, el aprendizaje máquina hace uso de muestras para ident
 El \emph{procesamiento de imágenes}\footnote{Su función es capturar y procesar por medio de imágenes la información más relevante.} analiza por medio de características como: \emph{forma, color, bordes, textura} cuando se utiliza en conjunto con el aprendizaje máquina. Sin embargo, las características dependerán en gran medida del objetivo ya que no todas las características aportan información relevante para el procesamiento y clasificación. Las características utilizadas en el análisis de especies arbóreas serán clasificadas en características locales y características globales.
 
 \section{Antecedentes históricos}
-El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \cite{rf4}. 
+El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \citep{rf4}. 
 
-El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \cite{rf5}. 
+El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}. 
 
-La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, más delante en los descriptores de características, se explicarán a detalle como es que la visión computacional hace uso de ellas \cite{rf6}.
+La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, más delante en los descriptores de características, se explicarán a detalle como es que la visión computacional hace uso de ellas \citep{rf6}.
 
-Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como ``sistemas de recolección y registros cuali-cuantitativos de los árboles y de las características del área sobre la cual se desarrolla el bosque, de acuerdo con objetivos previstos y con base en métodos apropiados y confiables"\cite{rf7}.
+Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como sistemas de recolección de características del área sobre el que se trabaja \citep{rf7}.
 
 \section{Descriptores de características globales}
 La idea de que el color presente en las muestras recolectadas sea el único diferenciador de una especie respecto a otra es un pensamiento incorrecto debido a que además de este criterio, existen otros criterios que nos permiten apreciar e identificar las características de una especie arbórea, no obstante, estas características pueden ser útiles en otras fases de la investigación. 
@@ -96,14 +109,15 @@ La característica de clasificación de color hace uso del \emph{histograma de c
 
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{1.0\textwidth}
-    \includegraphics[width=\textwidth]{histogram}
-    \caption[Histograma de color generado]{Histograma de color generado con las bibliotecas \texttt{matplotlib y OpenCV.}}
-  \end{minipage}
+\begin{tabular}{@{}ccc@{}}
+\subfloat[Muestra utilizada]{\includegraphics[width=0.45\textwidth]{DSC06100}} & 
+\subfloat[Histograma generado]{\includegraphics[width=0.45\textwidth]{histograma-gen}} &
+  \end{tabular}
+  \caption[Histograma de color]{Histograma de color generado con las bibliotecas \texttt{matplotlib y OpenCV.}}
+  \label{Histograma-generado}
 \end{figure}
 
 
-\newpage
 \subsection{Forma}
 La característica de forma cuenta también con varias métricas, se hace énfasis en los \emph{momentos de una imagen}. 
 Los momentos de una imagen son los pesos promedio de la intensidad de píxel sobre una imagen.  
@@ -118,8 +132,7 @@ Los momentos de una imagen son los pesos promedio de la intensidad de píxel sob
 
 Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,y)$ dados por la ecuación $I(x,y)$ donde $I(x,y)$ hace referencia una imagen binaria donde sólo es posible tomar un valor cero o uno. En otras palabras, los momentos de una imagen son un conjunto de siete números calculados del movimiento central que son invariantes para las transformaciones de una imagen. 
 
-\newpage
-La forma más sencilla de describir los momentos de una imagen es por medio de la siguiente ecuación: \begin{equation}
+\begin{equation}
 \label{eq:2.1}
  M = \sum_{x}\sum_{y} I(x,y).
 \end{equation}
@@ -181,15 +194,15 @@ Este artículo nos menciona como hacen uso de combinar datos para realizar inven
 \break
 
 
-\citep{rf1} Utiliza una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales .
+\cite{rf1} Utiliza una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales .
  
-\citep{rf2} tiene como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con Inteligencia Artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
+\cite{rf2} tiene como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con inteligencia artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
 
-\citep{rf3} tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. %El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización.
+\cite{rf3} tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. %El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización.
 
-\citep{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
+\cite{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
 
-\citep{rf10} hace uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó.
+\cite{rf10} hace uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó.
 
 \pagebreak
  
@@ -205,7 +218,7 @@ La mayoría de los trabajos citados hacen uso de otra clase de tecnología que n
 \end{description}
 
 \begin{description}
-\item[Visión computacional]{Este concepto está completamente relacionado con la Inteligencia Artificial, dado que es una  técnica del aprendizaje máquina que busca encontrar objetos emulando la capacidad humana del reconocimiento.}
+\item[Visión computacional]{Este concepto está completamente relacionado con la inteligencia artificial, dado que es una  técnica del aprendizaje máquina que busca encontrar objetos emulando la capacidad humana del reconocimiento.}
 \end{description}
 
 \begin{description}
@@ -221,22 +234,21 @@ La mayoría de los trabajos citados hacen uso de otra clase de tecnología que n
 \end{description}
 
 \begin{description}
-\item[Detección de objetos]{Es una técnica del Aprendizaje Máquina que emula la capacidad humana de detectar por si sola, algún objeto por medio de la vista.}
+\item[Detección de objetos]{Es una técnica del aprendizaje máquina que emula la capacidad humana de detectar por si sola, algún objeto por medio de la vista.}
 \end{description}
 
 \newpage
 
 \subsection{Comparaciones}
-En la siguiente tabla, podemos apreciar que características podemos encontrar en las investigaciones citadas anteriormente y su relación con la investigación con la que se está trabajando actualmente.\\
-
+En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, podemos apreciar que características podemos encontrar en las investigaciones citadas anteriormente y su relación con la investigación con la que se está trabajando actualmente.\\
+\renewcommand{\tablename}{Cuadro}
 \begin{table}[hbt!]
 	{\centering
+	\caption{Comparación de trabajos frente al desarrollado}
 	\begin{adjustbox}{width=\textwidth}
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
 			Trabajo &  Inventarios forestales &  Visión Computacional & Detección de objetos\\
-			\hline
-			Investigación & \checkmark & \checkmark & \checkmark \\
 			\hline
 			\cite{rf1} & \checkmark & $\times$ & \checkmark \\
 			\hline
@@ -248,23 +260,34 @@ En la siguiente tabla, podemos apreciar que características podemos encontrar e
 			\hline
 			\cite{rf10}& $\times$ & \checkmark & \checkmark  \\
 			\hline
+			\cite{rf11}& $\times$ & \checkmark & \checkmark  \\
+			\hline
+			\cite{rf12}& \checkmark  & $\times$ & $\times$  \\
+			\hline
+			\cite{rf13}& \checkmark & $\times$ & $\times$  \\
+			\hline
+			\cite{rf14}&  $\times$ & \checkmark & $\times$   \\
+			\hline
+			\cite{rf15}& \checkmark & \checkmark & $\times$  \\
+			\hline
+			Investigación & \checkmark & \checkmark & \checkmark \\
+			\hline
 		\end{tabular}
 	\end{adjustbox}
-	\caption{Comparación de trabajos frente al desarrollado}
 	\label{tab:Comparación de trabajos frente al desarrollado}}
 \end{table}
 
 \subsection{Áreas de oportunidad}
-En la tabla 3.1 se puede apreciar que características tiene la investigación que se trabaja con respecto a la de otros autores, y es que, a simple vista pudiera ser que otros trabajos tengan las mismas características o al menos casi todas, pero por lo que respecta a la investigación, la ventaja que tiene es que, además de ser un código libre para que cualquier persona pueda verlo, es que la investigación se está aplicando sobre un problema real, es decir, generar los inventarios forestales. 
+En el cuadro 3.1 se puede apreciar que características tiene la investigación que se trabaja con respecto a la de otros autores, y es que, a simple vista pudiera ser que otros trabajos tengan las mismas características o al menos casi todas, pero por lo que respecta a la investigación, la ventaja que tiene es que, además de ser un código libre para que cualquier persona pueda verlo, es que la investigación se está aplicando sobre un problema real, es decir, generar los inventarios forestales. 
 
-Por otro lado, también se puede apreciar que el trabajo de \citep{rf10} tiene las mismas características que nuestro trabajo pero va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
+\newpage
+Por otro lado, también se puede apreciar que el trabajo de \cite{rf10} tiene las mismas características que nuestro trabajo pero va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
 
-\section{Apartados fundamentales a desarrollar}
-En lo que respecta a los aspectos fundamentales de la investigación, podemos destacar el aprendizaje máquina (ML) y la visión computacional como herramientas clave. Primeramente, el ML nos ayudará para poder entrenar un algoritmo cuyo producto será bastante relevante en el proceso de clasificación durante la investigación.
+En lo que respecta a las áreas de oportunidad de la investigación, podemos destacar el aprendizaje máquina (ML) y la visión computacional como herramientas clave. Primeramente, el aprendizaje máquina nos ayudará para poder entrenar un algoritmo cuyo producto será bastante relevante en el proceso de clasificación durante la investigación.
 
-En nuestro caso, el ML se encargará de extraer información clave de cada una de las muestras recolectadas de las zonas forestales, donde, mediante descriptores de características tanto globales como locales, se encargará de generar un archivo que contenga la información más relevante de las muestras.
+En nuestro caso, el aprendizaje máquina se encargará de extraer información clave de cada una de las muestras recolectadas de las zonas forestales, donde, mediante descriptores de características tanto globales como locales, se encargará de generar un archivo que contenga la información más relevante de las muestras.
 
-Posteriormente, la visión computacional hará uso del archivo generado previamente por el ML donde se hará cargo de clasificar cada árbol mediante una etiqueta que definirá su especie por color. Esto último no ha sido aplicado en las investigaciones encontradas puesto que tienen un enfoque nulo en hacer clasificaciones de múltiples objetos de un sólo tipo, o bien, sólo se enfocan en hacer anotaciones manuales por medio de inputs previamente establecidos y esto únicamente se enfoca en comparaciones.
+Posteriormente, la visión computacional hará uso del archivo generado previamente por el aprendizaje máquina donde se hará cargo de clasificar cada árbol mediante una etiqueta que definirá su especie por color. Esto último no ha sido aplicado en las investigaciones encontradas puesto que tienen un enfoque nulo en hacer clasificaciones de múltiples objetos de un sólo tipo, o bien, sólo se enfocan en hacer anotaciones manuales por medio de inputs previamente establecidos y esto únicamente se enfoca en comparaciones.
 
 El Inventario forestal es otro de los apartados importante en la investigación, dado que es uno de los enfoques en los que se el desarrollo de los algoritmos que vamos a utilizar, se estará tomando como punto de partida al momento de desarrollarse. 
 
@@ -440,13 +463,13 @@ Respecto a la figura \textbf{5.2} podemos destacar que la muestra original sirve
 \break
 
 
-En las siguientes figuras mostraremos un poco como es que se puede percibir la diferencia entre una anotación realizada por el ML a partir del modelo de datos previamente generado y la muestra con anotación hecha por un experto en el tema. \\
+En las siguientes figuras mostraremos un poco como es que se puede percibir la diferencia entre una anotación realizada por el aprendizaje máquina a partir del modelo de datos previamente generado y la muestra con anotación hecha por un experto en el tema. \\
 
 \begin{figure}[H]
   \centering
   \begin{minipage}[b]{0.4\textwidth}
     \includegraphics[width=\textwidth]{muestra_combinada}
-    \caption{Anotaciones de ML}
+    \caption{Anotaciones del aprendizaje máquina}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.4\textwidth}
@@ -455,7 +478,7 @@ En las siguientes figuras mostraremos un poco como es que se puede percibir la d
   \end{minipage}
 \end{figure}
 
-En el caso de la figura \textbf{5.3} las anotaciones generadas a partir del ML pueden contener anotaciones que no están en las anotaciones manuales pero no significa que estén incorrectas, sino que dadas las instancias otorgadas de rectángulos (green, blue, yellow) el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. En contra parte, la figura \textbf{5.4} nos deja ver que las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
+En el caso de la figura \textbf{5.3} las anotaciones generadas a partir del aprendizaje máquina pueden contener anotaciones que no están en las anotaciones manuales pero no significa que estén incorrectas, sino que dadas las instancias otorgadas de rectángulos (green, blue, yellow) el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. En contra parte, la figura \textbf{5.4} nos deja ver que las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
 
 \break
 
@@ -501,7 +524,7 @@ Todas las pruebas y algoritmos fueron ejecutados en una laptop con las siguiente
 			Ram & 8 GB RAM DDR4 2133 MHz\\
 			\hline
 		\end{tabular}
-	\caption{Especificaciones técnicas del PC}
+	\caption{Especificaciones técnicas del equipo de cómputo}
 	\label{tab:Especificaciones técnicas del PC}
 	}
 \end{table}
@@ -509,7 +532,7 @@ Todas las pruebas y algoritmos fueron ejecutados en una laptop con las siguiente
 \break
 
 \section{Discusión de resultados}
-Tal y como se mostró en la figura 6.1, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador.
+Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador.
 
 Cabe recalcar que el rendimiento de este algoritmo también puede variar en relación con el procesamiento de la imagen. Esto último quiere decir que si nuestra imagen es demasiado grande, el tiempo de procesado será mayor por la cantidad de pixeles a remover y sustituir. 
 No obstante, los parámetros que se agregaron para poder tener un criterio de clasificación solamente son valores muestra con el fin de abarcar la mayor cantidad de información posible y a su vez, tener un algoritmo de detección preciso.
