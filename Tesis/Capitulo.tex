@@ -71,6 +71,8 @@ generar un inventario forestal mediante el recorrido de un dron y a su vez, anal
 \pagebreak
 
 \section{Estructura}
+El contenido de la investigación se va a dividir en 7 capítulos, donde cada uno de ellos tiene un propósito distinto. Con el propósito de hacer más breve y entendible la investigación, se desglosa cada uno de los capítulos con el contenido que podemos esperar de cada uno de ellos.
+
 En el capítulo 2 expone algunos antecedentes que han surgido a lo largo
 de la historia respecto a los inventarios forestales, así como las características más importantes sobre las que trabaja el procesamiento de imágenes.
 
@@ -92,13 +94,13 @@ Como se mencionó antes, el aprendizaje máquina hace uso de muestras para ident
 El \emph{procesamiento de imágenes}\footnote{Su función es capturar y procesar por medio de imágenes la información más relevante.} analiza por medio de características como: \emph{forma, color, bordes, textura} cuando se utiliza en conjunto con el aprendizaje máquina. Sin embargo, las características dependen en gran medida del objetivo ya que no todas las características aportan información relevante para el procesamiento y clasificación. Las características utilizadas en el análisis de especies arbóreas se clasifican en características locales y características globales.
 
 \section{Antecedentes históricos}
-El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \citet{rf4}. 
+El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \citep{rf4}. 
 
-El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citet{rf5}. 
+El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}. 
 
-La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, en el capítulo 2.2 descriptores de características, describe a detalle como es que la visión computacional hace uso de ellas \citet{rf6}.
+La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, en el capítulo 2.2 descriptores de características, describe a detalle como es que la visión computacional hace uso de ellas \citep{rf6}.
 
-Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como sistemas de recolección de características del área sobre el que se trabaja \citet{rf7}.
+Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como sistemas de recolección de características del área sobre el que se trabaja \citep{rf7}.
 
 \section{Descriptores de características globales}
 La idea de que el color presente en las muestras recolectadas sea el único diferenciador de una especie respecto a otra es un pensamiento incorrecto debido a que además de este criterio, existen otros criterios que nos permiten apreciar e identificar las características de una especie arbórea, no obstante, estas características pueden ser útiles en otras fases de la investigación. 
@@ -142,15 +144,15 @@ La ecuación \ref{eq:2.1} obtiene la sumatoria de la intensidad de todos los pí
 Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en nuestro caso, al identificar las muestras de los árboles. En este caso haremos uso de la métrica de \emph{textura de Haralick}. 
 
 La Figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas en la imagen, a simple vista algunos colores denotan ser de una especie distinta si se hace un análisis minucioso, pero en este caso, la característica de textura puede ser utilizada para diferenciar entre especies arbóreas.
-
+\vspace*{3\baselineskip}
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.7\textwidth}
+  \begin{minipage}[b]{1\textwidth}
     \includegraphics[width=\textwidth]{textura-cil}
     \caption{Texturas en muestra del Cilantrillo}
   \end{minipage}
 \end{figure}
-
+\newpage
 \section{Descriptores de características locales}
 Las características mencionadas en la sección 2.2 cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor es el óptimo para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. 
 
@@ -193,15 +195,15 @@ Este artículo nos menciona como hacen uso de combinar datos para realizar inven
 \break
 
 
-\citet{rf1} Utiliza una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales .
+\citet{rf1} Utilizan una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales.
  
-\citet{rf2} tiene como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con inteligencia artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
+\citet{rf2} tienen como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con inteligencia artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
 
 \citet{rf3} tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. %El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización.
 
-\citet{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
+\citet{rf9} hacen simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
 
-\citet{rf10} hace uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó.
+\citet{rf10} hacen uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó.
 
 \pagebreak
  
@@ -277,10 +279,10 @@ En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desgl
 \end{table}
 
 \subsection{Áreas de oportunidad}
-En el cuadro 3.1 se puede apreciar que características tiene la investigación que se trabaja con respecto a la de otros autores, y es que, a simple vista pudiera ser que otros trabajos tengan las mismas características o al menos casi todas, pero por lo que respecta a la investigación, la ventaja que tiene es que, además de ser un código libre para que cualquier persona pueda verlo, es que la investigación se está aplicando sobre un problema real, es decir, generar los inventarios forestales. 
+En el cuadro 3.1 se puede apreciar que características tiene la investigación con respecto a la de otros autores, y es que, a simple vista pudiera ser que otros trabajos tengan las mismas características o al menos casi todas pero por lo que respecta a la investigación, además de generar un inventario forestal de manera eficiente y proporcionar su código, este puede ser modificado o estudiado con otros propósitos sin necesidad de esperar una retribución de por medio debido a que es un software libre al público.
 
 \newpage
-Por otro lado, también se puede apreciar que el trabajo de \cite{rf10} tiene las mismas características que nuestro trabajo pero va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
+Por otro lado, también se puede apreciar que el trabajo de \citet{rf10} tiene las mismas características que nuestro trabajo pero va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
 
 En lo que respecta a las áreas de oportunidad de la investigación, podemos destacar el aprendizaje máquina (ML) y la visión computacional como herramientas clave. Primeramente, el aprendizaje máquina permite entrenar un algoritmo cuyo producto es bastante relevante en el proceso de clasificación durante la investigación.
 
