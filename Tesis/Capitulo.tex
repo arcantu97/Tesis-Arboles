@@ -302,17 +302,17 @@ Habiendo conocido las características que mejor describen a los atributos de nu
 La primera fase a considerar en el desarrollo de esta, sería recolectar muestras de el objeto(s) a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que nuestro algoritmo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que necesitamos información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
 
 \section{Muestras recolectadas}
-Inicialmente se proporcionó un repositorio con imágenes alojado en Google Drive que contenía imágenes de las zonas donde se realizó el recorrido del dron, más específicamente \textbf{Cilandrillo} y \textbf{Trinidad}.
+Inicialmente se proporcionó un repositorio con imágenes alojado en Google Drive que contenía imágenes de las zonas donde se realizó el recorrido del dron, más específicamente \emph{Cilandrillo} y \emph{Trinidad}.
 
 \begin{figure}
  \centering
-\includegraphics[scale=0.5]{Cilandrillo}
+\includegraphics[scale=0.6]{grid_Cilantrillo}
 \caption{Muestras de la zona de Cilandrillo}
 \end{figure}
 
 \begin{figure}
  \centering
-\includegraphics[scale=0.5]{Trinidad}
+\includegraphics[scale=0.6]{grid_Trinidad}
 \caption{Muestras de la zona de Trinidad}
 \end{figure}
 
@@ -321,7 +321,7 @@ Como se mencionó al inicio de la sección 4.2, es importante recolectar una gra
 
 La información de cada muestra es analizada píxel por píxel, por lo que a simple vista podemos percatarnos de que clase de información tiene cada muestra, pero el analizar cada una de ellas llevaría demasiado tiempo, por lo que, podemos concluir que hay píxeles dentro de ellas que no sean útiles. 
 
-En los casos de la figura \textbf{4.3} y \textbf{4.4} mostramos un pequeño ejemplo de cómo se verían las muestras que nos son de utilidad y destacando que en el siguiente capítulo apreciaremos el procedimiento realizado para poder obtener muestras útiles.
+En los casos de la figura 4.3 y 4.4 mostramos un pequeño ejemplo de cómo se verían las muestras que nos son de utilidad y destacando que en el siguiente capítulo apreciaremos el procedimiento realizado para poder obtener muestras útiles.
 
 \begin{figure}[b]
   \centering
@@ -341,7 +341,7 @@ En los casos de la figura \textbf{4.3} y \textbf{4.4} mostramos un pequeño ejem
 \subsection{Información no útil}
 En cada una de las muestras recolectadas está presente el suelo ya que es una imagen capturada por un drone, sin embargo, el suelo forma parte de la información que necesitamos remover de las muestras para no sobre entrenar a nuestro modelo de reconocimiento.
 
-Para efectos prácticos, se declararon los colores de las especies arbóreas, esto con el fin de decirle a nuestro algoritmo que información no debe remover de las muestras. A su vez tenemos que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal alpha, mismo que es necesario para llevar a cabo nuestro procedimiento de reemplazar la información, por lo que tenemos que convertir cada muestra primero, a un formato .png para que la muestra admita este canal. Después se convierte la muestra a un canal \textbf{RGBA} (Red Gray Blue Alpha).
+Para efectos prácticos, se declararon los colores de las especies arbóreas, esto con el fin de decirle a nuestro algoritmo que información no debe remover de las muestras. A su vez tenemos que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal alpha, mismo que es necesario para llevar a cabo nuestro procedimiento de reemplazar la información, por lo que tenemos que convertir cada muestra primero, a un formato .png para que la muestra admita este canal. Después se convierte la muestra a un canal \emph{RGBA} (Red Gray Blue Alpha).
 
  Una vez que la muestra tenga el canal alpha recorreríamos todos los pixeles de la imagen con el fin de encontrar y asignar a una variable, todos los pixeles que no correspondan con los colores de los árboles y posteriormente, ir descartando de estos pixeles con el fin de guardar la muestra con la información útil como se muestra en la figura \textbf{2.5}.
 
