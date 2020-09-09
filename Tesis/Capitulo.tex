@@ -39,11 +39,10 @@ En las figura \ref{Zona-cilantrillo} se aprecia la zona de Trinidad desde distin
 \newpage
 
 \section{Motivación}
-Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocas puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilandrillo y Trinidad.
+Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocas puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilantrillo y Trinidad.
 
 \section{Hipótesis}
-Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en
-la búsqueda de un elemento en particular, en nuestro caso las especies arbóreas; se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
+Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en la búsqueda de un elemento en particular, las especies arbóreas (caso del presente trabajo) se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
 
 \section{Objetivos}
 En esta sección se establece el objetivo general y los objetivos específicos sobre los que se enfoca la tesis.
@@ -71,7 +70,7 @@ generar un inventario forestal mediante el recorrido de un dron y a su vez, anal
 \pagebreak
 
 \section{Estructura}
-El contenido de la investigación se va a dividir en 7 capítulos, donde cada uno de ellos tiene un propósito distinto. Con el propósito de hacer más breve y entendible la investigación, se desglosa cada uno de los capítulos con el contenido que podemos esperar de cada uno de ellos.
+El contenido de la investigación se va a dividir en siete capítulos, donde cada uno de ellos tiene un propósito distinto. Con el propósito de hacer más breve y entendible la investigación, se desglosa cada uno de los capítulos con el contenido que podemos esperar de cada uno de ellos.
 
 En el capítulo 2 expone algunos antecedentes que han surgido a lo largo
 de la historia respecto a los inventarios forestales, así como las características más importantes sobre las que trabaja el procesamiento de imágenes.
@@ -98,7 +97,7 @@ El procesamiento de imágenes surge en el año 1920 de los primeros intentos de 
 
 El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}. 
 
-La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, en el capítulo 2.2 descriptores de características, describe a detalle como es que la visión computacional hace uso de ellas \citep{rf6}.
+La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, en la sección 2.2 descriptores de características, describe a detalle como es que la visión computacional hace uso de ellas \citep{rf6}.
 
 Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como sistemas de recolección de características del área sobre el que se trabaja \citep{rf7}.
 
@@ -141,9 +140,9 @@ Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,
 La ecuación \ref{eq:2.1} obtiene la sumatoria de la intensidad de todos los píxeles, es decir, la sumatoria se hace con base únicamente en la intensidad de los píxeles y no con la posición dentro de una imagen.
 
 \subsection{Textura} 
-Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en nuestro caso, al identificar las muestras de los árboles. En este caso haremos uso de la métrica de \emph{textura de Haralick}. 
+Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en el presente trabajo, al identificar las muestras de los árboles. En este caso se emplea la métrica de \emph{textura de Haralick}. 
 
-La Figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas en la imagen, a simple vista algunos colores denotan ser de una especie distinta si se hace un análisis minucioso, pero en este caso, la característica de textura puede ser utilizada para diferenciar entre especies arbóreas.
+La figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas en la imagen, a simple vista algunos colores denotan ser de una especie distinta si se hace un análisis minucioso, pero en este caso, la característica de textura puede ser utilizada para diferenciar entre especies arbóreas.
 \vspace*{3\baselineskip}
 \begin{figure}[h!]
   \centering
@@ -195,13 +194,13 @@ Este artículo nos menciona como hacen uso de combinar datos para realizar inven
 \break
 
 
-\citet{rf1} Utilizan una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales.
+\citet{rf1} utilizan una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales.
  
 \citet{rf2} tienen como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con inteligencia artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
 
 \citet{rf3} tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional. %El problema a solucionar en concreto como parte de este trabajo es, resolver los métodos de umbralización.
 
-\citet{rf9} hacen simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
+\citet{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal. En este artículo se hacen validaciones usando modelos generados por información de un bosque privado y un bosque estatal de Illinois, EE.UU.
 
 \citet{rf10} hacen uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN) para procesar eficientemente la información recolectada y segmentar por clusters el ambiente sobre el que se trabajó.
 
@@ -271,7 +270,7 @@ En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desgl
 			\hline
 			\citet{rf15}& \checkmark & \checkmark & $\times$  \\
 			\hline
-			Investigación & \checkmark & \checkmark & \checkmark \\
+			El presente trabajo & \checkmark & \checkmark & \checkmark \\
 			\hline
 		\end{tabular}
 	\end{adjustbox}
@@ -282,11 +281,11 @@ En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desgl
 En el cuadro 3.1 se puede apreciar que características tiene la investigación con respecto a la de otros autores, y es que, a simple vista pudiera ser que otros trabajos tengan las mismas características o al menos casi todas pero por lo que respecta a la investigación, además de generar un inventario forestal de manera eficiente y proporcionar su código, este puede ser modificado o estudiado con otros propósitos sin necesidad de esperar una retribución de por medio debido a que es un software libre al público.
 
 \newpage
-Por otro lado, también se puede apreciar que el trabajo de \citet{rf10} tiene las mismas características que nuestro trabajo pero va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
+Por otro lado, también se puede apreciar que el trabajo de \citet{rf10} tiene las mismas características que el método propuesto, sin embargo va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
 
 En lo que respecta a las áreas de oportunidad de la investigación, podemos destacar el aprendizaje máquina (ML) y la visión computacional como herramientas clave. Primeramente, el aprendizaje máquina permite entrenar un algoritmo cuyo producto es bastante relevante en el proceso de clasificación durante la investigación.
 
-En nuestro caso, el aprendizaje máquina se encarga de extraer información clave de cada una de las muestras recolectadas de las zonas forestales, donde, mediante descriptores de características tanto globales como locales, se encarga de generar un archivo que contenga la información más relevante de las muestras.
+En el caso del método propuesto, el aprendizaje máquina se encarga de extraer información clave de cada una de las muestras recolectadas de las zonas forestales, donde, mediante descriptores de características tanto globales como locales, se encarga de generar un archivo que contenga la información más relevante de las muestras.
 
 Posteriormente, la visión computacional hace uso del archivo generado previamente por el aprendizaje máquina donde se encarga de clasificar cada árbol mediante una etiqueta que define a su especie por color. Esto último no ha sido aplicado en las investigaciones encontradas puesto que tienen un enfoque nulo en hacer clasificaciones de múltiples objetos de un sólo tipo, o bien, sólo se enfocan en hacer anotaciones manuales por medio de inputs previamente establecidos y esto únicamente se enfoca en comparaciones.
 
@@ -296,13 +295,13 @@ Clasificación es quizás el punto más importante de la investigación debido a
 
 
 \chapter{Solución propuesta}
-Habiendo conocido las características que mejor describen a los atributos de nuestro algoritmo, podemos decir que la base de nuestro algoritmo se puede desarrollar.
+Habiendo conocido las características que mejor describen a los atributos del presente trabajo, podemos decir que la base del método propuesto se puede desarrollar.
 
 \section{Fase de recolección de muestras}
-La primera fase en el desarrollo de la solución propuesta sería recolectar muestras de el objeto(s) a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que nuestro algoritmo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que necesitamos información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
+La primera fase en el desarrollo de la solución propuesta sería recolectar muestras de el objeto(s) a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que el presente trabajo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que necesitamos información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
 
 \section{Muestras recolectadas}
-Inicialmente se proporcionó un repositorio con imágenes alojado en Google Drive que contenía imágenes de las zonas donde se realizó el recorrido del dron, más específicamente \emph{Cilandrillo} y \emph{Trinidad}.
+Inicialmente, el doctor Manuel Jiménez proporcionó un repositorio con imágenes alojado en Google Drive que contenía imágenes de las zonas donde se realizó el recorrido del dron, más específicamente \emph{Cilantrillo} y \emph{Trinidad}.
 
 \begin{figure}
  \centering
@@ -317,7 +316,7 @@ Inicialmente se proporcionó un repositorio con imágenes alojado en Google Driv
 \end{figure}
 
 \subsection{Análisis de muestras}
-Como se mencionó al inicio de la sección 4.2, es importante recolectar una gran cantidad de muestras para entrenar bien el modelo, por lo que para la zona del Cilandrillo se recolectaron 277 muestras y para la zona de Trinidad se recolectaron 270 muestras. Esta cantidad de muestras es suficiente para entrenar bien nuestro modelo que sea capaz de reconocer los distintos tipos de árbol, más sin embargo, en cada imagen se puede apreciar información que no es útil y puede sobre entrenar el modelo, perjudicando de forma que este detecte más en concreto, el suelo como un tipo de árbol.
+Como se mencionó al inicio de la sección 4.2, es importante recolectar una gran cantidad de muestras para entrenar bien el modelo, por lo que para la zona del Cilantrillo se recolectaron 277 muestras y para la zona de Trinidad se recolectaron 270 muestras. Esta cantidad de muestras es suficiente para entrenar bien el modelo desarrollado y que sea capaz de reconocer los distintos tipos de árbol, más sin embargo, en cada imagen se puede apreciar información que no es útil y puede sobre entrenar el modelo, perjudicando de forma que este detecte más en concreto, el suelo como un tipo de árbol.
 
 La información de cada muestra es analizada píxel por píxel, por lo que a simple vista podemos percatarnos de que clase de información tiene cada muestra, pero el analizar cada una de ellas llevaría demasiado tiempo, por lo que, podemos concluir que hay píxeles dentro de ellas que no sean útiles. 
 
@@ -336,9 +335,9 @@ En los casos de la figura 4.3 y 4.4 mostramos un pequeño ejemplo de cómo se ve
 \newpage
 
 \subsection{Información no útil}
-En cada una de las muestras recolectadas está presente el suelo ya que es una imagen capturada por un drone, sin embargo, el suelo forma parte de la información que necesitamos remover de las muestras para no sobre entrenar a nuestro modelo de reconocimiento.
+En cada una de las muestras recolectadas está presente el suelo ya que es una imagen capturada por un drone, sin embargo, el suelo forma parte de la información que necesitamos remover de las muestras para no sobre entrenar a el modelo de reconocimiento previamente desarrollado.
 
-Para efectos prácticos, se declararon los colores de las especies arbóreas, esto con el fin de decirle a nuestro algoritmo que información no debe remover de las muestras. A su vez tenemos que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal alpha, mismo que es necesario para llevar a cabo nuestro procedimiento de reemplazar la información, por lo que tenemos que convertir cada muestra primero, a un formato .png para que la muestra admita este canal. Después se convierte la muestra a un canal \emph{RGBA} (Red Gray Blue Alpha).
+Para efectos prácticos, se declararon los colores de las especies arbóreas, esto con el fin de decirle a el método propuesto que información no debe remover de las muestras. A su vez tenemos que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal alpha, mismo que es necesario para llevar a cabo el método propuesto de reemplazar la información, por lo que tenemos que convertir cada muestra primero, a un formato .png para que la muestra admita este canal. Después se convierte la muestra a un canal \emph{RGBA} (Red Gray Blue Alpha).
 
  Una vez que la muestra tenga el canal alpha recorreríamos todos los pixeles de la imagen con el fin de encontrar y asignar a una variable, todos los pixeles que no correspondan con los colores de los árboles y posteriormente, ir descartando de estos pixeles con el fin de guardar la muestra con la información útil como se muestra en la figura 2.5.
 
@@ -356,7 +355,7 @@ Para efectos prácticos, se declararon los colores de las especies arbóreas, es
 Una vez recolectadas las muestras con información relevante, se procede a  entrenar a el modelo con esa información para que sea en fases posteriores este sea capaz de entender y clasificar donde estén presentes las especies arbóreas almacenadas en el modelo. La forma de organizar cada muestra para un correcto entrenamiento es mediante la separación de cada especie por su color correspondiente, es decir, separando las especies de color azul en una carpeta, los verdes y los amarillos en su carpeta correspondiente consecuentemente.
 
 \subsection{Recortando muestras por islas}
-Primeramente hay reconocer las secciones o partes de la muestra que son de nuestro interés, en este caso, vamos a estar trabajando como antes con los colores, específicamente los de cada especie de árbol. En el caso de todas las muestras, tenemos tres colores: [verde, amarillo, azul, azul claro, rosa, púrpura, verde limón, amarillo oscuro, azul oscuro, gris oscuro, gris claro]. Estos colores nos van a indicar que colores tienen una anotación valida para recortar.
+Primeramente hay reconocer las secciones o partes de la muestra que son de interés, en este caso, vamos a estar trabajando como antes con los colores, específicamente los de cada especie de árbol. En el caso de todas las muestras, tenemos tres colores: [verde, amarillo, azul]. Estos colores nos van a indicar que colores tienen una anotación valida para recortar.
 
 
 \begin{figure}[H]
@@ -369,7 +368,7 @@ Primeramente hay reconocer las secciones o partes de la muestra que son de nuest
 
 En la figura 4.6 se aprecia que tiene secciones delimitadas por colores, por lo que iremos recorriendo la muestra por píxeles hasta encontrar la zona que esté dentro del rango de colores previamente establecido.
 
-La idea de hacer recortes de las anotaciones por colores es de agilizar el procesamiento a la hora de entrenar nuestro modelo con todas las muestras. Cada muestra a su vez, tiene un porcentaje de admisión que permite establecer si la anotación cumple o no con los criterios establecidos.
+La idea de hacer recortes de las anotaciones por colores es de agilizar el procesamiento a la hora de entrenar el modelo con todas las muestras. Cada muestra a su vez, tiene un porcentaje de admisión que permite establecer si la anotación cumple o no con los criterios establecidos.
 
 Ya con las muestras de colores obtenidas, se procede a separar por islas de acuerdo al color que este establecido. Se separa por color verde, amarillo y azul, cada color en una carpeta distinta para tener mayor control de las islas capturadas.
 
@@ -383,7 +382,7 @@ Ya con las muestras de colores obtenidas, se procede a separar por islas de acue
 
 En la figura 4.7 se aprecian las islas separadas por color, en cada una de estas muestras, se hacen recortes interiores de cada zona recortada para que se procesen de mejor forma por el modelo que estaremos entrenando. 
 
-Los rectángulos generados por medio de las islas tienen un tamaño fijo de 150 x 150, donde a su vez, cada 25 píxeles, se va buscando rectángulos con un porcentaje de 0.005 píxeles no transparentes.
+Los rectángulos generados por medio de las islas tienen un tamaño fijo de 150 $x$ 150, donde a su vez, cada 25 píxeles, se va buscando rectángulos con un porcentaje de 0.005 píxeles no transparentes.
 
 
 \begin{figure}[h]
@@ -494,7 +493,7 @@ Después de clasificar todas las muestras que pasaron por las fases de entrenami
 
 \end{figure}
 
-La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilandrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
+La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
 
 \section{Experimentación}
 Tal y como se muestra en la sección de validaciones (Capítulo 4.3), hubo un porque detrás del hacerlo de tal manera y esto fue por la elección del algoritmo que se iba a encargar de ejecutar la detección.
@@ -541,6 +540,6 @@ Respecto a la ejecución de los algoritmos, es cierto que puede llegar a ser con
 \chapter{Conclusiones}
 Después de haber obtenido los resultados del algoritmo podemos concluir algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, \textbf{Abies}, la cual en la tabla 6.1 nos dio un valor de 15567, un resultado bastante superior al de las otras especies arbóreas.
 
-Otra de las cosas que se pudo concluir al aunar los resultados fue que el proceso de detección no hubiese sido posible de no ser removido el suelo en la fase previa al entrenamiento, esto debido a que el suelo provoca que nuestro modelo de entrenamiento hubiera sido cargado con información no útil. Con esto podemos inferir que el algoritmo hubiera clasificado de alguna forma en forma de especie las partes que contienen suelo dentro de cada muestra, haciendo que nuestro algoritmo no clasificara correctamente.
+Otra de las cosas que se pudo concluir al aunar los resultados fue que el proceso de detección no hubiese sido posible de no ser removido el suelo en la fase previa al entrenamiento, esto debido a que el suelo provoca que el modelo de entrenamiento hubiera sido cargado con información no útil. Con esto podemos inferir que el algoritmo hubiera clasificado de alguna forma en forma de especie las partes que contienen suelo dentro de cada muestra, haciendo que el método propuesto no clasificara correctamente.
 
 Por último y no menos importante, el tiempo de detección de muestras. Este fue la fase más tardadas de todas no sólo por el hecho de que había muchas muestras, sino que al analizar cada muestra se hacía un seguimiento de píxel por píxel para verificar el color alpha de este en la fase de seguimiento y posteriormente removerlo de la muestra, en la fase de detección, se verificaba que este no contuviera el color transparente para omitirlo y recorrer los pixeles o información útil.
