@@ -426,11 +426,10 @@ Originalmente se conocen las distintas especies arbóreas de la colección o set
 
 Es necesario declarar durante la fase del entrenamiento, las clases a utilizar y el tamaño de muestras para posteriormente generar un set que sea de utilidad. En este caso, se declara un tamaño de 250 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en el capítulo 2, sección 2.3 donde mencionamos a las características globales.
 
-%%me quedé aquí
-Al ir recorriendo las muestras, las procesamos primero guardándolas en un variable local que determina el tamaño de estas para posteriormente, utilizarlas al extraer las características globales. Cuando se tiene almacenada la información extraída de las muestras, se añade a un vector de características globales en el cual se guarda dentro, un conjunto de datos que contiene la información de cada una de las muestras y posteriormente, utilizado al momento de clasificar las especies de árbol. 
+Al ir recorriendo las muestras, estas se guardan en un variable local que determina el tamaño de las muestras para posteriormente, utilizarlas al extraer las características globales. Cuando se tiene almacenada la información extraída de las muestras, se añade a un vector de características globales en el cual se guarda un conjunto de datos que contiene la información de cada una de las muestras y posteriormente, utilizar este vector de características al momento de clasificar las especies de árbol. 
 
 \section{Fase de detección}
-Esta fase es la más importante de todas debido a que utilizamos los modelos generados a partir de la fase de entrenamiento. En esta fase se utilizan las características globales de extracción de características previamente comentadas en el capítulo capítulo 2, sección 2.3 donde hacemos uso del modelo de clasificador forestal aleatorio \footnotemark{\emph{Random Forest Classifier}}, donde tenemos que poner un valor estimado de arboles por cada muestra donde se vaya a probar el modelo, en nuestro caso utilizaremos como valor de 200. Posteriormente tenemos que definir que utilizar la información de los modelos de características utilizadas y las etiquetas de muestras generadas a partir de ello también. 
+Esta fase es la más importante de todas debido a que se utiliza el modelo generado a partir de la fase de entrenamiento. En esta fase se utilizan las características globales de extracción de características del capítulo 2, sección 2.3 donde hacemos uso del modelo clasificador forestal aleatorio \emph{Random Forest Classifier}\footnotemark, donde se establece un valor estimado de arboles por cada muestra donde se vaya a probar el modelo, en la investigación se va a utilizar un valor de 100. Posteriormente tenemos que definir que utilizar la información de los modelos de características utilizadas y las etiquetas de muestras generadas a partir de ello también. 
 \footnotetext{Clasificador de múltiples decisiones que funciona en conjunto.}
 \\
 
@@ -484,18 +483,18 @@ En el caso de la figura 5.3 las anotaciones generadas a partir del aprendizaje m
 Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, tenemos un resultado preliminar que nos indica cuantas especies fueron detectadas en la fase de detección, mismo que se discute a lo largo del capítulo 6.
 
 
-Los resultados de la fase de detección se presentan en la tabla \ref{Numero de especies}
-
-\begin{figure}[H]
+\begin{figure}[h!]
   \centering
+  
   \begin{minipage}[b]{0.5\textwidth}
         \includegraphics[width=\textwidth]{Result_detection}
-    \caption{Número de especies detectadas}
+    \caption{Número de especies detectadas} 
+    \label{Numero especies}
   \end{minipage}
-  \label{Numero de especies}
+
 \end{figure}
 
-El cuadro \ref{Numero de especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilandrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
+La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilandrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
 
 \section{Experimentación}
 Tal y como se muestra en la sección de validaciones (Capítulo 4.3), hubo un porque detrás del hacerlo de tal manera y esto fue por la elección del algoritmo que se iba a encargar de ejecutar la detección.
