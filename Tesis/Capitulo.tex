@@ -372,7 +372,7 @@ Ya con las muestras de colores obtenidas, se procede a separar por islas de acue
 \begin{figure}[H]
   \centering
   \begin{minipage}[b]{0.6\textwidth}
-        \includegraphics[width=\textwidth]{grid_Muestras}
+        \includegraphics[width=\textwidth]{grid_Muestras_2}
     \caption{Isla separada por color}
   \end{minipage}
 \end{figure}
@@ -416,8 +416,7 @@ Recapitulando las fases anteriores, conocemos que a partir de obtener muestras, 
 La figura \ref{Diagrama de flujo de las fases} también permite visualizar las fases posteriores a lo explicado en el capítulo 4, donde se puede percibir que las fases siguientes cobrarían importancia a la hora de visualizar el resultado de todas las fases en conjunto.
 
 \begin{figure}[H]
-\centering
-  \resizebox{.5\columnwidth}{!}{
+  \resizebox{.7\columnwidth}{!}{
   \begin{tikzpicture}[node distance=2cm, auto]
  \node [cloud] (init) {Inicio};
  \node [block, below of=init] (recoleccion) {Recolectar muestras};
@@ -543,6 +542,7 @@ En el caso de la figura 5.3 las anotaciones generadas a partir del aprendizaje m
 Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, se puede obtener un resultado preliminar que nos indica cuantas especies fueron detectadas en la fase de detección.
 
 Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas para comprobar los resultados del modelo generado. En algunas situaciones si se modifica un parámetro es posible que el resultado no sea el esperado, por tanto, se tiene que jugar con los valores que les asignen a los parámetros para poder determinar si el resultado es o no el esperado en cuestión. En esta sección se tratan los resultados obtenidos a lo largo de desarrollar algunos experimentos que permitan determinar si la solución propuesta cumple con el objetivo de desarrollar un inventario forestal de forma eficiente.
+\newpage
 
 \section{Diseño experimental}
 En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo, el trata de determinar un resultado manualmente con solo observar una muestra puede no favorecernos y por tanto, el manejar un contador que permita tener un control de las especies arbóreas detectadas favorece mucho la cuestión estadística de las especies detectadas.
