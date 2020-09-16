@@ -17,12 +17,16 @@
 \usepackage{float}
 \usepackage{footmisc}
 \usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows, babel, shapes}
 \usepackage[font=small, skip=0pt]{caption}
 \setlength{\footnotesep}{0.5cm}
 \setlength\footnotemargin{3pt}
-    \hypersetup{breaklinks=true,colorlinks=true,
-        linkcolor=black,citecolor=black,urlcolor=black}
-
+\hypersetup{breaklinks=true,colorlinks=true,    linkcolor=black,citecolor=black,urlcolor=black}
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=8em, text badly centered, node distance=3.5cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=12em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=1cm,minimum height=4em, text width=4em, text centered]
 %%%%%%%%%%%%%%%%%%%%%
 % Definiendo campos %
 %%%%%%%%%%%%%%%%%%%%%

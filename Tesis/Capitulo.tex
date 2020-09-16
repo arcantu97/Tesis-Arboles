@@ -410,15 +410,43 @@ En la figura 4.8 se puede apreciar uno de los rectángulos generados por medio d
 %
 %\break
 
-\chapter{Desarrollo de solución}
+\chapter{Desarrollo de la solución}
+Recapitulando un poco las fases anteriores, conocemos que a partir de obtener muestras, estas pueden ser procesadas con la finalidad de generar un modelo que nos permita posteriormente, detectar las especies en una fase posterior haciendo uso del mismo. Sin embargo, es necesario recordar que previo a esta fase, hay algunas fases que intervienen como la fase de recortar por islas y  generar los rectángulos que serán utilizados en el modelo, por tanto, la figura \ref{Diagrama de flujo de las fases} detalla las fases y su sucesión en el desarrollo de la solución.
 
-Posterior a obtener las muestras separada por islas, la fase siguiente consistiría en entrenar un modelo que permita reconocer las especies arbóreas obteniendo la información más importante a partir de las muestras recolectadas en la fase de procesamiento de muestras.
+La figura \ref{Diagrama de flujo de las fases} también permite visualizar las fases posteriores a lo explicado en el capítulo 4, donde se puede percibir que las fases siguientes cobrarían importancia a la hora de visualizar el resultado de todas las fases en conjunto.
 
-Cabe destacar que el modelo generado funciona en gran medida debido a que etiqueta las especies de árboles almacenadas con las características previamente mencionadas (textura, forma y color) en las muestras originales en la fase final.
+\begin{figure}[H]
+\centering
+  \resizebox{.5\columnwidth}{!}{
+  \begin{tikzpicture}[node distance=2cm, auto]
+ \node [cloud] (init) {Inicio};
+ \node [block, below of=init] (recoleccion) {Recolectar muestras};
+ \node [decision, below of=recoleccion] (decision1) {¿La muestra contiene suelo?};
+ \node [block, left of=decision1, node distance=5cm] (hdecion1) {Remover suelo};  
+ \node [block, below of=decision1, node distance=4cm] (recortes) {Recortar islas por color};
+ \node [block, below of=recortes] (rectangulos) {Generar rectángulos interiores};
+  \node [block, below of=rectangulos] (entrenamiento) {Entrenar modelo};
+    \node [block, below of=entrenamiento] (prueba) {Detectar especies};
+      \node [block, below of=prueba] (combinacion) {Combinar suelo en muestras originales};
+ \node [cloud, below of=combinacion, node distance=2cm] (end) {Fin};
+ \path [line] (init) -- (recoleccion);
+ \path [line] (recoleccion) -- (decision1);
+ \path [line] (decision1) -| node [near start] {si} (hdecion1);
+ \path [line] (decision1) -- node {no}(recortes);
+ \path [line] (recortes) -- (rectangulos);
+ \path [line] (rectangulos) -- (entrenamiento);
+ \path [line] (entrenamiento) -- (prueba);
+ \path [line] (prueba) -- (combinacion);
+ \path [line] (combinacion) -- (end);
+\end{tikzpicture}}
+\caption{Fases del desarrollo de la solución}
+\label{Diagrama de flujo de las fases}
+\end{figure}
 
 \section{Fase de entrenamiento}
-Originalmente se conocen las distintas especies arbóreas de la colección o set de imágenes, pero al momento de clasificar, el algoritmo encargado de recorrer la carpeta que contiene las muestras útiles  necesita conocer que imágenes se van a tomar en cuenta, por lo que primero se determina por medio de un arreglo, el conjunto de carpetas a buscar con los rectángulos que se generaron a partir de las muestras recolectadas, es decir, el algoritmo buscará en las carpetas: green, blue y yellow. 
-\newpage
+Originalmente se conocen las distintas especies arbóreas de la colección o set de imágenes, pero al momento de clasificar, el algoritmo encargado de recorrer la carpeta que contiene las muestras útiles  necesita conocer que imágenes se van a tomar en cuenta. 
+
+Lo primero se determina por medio de un arreglo es el conjunto de carpetas a buscar con los rectángulos que se generaron a partir de las muestras recolectadas, es decir, el algoritmo buscará en las carpetas: green, blue y yellow. 
 
 Es necesario declarar durante la fase del entrenamiento, las clases a utilizar y el tamaño de muestras para posteriormente generar un set que sea de utilidad. En este caso, se declara un tamaño de 250 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde mencionamos a las características globales.
 
@@ -470,10 +498,7 @@ En la figura \ref{Comparación de anotaciones} se puede percibir la diferencia e
   \label{Comparación de anotaciones}
 \end{figure}
 
-
 En el caso de la figura 5.3 las anotaciones generadas a partir del aprendizaje máquina pueden contener anotaciones que no están en las anotaciones manuales pero no significa que estén incorrectas, sino que dadas las instancias otorgadas de rectángulos (green, blue, yellow) el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. En contra parte, la figura 5.4 nos deja ver que las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
-
-\break
 
 \chapter{Resultados}
 Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, tenemos un resultado preliminar que nos indica cuantas especies fueron detectadas en la fase de detección, mismo que se discute a lo largo del capítulo 6.
