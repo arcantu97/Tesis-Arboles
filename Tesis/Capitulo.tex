@@ -461,7 +461,7 @@ i, j = 0, 0
 \end{figure}
 
 
-Tal y como se observa en el fragmento de código 5.1, es necesario declarar las clases a utilizar y el tamaño de muestras durante la fase del entrenamiento para posteriormente generar un set que sea de utilidad. En este caso, se declara un tamaño de 114 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde mencionamos a las características globales.
+Tal y como se observa en el fragmento de código 5.1, es necesario declarar las clases a utilizar y el tamaño de muestras durante la fase del entrenamiento para posteriormente generar un set que sea de utilidad. En este caso, se declara un tamaño de 5000 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde mencionamos a las características globales.
 
 
 \begin{figure}[H]
@@ -539,63 +539,68 @@ En la figura \ref{Comparación de anotaciones} se puede percibir la diferencia e
 En el caso de la figura 5.3 las anotaciones generadas a partir del aprendizaje máquina pueden contener anotaciones que no están en las anotaciones manuales pero no significa que estén incorrectas, sino que dadas las instancias otorgadas de rectángulos (green, blue, yellow) el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. En contra parte, la figura 5.4 nos deja ver que las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
 
 \chapter{Evaluación de experimentos}
+Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, podemos obtener tenemos un resultado preliminar que nos indica cuantas especies fueron detectadas en la fase de detección.
 
-Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, tenemos un resultado preliminar que nos indica cuantas especies fueron detectadas en la fase de detección, mismo que se discute a lo largo del capítulo 6.
+Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas para comprobar los resultados del modelo generado. En algunas situaciones si se modifica un parámetro es posible que el resultado no sea el esperado, por tanto, se tiene que jugar con los valores que les asignen a los parámetros para poder determinar si el resultado es o no el esperado en cuestión. En esta sección se tratan los resultados obtenidos a lo largo de desarrollar algunos experimentos que permitan determinar si la solución propuesta cumple con el objetivo de desarrollar un inventario forestal de forma eficiente.
 
+\section{Diseño experimental}
+En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo, el trata de determinar un resultado manualmente con solo observar una muestra puede no favorecernos y por tanto, el manejar un contador que permita tener un control de las especies arbóreas detectadas favorece mucho la cuestión estadística de las especies detectadas.
 
-\begin{figure}[h!]
-  \centering
-  
-  \begin{minipage}[b]{0.5\textwidth}
-        \includegraphics[width=\textwidth]{Result_detection}
-    \caption{Número de especies detectadas} 
-    \label{Numero especies}
-  \end{minipage}
-
-\end{figure}
-
-La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
-
-\section{Experimentación}
-Tal y como se muestra en la sección de validaciones (capítulo 4.3), hubo un porque detrás del hacerlo de tal manera y esto fue por la elección del algoritmo que se iba a encargar de ejecutar la detección.
+\subsection{Cantidad de especies detectadas}
+En el entrenamiento del modelo se determinaron 5000 muestras como estándar de imágenes para probar con el modelo generado, sin embargo, el \emph{límite de píxeles admitidos} juega un papel fundamental en este experimento debido a que a menor número de píxeles admitidos nos detectará menos especies. Este limite debe ser una razón considerable debido a que si se utiliza un valor bastante alto puede detectar muestras en zonas que no corresponden a una especie arbórea. 
 
 
-\begin{figure}[H]
-  \centering
-  \begin{minipage}[b]{0.8\textwidth}
-        \includegraphics[width=\textwidth]{algm}
-    \caption{Resultado de validación}
-  \end{minipage}
-\end{figure}
+%\begin{figure}[h!]
+%  \centering  
+%  \begin{minipage}[b]{0.5\textwidth}
+%        \includegraphics[width=\textwidth]{Result_detection}
+%    \caption{Número de especies detectadas} 
+%    \label{Numero especies}
+%  \end{minipage}
+%
+%\end{figure}
+%
+%La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
 
-
-Todas las pruebas y algoritmos fueron ejecutados en una laptop con las siguientes especificaciones:
-
-\begin{table}[H]
-	{\centering
-		\begin{tabular}{|c|c|c|}
-			\hline
-			SO & Windows 10 x64\\
-			\hline
-			Procesador & Intel Core i5-7300HQ\\
-			\hline
-			Ram & 8 GB RAM DDR4 2133 MHz\\
-			\hline
-		\end{tabular}
-	\caption{Especificaciones técnicas del equipo de cómputo}
-	\label{tab:Especificaciones técnicas del PC}
-	}
-\end{table}
-
-\break
-
-\section{Discusión de resultados}
-Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador.
-
-Cabe recalcar que el rendimiento de este algoritmo también puede variar en relación con el procesamiento de la imagen. Esto último quiere decir que si nuestra imagen es demasiado grande, el tiempo de procesado es mayor por la cantidad de pixeles a remover y sustituir. 
-No obstante, los parámetros que se agregaron para poder tener un criterio de clasificación solamente son valores muestra con el fin de abarcar la mayor cantidad de información posible y a su vez, tener un algoritmo de detección preciso.
-
-Respecto a la ejecución de los algoritmos, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso previamente se comentaron en capítulos anteriores, que hace cada parte del algoritmo. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los scripts que componen al algoritmo.
+%Tal y como se muestra en la sección de validaciones (capítulo 4.3), hubo un porque detrás del hacerlo de tal manera y esto fue por la elección del algoritmo que se iba a encargar de ejecutar la detección.
+%
+%
+%\begin{figure}[H]
+%  \centering
+%  \begin{minipage}[b]{0.8\textwidth}
+%        \includegraphics[width=\textwidth]{algm}
+%    \caption{Resultado de validación}
+%  \end{minipage}
+%\end{figure}
+%
+%
+%Todas las pruebas y algoritmos fueron ejecutados en una laptop con las siguientes especificaciones:
+%
+%\begin{table}[H]
+%	{\centering
+%		\begin{tabular}{|c|c|c|}
+%			\hline
+%			SO & Windows 10 x64\\
+%			\hline
+%			Procesador & Intel Core i5-7300HQ\\
+%			\hline
+%			Ram & 8 GB RAM DDR4 2133 MHz\\
+%			\hline
+%		\end{tabular}
+%	\caption{Especificaciones técnicas del equipo de cómputo}
+%	\label{tab:Especificaciones técnicas del PC}
+%	}
+%\end{table}
+%
+%\break
+%
+%\section{Discusión de resultados}
+%Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador.
+%
+%Cabe recalcar que el rendimiento de este algoritmo también puede variar en relación con el procesamiento de la imagen. Esto último quiere decir que si nuestra imagen es demasiado grande, el tiempo de procesado es mayor por la cantidad de pixeles a remover y sustituir. 
+%No obstante, los parámetros que se agregaron para poder tener un criterio de clasificación solamente son valores muestra con el fin de abarcar la mayor cantidad de información posible y a su vez, tener un algoritmo de detección preciso.
+%
+%Respecto a la ejecución de los algoritmos, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso previamente se comentaron en capítulos anteriores, que hace cada parte del algoritmo. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los scripts que componen al algoritmo.
 
 
 \chapter{Conclusiones}
