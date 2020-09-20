@@ -547,65 +547,59 @@ Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas
 \section{Diseño experimental}
 En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo, el trata de determinar un resultado manualmente con solo observar una muestra puede no favorecernos y por tanto, el manejar un contador que permita tener un control de las especies arbóreas detectadas favorece mucho la cuestión estadística de las especies detectadas.
 
-\subsection{Cantidad de especies detectadas}
-En el entrenamiento del modelo se determinaron 5000 muestras como estándar de imágenes para probar con el modelo generado, sin embargo, el \emph{límite de píxeles admitidos} juega un papel fundamental en este experimento debido a que a menor número de píxeles admitidos nos detectará menos especies. Este limite debe ser una razón considerable debido a que si se utiliza un valor bastante alto puede detectar muestras en zonas que no corresponden a una especie arbórea. 
+\subsection{Cantidad de especies por clase}
+El número de especies por clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. En el caso de esta prueba, se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas. 
 
+\subsection{Límite de píxeles}
+El límite de pixeles juega un papel fundamental en este experimento debido a que a menor número de píxeles admitidos nos detectará menos especies. Este limite debe ser una razón considerable debido a que si se utiliza un valor bastante alto puede detectar muestras en zonas que no corresponden a una especie arbórea. 
 
-%\begin{figure}[h!]
-%  \centering  
-%  \begin{minipage}[b]{0.5\textwidth}
-%        \includegraphics[width=\textwidth]{Result_detection}
-%    \caption{Número de especies detectadas} 
-%    \label{Numero especies}
-%  \end{minipage}
-%
-%\end{figure}
-%
-%La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, por lo que se puede discutir el número obtenido. A simple vista se aprecia que el número de abies nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie Pino y Encino muestran en su respectivo orden que tan predominantes son.
+\subsection{Resultados}
+Establecidos los experimentos que se van a realizar, se procederá a reportar los resultados obtenidos en el transcurso de las pruebas mencionadas en el capítulo 6.1 donde cada experimento explica en que consiste cada una.
 
-%Tal y como se muestra en la sección de validaciones (capítulo 4.3), hubo un porque detrás del hacerlo de tal manera y esto fue por la elección del algoritmo que se iba a encargar de ejecutar la detección.
-%
-%
-%\begin{figure}[H]
-%  \centering
-%  \begin{minipage}[b]{0.8\textwidth}
-%        \includegraphics[width=\textwidth]{algm}
-%    \caption{Resultado de validación}
-%  \end{minipage}
-%\end{figure}
-%
-%
-%Todas las pruebas y algoritmos fueron ejecutados en una laptop con las siguientes especificaciones:
-%
-%\begin{table}[H]
-%	{\centering
-%		\begin{tabular}{|c|c|c|}
-%			\hline
-%			SO & Windows 10 x64\\
-%			\hline
-%			Procesador & Intel Core i5-7300HQ\\
-%			\hline
-%			Ram & 8 GB RAM DDR4 2133 MHz\\
-%			\hline
-%		\end{tabular}
-%	\caption{Especificaciones técnicas del equipo de cómputo}
-%	\label{tab:Especificaciones técnicas del PC}
-%	}
-%\end{table}
-%
-%\break
-%
-%\section{Discusión de resultados}
-%Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador.
-%
-%Cabe recalcar que el rendimiento de este algoritmo también puede variar en relación con el procesamiento de la imagen. Esto último quiere decir que si nuestra imagen es demasiado grande, el tiempo de procesado es mayor por la cantidad de pixeles a remover y sustituir. 
-%No obstante, los parámetros que se agregaron para poder tener un criterio de clasificación solamente son valores muestra con el fin de abarcar la mayor cantidad de información posible y a su vez, tener un algoritmo de detección preciso.
-%
-%Respecto a la ejecución de los algoritmos, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso previamente se comentaron en capítulos anteriores, que hace cada parte del algoritmo. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los scripts que componen al algoritmo.
+\subsection{Especies por clase}
+Luego de probar el modelo generado en el capítulo 5.1, el cual se genero a partir de las muestras con suelo removido, pudimos obtener como resultado la cantidad de muestras generadas.
+
+\begin{figure}[h!]
+  \centering  
+  \begin{minipage}[b]{1\textwidth}
+        \includegraphics[width=\textwidth]{results}
+    \caption{Número de especies detectadas} 
+    \label{Numero especies}
+  \end{minipage}
+\end{figure}
+\break
+La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, a simple vista se aprecia que el porcentaje de pino nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie abies y encino muestran en su respectivo orden que tan predominantes son, siendo claramente 4\% mayor encino.
+
+\section{Discusión de resultados}
+Todos los experimentos y scripts fueron ejecutados en una laptop con las siguientes especificaciones:
+
+\begin{table}[H]
+	{\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			SO & Windows 10 x64\\
+			\hline
+			Procesador & Intel Core i5-7300HQ\\
+			\hline
+			Ram & 8 GB RAM DDR4 2133 MHz\\
+			\hline
+		\end{tabular}
+	\caption{Especificaciones técnicas del equipo de cómputo}
+	\label{tab:Especificaciones técnicas del PC}
+	}
+\end{table}
+
+Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador. 
+
+Cabe recalcar que el rendimiento de este algoritmo también puede variar en relación con el procesamiento de la imagen. Esto último quiere decir que si nuestra imagen es demasiado grande, el tiempo de procesado es mayor por la cantidad de pixeles a remover y sustituir. 
+
+No obstante, los parámetros que se agregaron para poder tener un criterio de clasificación solamente son valores muestra con el fin de abarcar la mayor cantidad de información posible y a su vez, tener un algoritmo de detección preciso.
+
+Respecto a la ejecución de los scripts, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso se discute en capítulos previos que hace cada parte de la solución propuesta. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los scripts que componen al algoritmo.
 
 
 \chapter{Conclusiones}
-Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, \textbf{Abies}, la cual en la tabla 6.1 nos dio un valor de 15567, un resultado bastante superior al de las otras especies arbóreas.
+Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas.
 
 Otra de las cosas que se pudo concluir al aunar los resultados fue que el proceso de detección no hubiese sido posible de no ser removido el suelo en la fase previa al entrenamiento, esto debido a que el suelo provoca que el modelo de entrenamiento hubiera sido cargado con información no útil. Con esto se puede inferir que el algoritmo hubiera clasificado de alguna forma en forma de especie las partes que contienen suelo dentro de cada muestra, haciendo que el método propuesto no clasificara correctamente.
 
