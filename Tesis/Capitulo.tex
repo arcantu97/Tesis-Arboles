@@ -547,14 +547,14 @@ Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas
 \section{Diseño experimental}
 En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo, el trata de determinar un resultado manualmente con solo observar una muestra puede no favorecernos y por tanto, el manejar un contador que permita tener un control de las especies arbóreas detectadas favorece mucho la cuestión estadística de las especies detectadas.
 
-\subsection{Cantidad de especies por clase}
-El número de especies por clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. En el caso de esta prueba, se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas. 
+\subsection{Cantidad de especies por tamaño de clase}
+El número de especies por tamaño de clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento, por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. En el caso de esta prueba, se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas, sin embargo, para las clases de abies y pino se obtuvieron 7647 y 8859 muestras en cada clase respectivamente.
 
-\subsection{Límite de píxeles}
-El límite de pixeles juega un papel fundamental en este experimento debido a que a menor número de píxeles admitidos nos detectará menos especies. Este limite debe ser una razón considerable debido a que si se utiliza un valor bastante alto puede detectar muestras en zonas que no corresponden a una especie arbórea. 
-
-\subsection{Resultados}
-Establecidos los experimentos que se van a realizar, se procederá a reportar los resultados obtenidos en el transcurso de las pruebas mencionadas en el capítulo 6.1 donde cada experimento explica en que consiste cada una.
+\subsection{Límite de píxeles ausentes}
+El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta,  en caso contrario, detectaría una menor cantidad de especies en las muestras. Para este experimento es utilizado un valor de 0.85 como cantidad de píxeles ausentes en las muestras.
+%anterior, se dejó un límite de 0.05\% de píxeles ausentes y para comparar los valores límite entre dos experimentos, se realiza el experimento 
+\section{Resultados}
+Establecidos los experimentos que se van a realizar, se reporta los resultados obtenidos en el transcurso de las pruebas del capítulo 6.1 donde explica en que consiste cada una de ellas.
 
 \subsection{Especies por clase}
 Luego de probar el modelo generado en el capítulo 5.1, el cual se genero a partir de las muestras con suelo removido, pudimos obtener como resultado la cantidad de muestras generadas.
@@ -589,18 +589,17 @@ Todos los experimentos y scripts fueron ejecutados en una laptop con las siguien
 	}
 \end{table}
 
-Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador. 
+%Tal y como se mostró en el cuadro \ref{tab:Especificaciones técnicas del PC}, el algoritmo que mejor rendimiento tiene a la hora de hacer nuestra detección es el algoritmo clasificador de bosques aleatorios el cual nos da un score mucho menor en comparación a otros al momento de realizar el entrenamiento del clasificador. 
 
-Cabe recalcar que el rendimiento de este algoritmo también puede variar en relación con el procesamiento de la imagen. Esto último quiere decir que si nuestra imagen es demasiado grande, el tiempo de procesado es mayor por la cantidad de pixeles a remover y sustituir. 
+El tiempo que tardan en procesarse las muestras ejecutando los experimentos varían en relación con el procesamiento de la imagen. Esto ocurre debido a que si la muestra es demasiado grande, el tiempo de procesado es mayor por la cantidad de píxeles a remover y reemplazar. 
 
-No obstante, los parámetros que se agregaron para poder tener un criterio de clasificación solamente son valores muestra con el fin de abarcar la mayor cantidad de información posible y a su vez, tener un algoritmo de detección preciso.
+%Respecto a la ejecución de las pruebas, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso se discute en la sección 6.1  de este capítulo, que hace y que parámetro varía en cada experimento. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los algoritmos.
 
-Respecto a la ejecución de los scripts, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso se discute en capítulos previos que hace cada parte de la solución propuesta. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los scripts que componen al algoritmo.
+Para la prueba de especies por tamaño de clase es evidentemente que existe una especie predominante en ambas zonas forestales, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas. En esta prueba se consideraron la mayor cantidad de muestras posibles considerando también, un número de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completó en 18 horas.
 
-
-\chapter{Conclusiones}
-Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas.
-
-Otra de las cosas que se pudo concluir al aunar los resultados fue que el proceso de detección no hubiese sido posible de no ser removido el suelo en la fase previa al entrenamiento, esto debido a que el suelo provoca que el modelo de entrenamiento hubiera sido cargado con información no útil. Con esto se puede inferir que el algoritmo hubiera clasificado de alguna forma en forma de especie las partes que contienen suelo dentro de cada muestra, haciendo que el método propuesto no clasificara correctamente.
-
-Por último y no menos importante, el tiempo de detección de muestras. Este fue la fase más tardadas de todas no sólo por el hecho de que había muchas muestras, sino que al analizar cada muestra se hacía un seguimiento de píxel por píxel para verificar el color alpha de este en la fase de seguimiento y posteriormente removerlo de la muestra, en la fase de detección, se verificaba que este no contuviera el color transparente para omitirlo y recorrer los pixeles o información útil.
+%\chapter{Conclusiones}
+%Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas.
+%
+%Otra de las cosas que se pudo concluir al aunar los resultados fue que el proceso de detección no hubiese sido posible de no ser removido el suelo en la fase previa al entrenamiento, esto debido a que el suelo provoca que el modelo de entrenamiento hubiera sido cargado con información no útil. Con esto se puede inferir que el algoritmo hubiera clasificado de alguna forma en forma de especie las partes que contienen suelo dentro de cada muestra, haciendo que el método propuesto no clasificara correctamente.
+%
+%Por último y no menos importante, el tiempo de detección de muestras. Este fue la fase más tardadas de todas no sólo por el hecho de que había muchas muestras, sino que al analizar cada muestra se hacía un seguimiento de píxel por píxel para verificar el color alpha de este en la fase de seguimiento y posteriormente removerlo de la muestra, en la fase de detección, se verificaba que este no contuviera el color transparente para omitirlo y recorrer los pixeles o información útil.
