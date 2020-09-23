@@ -563,12 +563,26 @@ Luego de probar el modelo generado en el capítulo 5.1, el cual se genero a part
   \centering  
   \begin{minipage}[b]{1\textwidth}
         \includegraphics[width=\textwidth]{results}
-    \caption{Número de especies detectadas} 
-    \label{Numero especies}
+    \caption{Porcentaje de especies por clase} 
+    \label{Porcentaje de especies por clase}
   \end{minipage}
 \end{figure}
 \break
-La figura \ref{Numero especies} muestra la cantidad de especies detectadas a lo largo de la fase de detección, a simple vista se aprecia que el porcentaje de pino nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie abies y encino muestran en su respectivo orden que tan predominantes son, siendo claramente 4\% mayor encino.
+La figura \ref{Porcentaje de especies por clase} muestra la cantidad de especies detectadas a lo largo de la fase de detección, a simple vista se aprecia que el porcentaje de pino nos da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie abies y encino muestran en su respectivo orden que tan predominantes son, siendo claramente 4\% mayor encino.
+
+\subsection{Píxeles ausentes}
+En comparación con el valor anterior de 0.5\% en el experimento anterior, el aumentar a 0.85\% el porcentaje de píxeles ausentes por muestra no demostró una mejora significativa en resultados, apenas se incrementaron algunos valores en las especies detectadas como es representado en la figura 
+
+\begin{figure}[h!]
+  \centering  
+  \begin{minipage}[b]{1\textwidth}
+        \includegraphics[width=\textwidth]{results_2}
+    \caption{Porcentaje de píxeles ausentes} 
+    \label{Porcentaje de píxeles ausentes}
+  \end{minipage}
+\end{figure}
+\break
+La figura \ref{Porcentaje de píxeles ausentes} determina las especies detectadas por el modelo utilizando una ausencia de píxeles de 0.85\%, de igual forma, se observa que la especie predominante en este experimento es Pino.
 
 \section{Discusión de resultados}
 Todos los experimentos y scripts fueron ejecutados en una laptop con las siguientes especificaciones:
@@ -595,7 +609,9 @@ El tiempo que tardan en procesarse las muestras ejecutando los experimentos var�
 
 %Respecto a la ejecución de las pruebas, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso se discute en la sección 6.1  de este capítulo, que hace y que parámetro varía en cada experimento. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los algoritmos.
 
-Para la prueba de especies por tamaño de clase es evidentemente que existe una especie predominante en ambas zonas forestales, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas. En esta prueba se consideraron la mayor cantidad de muestras posibles considerando también, un número de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completó en 18 horas.
+Para la prueba de especies por tamaño de clase es evidentemente que existe una especie predominante en ambas zonas forestales, Pino, la cual en la figura \ref{Porcentaje de especies por clase} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas. En esta prueba se consideraron la mayor cantidad de muestras posibles considerando también, un número de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completó en 18 horas.
+
+En cuanto a la prueba de píxeles ausentes la especie predominante volvió a ser pino como es visto en la figura \ref{Porcentaje de píxeles ausentes}, en comparación con el experimento anterior, la diferencia no fue muy notable aumentando el valor del parametro, más sin embargo, en tiempo de computo si disminuyó ya que la prueba se completó en 13 horas y 15 minutos.
 
 %\chapter{Conclusiones}
 %Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas.
