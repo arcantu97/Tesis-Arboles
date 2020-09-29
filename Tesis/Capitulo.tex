@@ -306,8 +306,8 @@ Inicialmente, el doctor Manuel Jiménez proporcionó un repositorio con imágene
 
 \begin{figure}
  \centering
- \subfloat[Ejemplo de muestras de la zona de Cilantrillo]{\includegraphics[scale=0.6]{grid_Cilantrillo}}\par
-\subfloat[Ejemplo de muestras de la zona de Trinidad]{\includegraphics[scale=0.6]{grid_Trinidad}}
+ \subfloat[Ejemplo de muestras de la zona de Cilantrillo]{\includegraphics[scale=0.033]{grid_Cilantrillo}}\par
+\subfloat[Ejemplo de muestras de la zona de Trinidad]{\includegraphics[scale=0.033]{grid_Trinidad}}
 \end{figure}
 
 \subsection{Análisis de muestras}
@@ -429,7 +429,8 @@ La figura \ref{Diagrama de flujo de las fases} también permite visualizar las f
  \node [cloud, below of=combinacion, node distance=2cm] (end) {Fin};
  \path [line] (init) -- (recoleccion);
  \path [line] (recoleccion) -- (decision1);
- \path [line] (decision1) -| node [near start] {si} (hdecion1);
+ \path [line] (decision1) -- node [near start] {sí} (hdecion1);
+ \path [line] (hdecion1) |- (recortes);
  \path [line] (decision1) -- node {no}(recortes);
  \path [line] (recortes) -- (rectangulos);
  \path [line] (rectangulos) -- (entrenamiento);
@@ -458,9 +459,7 @@ i, j = 0, 0
 \label{Declaracion-variables}
 \end{figure}
 
-
-Tal y como se observa en el fragmento de código 5.1, es necesario declarar las clases que se utilizan y el tamaño de muestras durante la fase del entrenamiento para posteriormente generar un conjunto que sea de utilidad. En este caso, se declara un tamaño de 5000 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde se mencionan a las características globales.
-
+El fragmento de código 5.1 declara las clases que se utilizan y el tamaño de muestras durante la fase del entrenamiento para posteriormente generar un conjunto que sea de utilidad. En este caso, se declara un tamaño de 5000 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde se mencionan a las características globales.
 
 \begin{figure}[H]
 \centering
@@ -489,10 +488,12 @@ for training_name in train_labels:
 \end{lstlisting}
 \label{Recorriendo-folders}
 \end{figure}
-En la porción de código 5.2 se observa que al recorrer las muestras, estas se guardan en un variable local que determina el tamaño de las muestras (\emph{images per class}) para posteriormente, utilizarlas al extraer las características globales. Cuando se tiene almacenada la información extraída de las muestras, se añade a un vector de características globales (\emph{global features}) en el cual se guarda un conjunto de datos que contiene la información de cada una de las muestras y posteriormente, utilizar este vector de características al momento de clasificar las especies de árbol. 
+
+En el fragmento de código 5.2 se observa que al recorrer las muestras, estas se guardan en un variable local que determina el tamaño de las muestras (\texttt{images per class}) para posteriormente, utilizarlas al extraer las características globales. Cuando se tiene almacenada la información extraída de las muestras, se añade a un vector de características globales (\texttt{features}) en el cual se guarda un conjunto de datos que contiene la información de cada una de las muestras y posteriormente, utilizar este vector de características al momento de clasificar las especies de árbol. 
+\newpage
 
 \section{Fase de detección}
-Esta fase es la más importante de todas debido a que se utiliza el modelo generado a partir de la fase de entrenamiento. En esta fase se utilizan las características globales de extracción de características de la sección 2.3 donde se hace uso del modelo clasificador de {\em bosque aleatorio} (inglés: {\em random forest})\footnotemark, donde se establece un valor estimado de arboles por cada muestra donde se vaya a probar el modelo, en la investigación se va a utilizar un valor de 100. Posteriormente se tiene que definir que utilizar la información de los modelos de características utilizadas y las etiquetas de muestras generadas a partir de ello también. 
+Esta fase es la más importante de todas debido a que se utiliza el modelo generado a partir de la fase de entrenamiento. En esta fase se utilizan las características globales de extracción de características de la sección 2.3 donde se hace uso del modelo clasificador de {\em bosque aleatorio} (inglés: {\texttt{random forest})\footnotemark, donde se establece un valor estimado de arboles por cada muestra donde se vaya a probar el modelo, en la investigación se va a utilizar un valor de 100. Posteriormente se tiene que definir que utilizar la información de los modelos de características utilizadas y las etiquetas de muestras generadas a partir de ello también. 
 \footnotetext{Clasificador de múltiples decisiones que funciona en conjunto.}
 \\
 
@@ -521,7 +522,7 @@ El proceso de combinarlas consta en tomar la información del directorio origina
 \end{figure}
 \newpage
 
-Respecto a la figura 5.2 se puede destacar que la muestra original sirve como base y la muestra que contiene las especies arbóreas detectadas como mascara para poder combinar ambas capas. El objetivo de comparar las muestras generadas respecto a una muestra original es que se pueda comparar cuantas especies acertaron contra las muestras con anotaciones manuales hechas por los expertos en especies.
+Respecto a la figura 5.2 se puede destacar que la muestra original sirve como base y la muestra que contiene las especies arbóreas detectadas como mascara para poder combinar ambas capas. El objetivo de comparar las muestras generadas respecto a una muestra original es que se pueda comparar  cuántos árboles de cada especie acertaron contra las muestras con anotaciones manuales hechas por los expertos en especies.
 
 En la figura \ref{Comparación de anotaciones} se puede percibir la diferencia entre una anotación realizada por el aprendizaje máquina a partir del modelo de datos previamente generado y la muestra con anotación hecha por un experto en el tema. \\
 
@@ -538,13 +539,13 @@ En la figura \ref{Comparación de anotaciones} se puede percibir la diferencia e
 En el caso de la figura 5.3 las anotaciones generadas a partir del aprendizaje máquina pueden contener anotaciones que no están en las anotaciones manuales pero no significa que estén incorrectas, sino que dadas las instancias otorgadas de rectángulos (green, blue, yellow) el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. En contra parte, la figura 5.4 muestra  las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
 
 \chapter{Experimentos}
-Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, se puede obtener un resultado preliminar que indica cuantas especies fueron detectadas en la fase de detección.
+Después de clasificar todas las muestras que pasaron por las fases de entrenamiento, detección y combinación, se puede obtener un resultado preliminar que indica  cuántos árboles de cada especie fueron detectadas en la fase de detección.
 
 Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas para comprobar los resultados del modelo generado. En algunas situaciones si se modifica un parámetro es posible que el resultado no sea el esperado, por tanto, se tiene que jugar con los valores que les asignen a los parámetros para poder determinar si el resultado es o no el esperado en cuestión. En esta sección se tratan los resultados obtenidos a lo largo de desarrollar algunos experimentos que permitan determinar si la solución propuesta cumple con el objetivo de desarrollar un inventario forestal de forma eficiente.
 \newpage
 
 \section{Diseño experimental}
-En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo, el trata de determinar un resultado manualmente con solo observar una muestra puede no favorecernos y por tanto, el manejar un contador que permita tener un control de las especies arbóreas detectadas favorece mucho la cuestión estadística de las especies detectadas.
+En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo,  la determinación de un resultado con solo observar una muestra puede no favorecer en la experimentación y por tanto, manejar un contador que permita tener un control de las especies arbóreas, favorece mucho la cuestión estadística de las especies detectadas.
 
 \subsection{Cantidad de especies por tamaño de clase}
 El número de especies por tamaño de clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento, por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. En el caso de esta prueba, se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas, sin embargo, para las clases de abies y pino se obtuvieron 7647 y 8859 muestras en cada clase respectivamente.
