@@ -545,10 +545,15 @@ Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas
 \newpage
 
 \section{Diseño experimental}
-En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo,  la determinación de un resultado con solo observar una muestra puede no favorecer en la experimentación y por tanto, manejar un contador que permita tener un control de las especies arbóreas, favorece mucho la cuestión estadística de las especies detectadas.
+%En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo,  la determinación de un resultado con solo observar una muestra puede no favorecer en la experimentación y por tanto, manejar un contador que permita tener un control de las especies arbóreas, favorece mucho la cuestión estadística de las especies detectadas.
+El analizar una muestra que haya pasado por la fase de combinación puede decirnos si los parámetros que fueron seleccionados nos dan un resultado favorable o si estos podrían mejorar cambiando alguno de ellos, sin embargo, es experimentando como se puede determinar si es posible mejorar el resultado obtenido. Ya sea reduciendo, aumentando o simplemente tanteando el valor de un parámetro libre, es como se puede producir un resultado que posteriormente se pueda estudiar y analizar sus diferencias con otros experimentos aplicados sobre las muestras generadas, esto con el fin de establecer una combinación que maximice la precisión de la solución desarrollada.
 
-\subsection{Cantidad de especies por tamaño de clase}
+\subsection{Misma cantidad de especies por tamaño de clase}
 El número de especies por tamaño de clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento, por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. En el caso de esta prueba, se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas, sin embargo, para las clases de abies y pino se obtuvieron 7647 y 8859 muestras en cada clase respectivamente.
+
+%%Detallar este experimento
+\subsection{Cantidad total de especies por tamaño de clase}
+\subsection{Umbralización}
 
 \subsection{Límite de píxeles ausentes}
 El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta,  en caso contrario, detectaría una menor cantidad de especies en las muestras. Para este experimento es utilizado un valor de 0.85 como cantidad de píxeles ausentes en las muestras.
@@ -591,7 +596,7 @@ Todos los experimentos y scripts fueron ejecutados en una laptop con las siguien
 	{\centering
 		\begin{tabular}{|c|c|c|}
 			\hline
-			SO & Windows 10 x64\\
+			Sistema Operativo & Windows 10 x64\\
 			\hline
 			Procesador & Intel Core i5-7300HQ\\
 			\hline
