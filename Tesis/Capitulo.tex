@@ -549,44 +549,88 @@ Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas
 El analizar una muestra que haya pasado por la fase de combinación puede decirnos si los parámetros que fueron seleccionados nos dan un resultado favorable o si estos podrían mejorar cambiando alguno de ellos, sin embargo, es experimentando como se puede determinar si es posible mejorar el resultado obtenido. Ya sea reduciendo, aumentando o simplemente tanteando el valor de un parámetro libre, es como se puede producir un resultado que posteriormente se pueda estudiar y analizar sus diferencias con otros experimentos aplicados sobre las muestras generadas, esto con el fin de establecer una combinación que maximice la precisión de la solución desarrollada.
 
 \subsection{Misma cantidad de especies por tamaño de clase}
-El número de especies por tamaño de clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento, por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. En el caso de esta prueba, se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas, sin embargo, para las clases de abies y pino se obtuvieron 7647 y 8859 muestras en cada clase respectivamente.
+El número de especies por tamaño de clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento, por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección. 
 
-%%Detallar este experimento
 \subsection{Cantidad total de especies por tamaño de clase}
+Debido a que no todas las especies de árboles generaron la misma cantidad de muestras, se van a utilizar las muestras totales de cada clase para determinar si esto repercute de forma positiva en el desarrollo de este experimento.
+
+\subsection{Misma cantidad de especies utilizando espejos de muestras}
+En el experimento de cantidad total de especies por tamaño de clase, se utilizaban la cantidad total de muestra generadas para cada clase, sin embargo, el impacto que pueda tener la misma cantidad de especies para cada clase considerando la especie que obtuvo más muestras generadas (\texttt{pino} con 8859 muestras) puede repercutir de cierta manera en que también se haga una mejor detección de esta, es por esta razón que se van a utilizar reflejos de las clases que tengan una cantidad de muestras menor a la de pino para completar esas especies faltantes.
+
 \subsection{Umbralización}
+En la umbralización se consideran la porción de píxeles admitidos al momento de generar los rectángulos que posteriormente serán utilizados durante la fase de entrenamiento del modelo de la solución propuesta, por tanto, se comparan 3 niveles distintos de umbral para comparar el que mejor resultados proporciona, mismo que servirá para definir el umbral ideal en otros experimentos. 
+
 
 \subsection{Límite de píxeles ausentes}
-El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta,  en caso contrario, detectaría una menor cantidad de especies en las muestras. Para este experimento es utilizado un valor de 0.85 como cantidad de píxeles ausentes en las muestras.
-%anterior, se dejó un límite de 0.05\% de píxeles ausentes y para comparar los valores límite entre dos experimentos, se realiza el experimento 
+El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta,  en caso contrario, detectaría una menor cantidad de especies en las muestras
+
 \section{Resultados}
 Establecidos los experimentos que se van a realizar, se reporta los resultados obtenidos en el transcurso de las pruebas del capítulo 6.1 donde explica en que consiste cada una de ellas.
 
-\subsection{Especies por clase}
-Luego de probar el modelo generado en el capítulo 5.1, el cual se genero a partir de las muestras con suelo removido, se pudo obtener como resultado la cantidad de muestras generadas.
+\subsection{Misma cantidad de especies por clase}
+En el caso de este experimento se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas.
 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{1\textwidth}
+  \begin{minipage}[b]{0.75\textwidth}
         \includegraphics[width=\textwidth]{results}
     \caption{Porcentaje de especies por clase} 
     \label{Porcentaje de especies por clase}
   \end{minipage}
 \end{figure}
-\break
 La figura \ref{Porcentaje de especies por clase} muestra la cantidad de especies detectadas a lo largo de la fase de detección, a simple vista se aprecia que el porcentaje de pino da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie abies y encino muestran en su respectivo orden que tan predominantes son, siendo claramente 4\% mayor encino.
 
-\subsection{Píxeles ausentes}
-En comparación con el valor anterior de 0.5\% en el experimento anterior, el aumentar a 0.85\% el porcentaje de píxeles ausentes por muestra no demostró una mejora significativa en resultados, apenas se incrementaron algunos valores en las especies detectadas como es representado en la figura 
+\subsection{Cantidad total de especies por tamaño de clase}
+En este experimento se utilizan obtiene el tamañode cada clase, siendo que cada clase (\texttt{encino}: 5592 muestras, \texttt{abies}: 7647 muestras y \texttt{pino}: 8859 muestras), para generar el modelo de la solución propuesta el cual se prueba para ver si mejora el desempeño de la solución desarollada.
+\begin{figure}[h!]
+  \centering  
+  \begin{minipage}[b]{0.75\textwidth}
+        \includegraphics[width=\textwidth]{results}
+    \caption{Porcentaje de especies totales por clase} 
+    \label{Porcentaje de especies totales por clase}
+  \end{minipage}
+\end{figure}
+
+\subsection{Misma cantidad de especies utilizando espejos de muestras}
+Dado que cada clase  de arbórea tiene un tamaño distinto, \texttt{pino} con 8859 muestras, rebasa en muestras a las clases de abies  y encino, por tanto, el experimento va a generar espejos de muestras de arboles  en las clases que no cuentan con un tamaño de 8859 muestras, esto va a permitir tener la misma cantidad de muestras en todas las especies de arboles. 
+\begin{figure}[h!]
+  \centering  
+  \begin{minipage}[b]{0.75\textwidth}
+        \includegraphics[width=\textwidth]{results}
+    \caption{Porcentaje de mismas especies por clase} 
+    \label{Porcentaje de mismas especies por clase}
+  \end{minipage}
+\end{figure}
+
+\subsection{Umbralización}
+En este experimento se van a probar 3 combinaciones distintas por cada clase (0.05\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de arbóles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta.
+
+Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
+\newpage
 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{1\textwidth}
+  \begin{minipage}[b]{0.75\textwidth}
+        \includegraphics[width=\textwidth]{results}
+    \caption{Porcentaje de especies utilizando umbralización} 
+    \label{Porcentaje de especies utilizando umbralización}
+  \end{minipage}
+\end{figure}
+
+\subsection{Píxeles ausentes}
+Para este experimento se van a utilizar 3 distintos valores de píxeles ausentes (0.75\%, 0.80\% y 0.85\%) donde se va a utilizar el umbral con mejor desempeño obtenido por el experimento de umbralización.
+
+%En comparación con el valor anterior de 0.5\% en el experimento anterior, el aumentar a 0.85\% el porcentaje de píxeles ausentes por muestra no demostró una mejora significativa en resultados, apenas se incrementaron algunos valores en las especies detectadas como es representado en la figura 
+
+\begin{figure}[h!]
+  \centering  
+  \begin{minipage}[b]{0.65\textwidth}
         \includegraphics[width=\textwidth]{results_2}
     \caption{Porcentaje de píxeles ausentes} 
     \label{Porcentaje de píxeles ausentes}
   \end{minipage}
 \end{figure}
-\break
+
 La figura \ref{Porcentaje de píxeles ausentes} determina las especies detectadas por el modelo utilizando una ausencia de píxeles de 0.85\%, de igual forma, se observa que la especie predominante en este experimento es Pino.
 
 \section{Discusión de resultados}
@@ -594,6 +638,7 @@ Todos los experimentos y scripts fueron ejecutados en una laptop con las siguien
 
 \begin{table}[H]
 	{\centering
+		\caption{Especificaciones técnicas del equipo de cómputo}
 		\begin{tabular}{|c|c|c|}
 			\hline
 			Sistema Operativo & Windows 10 x64\\
@@ -603,7 +648,7 @@ Todos los experimentos y scripts fueron ejecutados en una laptop con las siguien
 			Ram & 8 GB RAM DDR4 2133 MHz\\
 			\hline
 		\end{tabular}
-	\caption{Especificaciones técnicas del equipo de cómputo}
+
 	\label{tab:Especificaciones técnicas del PC}
 	}
 \end{table}
