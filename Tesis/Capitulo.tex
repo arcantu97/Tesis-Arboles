@@ -306,8 +306,8 @@ Inicialmente, el doctor Manuel Jiménez proporcionó un repositorio con imágene
 
 \begin{figure}
  \centering
- \subfloat[Ejemplo de muestras de la zona de Cilantrillo]{\includegraphics[scale=0.033]{grid_Cilantrillo}}\par
-\subfloat[Ejemplo de muestras de la zona de Trinidad]{\includegraphics[scale=0.033]{grid_Trinidad}}
+ \subfloat[Ejemplo de muestras de la zona de Cilantrillo]{\includegraphics[scale=0.175]{grid_Cilantrillo}}\par
+\subfloat[Ejemplo de muestras de la zona de Trinidad]{\includegraphics[scale=0.175]{grid_Trinidad}}
 \end{figure}
 
 \subsection{Análisis de muestras}
@@ -501,7 +501,7 @@ Esta fase es la más importante de todas debido a que se utiliza el modelo gener
   \centering
   \begin{minipage}[b]{0.8\textwidth}
         \includegraphics[width=\textwidth]{resultado_clasificacion_2}
-    \caption{clasificación de especies arbóreas en una muestra}
+    \caption{Clasificación de especies arbóreas en una muestra}
   \end{minipage}
 \end{figure}
 
@@ -558,7 +558,7 @@ Debido a que no todas las especies de árboles generaron la misma cantidad de mu
 En el experimento de cantidad total de especies por tamaño de clase, se utilizaban la cantidad total de muestra generadas para cada clase, sin embargo, el impacto que pueda tener la misma cantidad de especies para cada clase considerando la especie que obtuvo más muestras generadas (\texttt{pino} con 8859 muestras) puede repercutir de cierta manera en que también se haga una mejor detección de esta, es por esta razón que se van a utilizar reflejos de las clases que tengan una cantidad de muestras menor a la de pino para completar esas especies faltantes.
 
 \subsection{Umbralización}
-En la umbralización se consideran la porción de píxeles admitidos al momento de generar los rectángulos que posteriormente serán utilizados durante la fase de entrenamiento del modelo de la solución propuesta, por tanto, se comparan 3 niveles distintos de umbral para comparar el que mejor resultados proporciona, mismo que servirá para definir el umbral ideal en otros experimentos. 
+En la umbralización se considera la porción de píxeles admitidos al momento de generar los rectángulos que posteriormente serán utilizados durante la fase de entrenamiento del modelo de la solución propuesta, por tanto, se comparan 3 niveles distintos de umbral para comparar el que mejor resultados proporciona, mismo que servirá para definir el umbral ideal en otros experimentos. 
 
 
 \subsection{Límite de píxeles ausentes}
@@ -603,18 +603,17 @@ Dado que cada clase  de arbórea tiene un tamaño distinto, \texttt{pino} con 88
 \end{figure}
 
 \subsection{Umbralización}
-En este experimento se van a probar 3 combinaciones distintas por cada clase (0.05\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de arbóles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta.
-
-Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
-\newpage
+En este experimento se prueban 3 combinaciones distintas por cada clase (0.05\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de arbóles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta. Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
 
 \begin{figure}[h!]
-  \centering  
-  \begin{minipage}[b]{0.75\textwidth}
-        \includegraphics[width=\textwidth]{results}
-    \caption{Porcentaje de especies utilizando umbralización} 
-    \label{Porcentaje de especies utilizando umbralización}
-  \end{minipage}
+  \centering
+\begin{tabular}{@{}ccc@{}}
+\subfloat[0.05\% de píxeles admitidos]{\includegraphics[width=0.30\textwidth]{results_umbral005}} & 
+\subfloat[0.25\% de píxeles admitidos]{\includegraphics[width=0.30\textwidth]{results_umbral025}} &
+\subfloat[0.50\% de píxeles admitidos]{\includegraphics[width=0.30\textwidth]{results_umbral050}}
+  \end{tabular}
+  \caption[Comparación de anotaciones]{Comparación de anotaciones hechas por el aprendizaje máquina y expertos.}
+  \label{Comparación de anotaciones}
 \end{figure}
 
 \subsection{Píxeles ausentes}
