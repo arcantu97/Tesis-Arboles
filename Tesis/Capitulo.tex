@@ -618,7 +618,7 @@ Dado que cada clase  de arbórea tiene un tamaño distinto, \texttt{pino} con 88
 
 \newpage
 \subsection{Umbralización}
-En este experimento se prueban 3 combinaciones distintas por cada clase (0.15\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de arbóles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta. Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
+En este experimento se prueban 3 combinaciones distintas por cada clase (0.15\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de árboles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta. Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
 
 
 \begin{figure}[h!]
@@ -632,22 +632,22 @@ En este experimento se prueban 3 combinaciones distintas por cada clase (0.15\%,
 
 \newpage
 
-\subsection{Píxeles ausentes}
-Para este experimento se van a utilizar 3 distintos valores de píxeles ausentes (0.75\%, 0.80\% y 0.85\%) donde se va a utilizar el umbral con mejor desempeño obtenido por el experimento de umbralización (0.50\%) el cual sera puesto a prueba en cada iteración con la que se utilice un nuevo valor de píxeles ausentes. Para esta prueba se recolecta un subconjunto de muestras para agilizar el proceso de resultados, tomando únicamente una tercera parte de las muetras totales.
+\subsection{Píxeles permitidos}
+Para este experimento se van a utilizar 3 distintos valores de píxeles permitidos (0.75\%, 0.80\% y 0.85\%) donde se va a utilizar el umbral con mejor desempeño obtenido por el experimento de umbralización (0.50\%) el cual sera puesto a prueba en cada iteración con la que se utilice un nuevo valor de píxeles permitidos. Para esta prueba se recolecta un subconjunto de muestras para agilizar el proceso de resultados, tomando únicamente una tercera parte de las muestras totales.
 %En comparación con el valor anterior de 0.5\% en el experimento anterior, el aumentar a 0.85\% el porcentaje de píxeles ausentes por muestra no demostró una mejora significativa en resultados, apenas se incrementaron algunos valores en las especies detectadas como es representado en la figura 
 
 \begin{figure}[h!]
   \centering  
   \begin{minipage}[b]{1\textwidth}
         \includegraphics[width=\textwidth]{resultado_pixelesausentes}
-    \caption{Porcentaje de píxeles ausentes} 
-    \label{Porcentaje de píxeles ausentes}
+    \caption{Comparación de píxeles permitidos} 
+    \label{Comparación de píxeles permitidos}
   \end{minipage}
 \end{figure}
 
 \newpage
 \section{Discusión de resultados}
-Todos los experimentos y scripts son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}:
+Todos los experimentos son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}:
 
 \begin{table}[H]
 	{\centering
@@ -674,7 +674,16 @@ El tiempo que tardan en procesarse las muestras ejecutando los experimentos var�
 
 Para la prueba de especies por tamaño de clase es evidentemente que existe una especie predominante en ambas zonas forestales, Pino, la cual en la figura \ref{Porcentaje de especies por clase} se detectan 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas. En esta prueba se consideran la mayor cantidad de muestras posibles considerando también, un número de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completa en 18 horas.
 
-En cuanto a la prueba de píxeles ausentes la especie predominante volvió a ser pino como es visto en la figura \ref{Porcentaje de píxeles ausentes}, en comparación con el experimento anterior, la diferencia no fue muy notable aumentando el valor del parametro, más sin embargo, en tiempo de computo si disminuyó ya que la prueba se completó en 13 horas y 15 minutos.
+En la prueba de cantidad total de espcies por tamaño de clases se aprecia que si afecta bastante fijar el tamaño de cada clase, en la figura \ref{Porcentaje de especies totales por clase} de la página \pageref{Porcentaje de especies totales por clase} es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo, sin embargo, pese a que encino tomo un porcentaje mayor de especies detectadas, abies sigue siendo la especie menos predominante.
+
+En contra parte, el experimento de misma cantidad de especies utilizando espejos de muestras hace uso de la especie de árbol que mayor tiene muestras (pino con 8859 muestras) para determinar el valor que deben tener las demás especies arbóreas, sin embargo, si se hace una comparación con el experimento de misma cantidad de especies por clase del capítulo 6.2.1, la diferencia con la especie predominante es poca, mismo caso para las especies con menos porcentaje de especies detectadas. Debido a esto, se entiende que tener un tamaño fijo de especies y un valor total de cada especie si impacta en el experimento.
+
+En el experimento de umbralización únicamente se toman en cuenta la cantidad de especies detectadas por porcentaje de píxeles permitidos, el experimento más equilibrado fue el de utilizar 0.50\% de píxeles permitidos, debido a que otorga un mejor rendimiento entre todas las muestras. Este porcentaje es utilizado como umbral para la generación del modelo que sirve como base para probar y detectar las especies en las muestras útiles como la de la figura \ref{Comparación de muestras} (b) página \pageref{Comparación de muestras}.
+
+Finalmente para el experimento de píxeles permitidos, se hace uso del modelo generado a partir de las muestas con el umbral óptimo, donde se hace una comparación de las especies detectas por porcentaje de píxeles de permitidos mostrado en la figura \ref{Comparación de píxeles permitidos} de la página \pageref{Comparación de píxeles permitidos}, donde se aprecia que el experimento con 85\% de pixeles permitidos es el que otorga mayor cantidad de especies arbóreas siendo ligeramente superior al experimento al experimento con 80\% de píxeles permitidos.
+
+Respecto a la hipótesis que se plantea, se busca como objetivo particular el optimizar tiempos y costos de generar el inventario forestal por técnicas generadas por procesamiento de imágenes, en cuanto a tiempos definitivamente ahorrara en términos de duración si se consideran los tiempos de procesamiento y recolección de muestras, esto debido a que con un conjunto de datos relativamente grande, se puede obtener una solución en menos de tres días; en el apartado económico se puede considerar que esta técnica reduce muchos gastos en relación a equipos de trabajo, gastos en viajes a zonas particulares, etc. En cuanto a la parte de los objetivos, se cumplieron tanto el objetivo general que era generar un inventario forestal, así como los objetivos específicos. En el caso de los objetivos específicos, la solución propuesta divide por fases cada etapa de en un procedimiento secuencial, desde la generación del conjunto de muestras hasta la parte de la prueba utilizando un modelo para detectar las especies. En resumen, la solución propuesta cumple con ambos objetivos.
+
 
 %\chapter{Conclusiones}
 %Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas.
