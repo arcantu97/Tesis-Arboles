@@ -80,7 +80,7 @@ En el capítulo 3 se hace la comparación de algunos trabajos relacionados con l
 En el capítulo 4 hace un vistazo a las muestras sobre las que se está trabajando además de la explicación de la primera fase de la investigación, el procesamiento de muestras.
 
 En el capítulo 5 expone las fases restantes de la investigación, las cuales corresponden a el entrenamiento, la detección y la combinación respectivamente.\\
-En el capítulo 6 discute los resultados posteriores a la ejecución del algoritmo.Por último en el capítulo 7 se presenta una conclusión respecto a la investigación desarrollada.
+En el capítulo 6 discute los resultados posteriores a la ejecución del algoritmo. Por último en el capítulo 7 se presenta una conclusión respecto a la investigación desarrollada.
 
 \chapter{Antecedentes}
 Hoy en día existen diversas tecnologías que acaparan la atención por su funcionalidad y la interacción que tienen con procesos cotidianos, pero también existen tecnologías capaces de sustituir habilidades que sólo podrían ser propias de un ser humano, es por eso que en la presente investigación se está trabajando con el aprendizaje máquina y su aplicación en el análisis de zonas forestales.
@@ -137,6 +137,8 @@ La ecuación \ref{eq:2.1} obtiene la sumatoria de la intensidad de todos los pí
 
 \subsection{Textura} 
 Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en el presente trabajo, al identificar las muestras de los árboles. En este caso se emplea la métrica de \emph{textura de Haralick}. 
+
+Esta métrica o conjunto de descriptores estadísticos de textura realizada por \citet{rf16}, se utiliza como parte de un conjunto de descriptores estadísticos de textura para determinar 14 descriptores de textura haciendo uso de la matriz de concurrencia de los valores de intensidad de la imagen (COM).
 
 La figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas en la imagen, a simple vista algunos colores denotan ser de una especie distinta si se hace un análisis minucioso, pero en este caso, la característica de textura puede ser utilizada para diferenciar entre especies arbóreas.
 \vspace*{3\baselineskip}
@@ -245,11 +247,12 @@ En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desgl
 \begin{table}[hbt!]
 \centering
 \caption{Comparación de trabajos frente al desarrollado. Donde \checkmark indica que cumple con esta característica y  $\times$ no cumple con esta característica.}
-\begin{adjustbox}{width=0.6\textwidth}
-\begin{tabular}{|c|c|c|c|}
-\toprule
-\rotatebox[origin=c]{0}{Trabajo} & \rotatebox[origin=c]{90}{Inventarios forestales}& \rotatebox[origin=c]{90}{Visión computacional} & \rotatebox[origin=c]{90}{ Detección de objetos}\\
-    \midrule
+\vspace{0.5cm}
+\begin{adjustbox}{width=0.5\textwidth}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Trabajo & \rotatebox[origin=c]{90}{Inventarios forestales}& \rotatebox[origin=c]{90}{Visión computacional} & \rotatebox[origin=c]{90}{ Detección de objetos}\\
+	\hline
     \citet{rf1} & \checkmark & $\times$ & \checkmark\\
     \hline
     \citet{rf2}&  \checkmark  &  $\times$ & $\times$ \\
@@ -271,7 +274,7 @@ En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desgl
     \citet{rf15}& \checkmark & \checkmark & $\times$\\
 	\hline    
     El presente trabajo & \checkmark & \checkmark & \checkmark\\
-    \bottomrule
+    \hline
 \end{tabular}
 \end{adjustbox}
 \label{tab:Comparación de trabajos frente al desarrollado}
@@ -349,7 +352,7 @@ Para efectos prácticos, se declaran los colores de las especies arbóreas, esto
 \section{Fase de procesamiento de muestras}
 Una vez recolectadas las muestras con información relevante, se procede a  entrenar a el modelo con esa información para que sea en fases posteriores este sea capaz de entender y clasificar donde estén presentes las especies arbóreas almacenadas en el modelo. La forma de organizar cada muestra para un correcto entrenamiento es mediante la separación de cada especie por su color correspondiente, es decir, separando las especies de color azul en una carpeta, los verdes y los amarillos en su carpeta correspondiente consecuentemente.
 
-\subsection{Recortando muestras por islas}
+\subsection{Recortando muestras}
 Primeramente hay reconocer las secciones o partes de la muestra que son de interés, en este caso, se trabaja con los colores, específicamente los de cada especie de árbol. En el caso de todas las muestras, se tienen tres colores: [verde, amarillo, azul]. Estos colores indican que colores tienen una anotación válida para recortar.
 
 
@@ -646,7 +649,7 @@ Para este experimento se van a utilizar 3 distintos valores de píxeles permitid
 \end{figure}
 
 \newpage
-\section{Discusión de resultados}
+\section{Discusión}
 Todos los experimentos son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}:
 
 \begin{table}[H]
