@@ -1,10 +1,10 @@
 \chapter{Introducción}
 Analizar y cuantificar todo un inventario forestal puede tomar mucho tiempo, puede tender a fallar por una u otra razón, por lo que la falla humana está presente en todo momento, más sin embargo, las tecnologías que hoy en día se han desarrollado además de distintos ámbitos de la ciencia pueden ayudar a automatizar tareas y reducir el índice de error humano.
 
-El \emph{aprendizaje máquina}\footnote{Campo de la inteligencia artificial que desarrolla algoritmos capaces de aprender por medio de información.} es precisamente uno de los campos de la \emph{inteligencia artificial}\footnote{Ciencia encargada de desarrollar algoritmos capaces de imitar capacidades humanas.} que permite resolver esta clase de problemas, ya que gracias al aprendizaje supervisado se pueden usar técnicas de agrupamiento para clasificar distintas especies de árboles por medio de muestras recolectadas. En el caso del análisis de recorridos por drones, el enfoque está dirigido al área forestal dado que se puede utilizar el aprendizaje máquina para la gestión del inventario forestal, ayudando a reducir el fallo humano y optimizando las tareas de clasificación de especies arbóreas.
+El \emph{aprendizaje máquina}\footnote{Campo de la inteligencia artificial que desarrolla algoritmos capaces de aprender por medio de información.} es precisamente uno de los campos de la \emph{inteligencia artificial}\footnote{Ciencia encargada de desarrollar algoritmos capaces de imitar capacidades humanas.} que permite resolver esta clase de problemas, ya que gracias al aprendizaje supervisado se pueden usar técnicas de agrupamiento para clasificar distintas especies de árboles por medio de muestras recolectadas. En análisis de recorridos por drones, el enfoque está dirigido al área forestal dado que se puede utilizar el aprendizaje máquina para la gestión del inventario forestal, ayudando a reducir el fallo humano y optimizando las tareas de clasificación de especies arbóreas.
 
 Para llevar a cabo la tarea de clasificar las especies arbóreas, se recolectan muestras de las zonas del Cilantrillo y La Trinidad en Nuevo León. Estas zonas cuentan con distintas zonas especies arbóreas como lo son: \emph{Abies, Encino y Pino}.
-\newpage
+\clearpage
 
 \vspace*{3\baselineskip}
 
@@ -36,13 +36,12 @@ En las figura \ref{Zona-cilantrillo} se aprecia la zona de Trinidad desde distin
    \label{Zona-cilantrillo}
 \end{figure}
 
-\newpage
-
+\clearpage
 \section{Motivación}
 Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocas puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilantrillo y Trinidad.
 
 \section{Hipótesis}
-Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en la búsqueda de un elemento en particular, las especies arbóreas (caso del presente trabajo) se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
+Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en la búsqueda de un elemento en particular, las especies arbóreas (presente trabajo) se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
 
 \section{Objetivos}
 En esta sección se establece el objetivo general y los objetivos específicos sobre los que se enfoca la tesis.
@@ -152,7 +151,7 @@ La figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas e
   \caption[Comparación de texturas.]{Comparación de texturas encontradas.}
   \label{Texturas}
 \end{figure}
-\newpage
+\clearpage
 \section{Descriptores de características locales}
 Las características mencionadas en la sección 2.2 cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor es el óptimo para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. 
 
@@ -238,7 +237,7 @@ La mayoría de los trabajos citados hacen uso de otra clase de tecnología que n
 \item[Detección de objetos]{Es una técnica del aprendizaje máquina que emula la capacidad humana de detectar por si sola, algún objeto por medio de la vista.}
 \end{description}
 
-\newpage
+\clearpage
 
 \subsection{Comparaciones}
 En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desglosan que características presentes  que se pueden encontrar en las investigaciones citadas y su relación con la investigación con la que se está trabajando actualmente.\\
@@ -279,7 +278,7 @@ Trabajo & \rotatebox[origin=c]{90}{Inventarios forestales}& \rotatebox[origin=c]
 \end{adjustbox}
 \label{tab:Comparación de trabajos frente al desarrollado}
 \end{table}
-\newpage
+\clearpage
 \subsection{Áreas de oportunidad}
 En el cuadro 3.1 se puede apreciar que características tiene la investigación con respecto a la de otros autores, y es que pudiera ser que otros trabajos tengan las mismas características o al menos casi todas pero por lo que respecta a la investigación, además de generar un inventario forestal de manera eficiente y proporcionar su código, este puede ser modificado o estudiado con otros propósitos sin necesidad de esperar una retribución de por medio debido a que es un software libre.
 
@@ -287,7 +286,7 @@ Por otro lado, también se puede apreciar que el trabajo de \citet{rf10} tiene l
 
 En lo que respecta a las áreas de oportunidad de la investigación, se puede destacar el aprendizaje máquina y la visión computacional como herramientas clave. Primeramente, el aprendizaje máquina permite entrenar un algoritmo cuyo producto es bastante relevante en el proceso de clasificación durante la investigación.
 
-En el caso del método propuesto, el aprendizaje máquina se encarga de extraer información clave de cada una de las muestras recolectadas de las zonas forestales, donde, mediante descriptores de características tanto globales como locales, se encarga de generar un archivo que contenga la información más relevante de las muestras.
+En el método propuesto, el aprendizaje máquina se encarga de extraer información clave de cada una de las muestras recolectadas de las zonas forestales, donde, mediante descriptores de características tanto globales como locales, se encarga de generar un archivo que contenga la información más relevante de las muestras.
 
 Posteriormente, la visión computacional hace uso del archivo generado previamente por el aprendizaje máquina donde se encarga de clasificar cada árbol mediante una etiqueta que define a su especie por color. Esto último no ha sido aplicado en las investigaciones encontradas puesto que tienen un enfoque nulo en hacer clasificaciones de múltiples objetos de un sólo tipo, o bien, sólo se enfocan en hacer anotaciones manuales por medio de inputs previamente establecidos y esto únicamente se enfoca en comparaciones.
 
@@ -302,7 +301,7 @@ Habiendo conocido las características que mejor describen a los atributos del p
 \section{Fase de recolección de muestras}
 La primera fase en el desarrollo de la solución propuesta sería recolectar muestras de el objeto(s) a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que el presente trabajo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que se necesita información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
 
-\newpage
+\clearpage
 \section{Muestras recolectadas}
 Inicialmente, el doctor Manuel Jiménez proporcionó un repositorio con imágenes alojado en Google Drive que contenía imágenes de las zonas donde se realizó el recorrido del dron, más específicamente \emph{Cilantrillo} y \emph{Trinidad}.
 
@@ -312,13 +311,13 @@ Inicialmente, el doctor Manuel Jiménez proporcionó un repositorio con imágene
 \subfloat[Ejemplo de muestras de la zona de Trinidad]{\includegraphics[scale=0.140]{grid_Trinidad}}
 \end{figure}
 
-\newpage
+\clearpage
 \subsection{Análisis de muestras}
 Como se mencionó al inicio de la sección 4.2, es importante recolectar una gran cantidad de muestras para entrenar bien el modelo, por lo que para la zona del Cilantrillo se obtienen 277 muestras y para la zona de Trinidad se obtienen 270 muestras. Esta cantidad de muestras es suficiente para entrenar bien el modelo desarrollado y que sea capaz de reconocer los distintos tipos de árbol, más sin embargo, en cada imagen se puede apreciar información que no es útil y puede sobre entrenar el modelo, perjudicando de forma que este detecte más en concreto, el suelo como un tipo de árbol.
 
 La información de cada muestra es analizada píxel por píxel, por lo que a simple vista se puede percibir la clase de información que contiene cada muestra, pero el analizar cada una de ellas llevaría demasiado tiempo, por lo que, se puede concluir que hay píxeles dentro de ellas que no sean útiles. 
 
-En los casos de la figura 4.3 y 4.4 se muestra un ejemplo de cómo se verían las muestras que son de utilidad y destacando que el siguiente capítulo define el procedimiento realizado para poder obtener muestras útiles.
+En la figura 4.3 y 4.4 se muestra un ejemplo de cómo se verían las muestras que son de utilidad y destacando que el siguiente capítulo define el procedimiento realizado para poder obtener muestras útiles.
 
 
 \begin{figure}[h!]
@@ -330,12 +329,12 @@ En los casos de la figura 4.3 y 4.4 se muestra un ejemplo de cómo se verían la
   \caption[Comparación de muestras]{Comparación de muestras donde se aprecia una útil de una no útil.}
   \label{Comparación de muestras}
 \end{figure}
-\newpage
+\clearpage
 
 \subsection{Información no útil}
 En cada una de las muestras recolectadas está presente el suelo ya que es una imagen capturada por un drone, sin embargo, el suelo forma parte de la información que se necesita remover de las muestras para no sobre entrenar a el modelo de reconocimiento previamente desarrollado.
 
-Para efectos prácticos, se declaran los colores de las especies arbóreas, esto con el fin de decirle a el método propuesto que información no debe remover de las muestras. A su vez se tiene que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal de transparencia, mismo que es necesario para llevar a cabo el método propuesto de reemplazar la información, por lo que se tiene que convertir cada muestra primero, a un formato \texttt{.png} para que la muestra admita este canal. Después se convierte la muestra a un canal \emph{RGBA} (rojo, verde, azúl y transparencia, siglas en inglés).
+Para efectos prácticos, se declaran los colores de las especies arbóreas, esto con el fin de decirle a el método propuesto que información no debe remover de las muestras. A su vez se tiene que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal de transparencia, mismo que es necesario para llevar a cabo el método propuesto de reemplazar la información, por lo que se tiene que convertir cada muestra primero, a un formato \texttt{.png} para que la muestra admita este canal. Después se convierte la muestra a un canal RGBA (rojo, verde, azúl y transparencia, siglas en inglés).
 
  Una vez que la muestra tenga el canal transparente, se recorren todos los píxeles de la imagen con el fin de encontrar y asignar a una variable, todos los pixeles que no correspondan con los colores de los árboles y posteriormente, descartar estos píxeles con el fin de guardar la muestra con la información útil como se muestra en la figura 2.5.
 
@@ -353,7 +352,7 @@ Para efectos prácticos, se declaran los colores de las especies arbóreas, esto
 Una vez recolectadas las muestras con información relevante, se procede a  entrenar a el modelo con esa información para que sea en fases posteriores este sea capaz de entender y clasificar donde estén presentes las especies arbóreas almacenadas en el modelo. La forma de organizar cada muestra para un correcto entrenamiento es mediante la separación de cada especie por su color correspondiente, es decir, separando las especies de color azul en una carpeta, los verdes y los amarillos en su carpeta correspondiente consecuentemente.
 
 \subsection{Recortando muestras}
-Primeramente hay reconocer las secciones o partes de la muestra que son de interés, en este caso, se trabaja con los colores, específicamente los de cada especie de árbol. En el caso de todas las muestras, se tienen tres colores: [verde, amarillo, azul]. Estos colores indican que colores tienen una anotación válida para recortar.
+Primeramente hay reconocer las secciones o partes de la muestra que son de interés, en este caso, se trabaja con los colores, específicamente los de cada especie de árbol. En todas las muestras, se tienen tres colores: [verde, amarillo, azul]. Estos colores indican que colores tienen una anotación válida para recortar.
 
 
 \begin{figure}[H]
@@ -363,7 +362,7 @@ Primeramente hay reconocer las secciones o partes de la muestra que son de inter
     \caption{Muestra con anotaciones}
   \end{minipage}
 \end{figure}
-\newpage
+\clearpage
 
 En la figura 4.6 se aprecia que tiene secciones delimitadas por colores, por lo que se recorre la muestra por píxeles hasta encontrar la zona que esté dentro del rango de colores previamente establecido.
 
@@ -441,6 +440,7 @@ La figura \ref{Diagrama de flujo de las fases} de la página \pageref{Diagrama d
  \path [line] (prueba) -- (combinacion);
  \path [line] (combinacion) -- (end);
 \end{tikzpicture}}
+\vspace{2cm}
 \caption{Fases del desarrollo de la solución}
 \label{Diagrama de flujo de las fases}
 \end{figure}
@@ -462,7 +462,7 @@ i, j = 0, 0
 \label{Declaracion-variables}
 \end{figure}
 
-El fragmento de código 5.1 declara las clases que se utilizan y el tamaño de muestras durante la fase del entrenamiento para posteriormente generar un conjunto que sea de utilidad. En este caso, se declara un tamaño de 5000 muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde se mencionan a las características globales.
+El fragmento de código 5.1 declara las clases que se utilizan y el tamaño de muestras durante la fase del entrenamiento para posteriormente generar un conjunto que sea de utilidad. En este caso, se declara un tamaño de cinco mil muestras por clase (color) y seguido se recorre el arreglo de carpetas para ir buscando en cada muestra, las características mencionadas en la sección 2.3 donde se mencionan a las características globales.
 
 \begin{figure}[H]
 \centering
@@ -493,7 +493,7 @@ for training_name in train_labels:
 \end{figure}
 
 En el fragmento de código 5.2 se observa que al recorrer las muestras, estas se guardan en un variable local que determina el tamaño de las muestras (\texttt{images per class}) para posteriormente, utilizarlas al extraer las características globales. Cuando se tiene almacenada la información extraída de las muestras, se añade a un vector de características globales (\texttt{features}) en el cual se guarda un conjunto de datos que contiene la información de cada una de las muestras y posteriormente, utilizar este vector de características al momento de clasificar las especies de árbol. 
-\newpage
+\clearpage
 
 \section{Fase de detección}
 Esta fase es la más importante de todas debido a que se utiliza el modelo generado a partir de la fase de entrenamiento. En esta fase se utilizan las características globales de extracción de características de la sección 2.3 donde se hace uso del modelo clasificador de {\em bosque aleatorio} (inglés: random forest)\footnotemark, donde se establece un valor estimado de árboles por cada muestra donde se vaya a probar el modelo, en la investigación se va a utilizar un valor de 100. Posteriormente se tiene que definir que utilizar la información de los modelos de características utilizadas y las etiquetas de muestras generadas a partir de ello también. 
@@ -525,7 +525,7 @@ El proceso de combinarlas consta en tomar la información del directorio origina
     \label{Combinación de detección y una muestra original}
   \end{minipage}
 \end{figure}
-\newpage
+\clearpage
 
 Respecto a la figura \ref{Combinación de detección y una muestra original} se puede destacar que la muestra original sirve como base y la muestra que contiene las especies arbóreas detectadas como mascara para poder combinar ambas capas. El objetivo de comparar las muestras generadas respecto a una muestra original es que se pueda comparar  cuántos árboles de cada especie acertan contra las muestras con anotaciones manuales hechas por los expertos en especies. En la figura \ref{Combinación de detección y una muestra original} se muestran también, las instancias otorgadas de rectángulos (green, blue, yellow) que el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. 
 
@@ -542,13 +542,13 @@ En la figura 5.4 determina la diferencia entre una anotación realizada por el a
   \label{Comparación de anotaciones}
 \end{figure}
 
-En el caso de la figura 5.4 (b) las anotaciones generadas a partir del aprendizaje máquina, por otra parte, la figura 5.4(c) muestra  las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
+En la figura 5.4 (b) las anotaciones generadas a partir del aprendizaje máquina, por otra parte, la figura 5.4(c) muestra  las anotaciones realizadas por los expertos determinan que en la figura de color marcada existe una especie.
 
 \chapter{Experimentos}
 Después de clasificar todas las muestras que pasan por las fases de entrenamiento, detección y combinación, se puede obtener un resultado preliminar que indica  cuántos árboles de cada especie son detectados en la fase de detección.
 
 Sin embargo, para lograr obtener un experimento hay que diseñar algunas pruebas para comprobar los resultados del modelo generado. En algunas situaciones si se modifica un parámetro es posible que el resultado no sea el esperado, por tanto, se tiene que jugar con los valores que les asignen a los parámetros para poder determinar si el resultado es o no el esperado en cuestión. En esta sección se tratan los resultados obtenidos a lo largo de desarrollar algunos experimentos que permitan determinar si la solución propuesta cumple con el objetivo de desarrollar un inventario forestal de forma eficiente.
-\newpage
+\clearpage
 
 \section{Diseño experimental}
 %En fases previas se combinaba el resultado de la fase de detección y la fase de combinación para poder visualizar el resultado más claro, sin embargo,  la determinación de un resultado con solo observar una muestra puede no favorecer en la experimentación y por tanto, manejar un contador que permita tener un control de las especies arbóreas, favorece mucho la cuestión estadística de las especies detectadas.
@@ -562,27 +562,20 @@ Ya sea reduciendo, aumentando o simplemente tanteando el valor de un parámetro 
 
 \begin{description}
 \item[Cantidad total de especies por tamaño de clase.]{Debido a que no todas las especies de árboles generan la misma cantidad de muestras, se van a utilizar las muestras totales de cada clase para determinar si esto repercute de forma positiva en el desarrollo de este experimento.}
-\end{description}
 
-\begin{description}
 \item[Misma cantidad de especies utilizando espejos de muestras.]{En el experimento de cantidad total de especies por tamaño de clase, se utilizaban la cantidad total de muestra generadas para cada clase, sin embargo, el impacto que pueda tener la misma cantidad de especies para cada clase considerando la especie que obtuvo más muestras generadas (\texttt{pino} con 8859 muestras) puede repercutir de cierta manera en que también se haga una mejor detección de esta, es por esta razón que se van a utilizar reflejos de las clases que tengan una cantidad de muestras menor a la de pino para completar esas especies faltantes.}
+
+\item[Umbralización.]{En la umbralización se considera la porción de píxeles admitidos al momento de generar los rectángulos que posteriormente serán utilizados durante la fase de entrenamiento del modelo de la solución propuesta, por tanto, se comparan tres niveles distintos de umbral  (0.15\%, 0.25\%, 0.50\%) para comparar el que mejor resultados proporciona, mismo que servirá para definir el umbral ideal en otros experimentos.} 
+
+\item[Límite de píxeles ausentes.]{El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta, en caso contrario, detectaría una menor cantidad de especies en las muestras. En este caso, se van a utilizar tres porcentajes de píxeles ausentes (0.75\%, 0.80\% y 0.85\%).}
 \end{description}
 
-\begin{description}
-\item[Umbralización.]{En la umbralización se considera la porción de píxeles admitidos al momento de generar los rectángulos que posteriormente serán utilizados durante la fase de entrenamiento del modelo de la solución propuesta, por tanto, se comparan 3 niveles distintos de umbral  (0.15\%, 0.25\%, 0.50\%) para comparar el que mejor resultados proporciona, mismo que servirá para definir el umbral ideal en otros experimentos.} 
-\end{description}
-
-\begin{description}
-\item[Límite de píxeles ausentes.]{El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta,  en caso contrario, detectaría una menor cantidad de especies en las muestras. En este caso, se van a utilizar tres porcentajes de píxeles ausentes (0.75\%, 0.80\% y 0.85\%).}
-\end{description}
-
-\newpage
-
+\clearpage
 \section{Resultados}
 Establecidos los experimentos que se van a realizar, se reporta los resultados obtenidos en el transcurso de las pruebas del capítulo 6.1 donde explica en que consiste cada una de ellas.
 
 \subsection{Misma cantidad de especies por clase}
-En el caso de este experimento se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas.
+En este experimento se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas.
 
 \begin{figure}[h!]
   \centering  
@@ -607,7 +600,7 @@ Este experimento obtiene el tamaño de cada clase, siendo que cada clase (\textt
   \end{minipage}
 \end{figure}
 
-\newpage
+\clearpage
 \subsection{Misma cantidad de especies utilizando espejos de muestras}
 Dado que cada clase  de arbórea tiene un tamaño distinto, \texttt{pino} con 8859 muestras, rebasa en muestras a las clases de abies  y encino, por tanto, el experimento va a generar espejos de muestras de árboles  en las clases que no cuentan con un tamaño de 8859 muestras, esto va a permitir tener la misma cantidad de muestras en todas las especies de árboles. 
 \begin{figure}[h!]
@@ -619,24 +612,24 @@ Dado que cada clase  de arbórea tiene un tamaño distinto, \texttt{pino} con 88
   \end{minipage}
 \end{figure}
 
-\newpage
+\clearpage
 \subsection{Umbralización}
-En este experimento se prueban 3 combinaciones distintas por cada clase (0.15\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de árboles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta. Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
+En este experimento se prueban tres combinaciones distintas por cada clase (0.15\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de árboles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta. Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
 
 
 \begin{figure}[h!]
   \centering  
   \begin{minipage}[b]{1\textwidth}
-        \includegraphics[width=\textwidth]{resultado_umbralización}
+        \includegraphics[width=\textwidth]{result_umbralización}
     \caption{Comparación de umbralización} 
     \label{Comparación de umbralización}
   \end{minipage}
 \end{figure}
 
-\newpage
+\clearpage
 
 \subsection{Píxeles permitidos}
-Para este experimento se van a utilizar 3 distintos valores de píxeles permitidos (0.75\%, 0.80\% y 0.85\%) donde se va a utilizar el umbral con mejor desempeño obtenido por el experimento de umbralización (0.50\%) el cual sera puesto a prueba en cada iteración con la que se utilice un nuevo valor de píxeles permitidos. Para esta prueba se recolecta un subconjunto de muestras para agilizar el proceso de resultados, tomando únicamente una tercera parte de las muestras totales.
+Para este experimento se van a utilizar tres distintos valores de píxeles permitidos (0.75\%, 0.80\% y 0.85\%) donde se va a utilizar el umbral con mejor desempeño obtenido por el experimento de umbralización (0.50\%) el cual sera puesto a prueba en cada iteración con la que se utilice un nuevo valor de píxeles permitidos. Para esta prueba se recolecta un subconjunto de muestras para agilizar el proceso de resultados, tomando únicamente una tercera parte de las muestras totales.
 %En comparación con el valor anterior de 0.5\% en el experimento anterior, el aumentar a 0.85\% el porcentaje de píxeles ausentes por muestra no demostró una mejora significativa en resultados, apenas se incrementaron algunos valores en las especies detectadas como es representado en la figura 
 
 \begin{figure}[h!]
@@ -648,7 +641,7 @@ Para este experimento se van a utilizar 3 distintos valores de píxeles permitid
   \end{minipage}
 \end{figure}
 
-\newpage
+\clearpage
 \section{Discusión}
 Todos los experimentos son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}:
 
