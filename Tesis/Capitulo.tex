@@ -692,16 +692,40 @@ La solución propuesta surgió a partir de un problema de clasificación de flor
 
 Las muestras son generadas utilizando parámetros de umbral optimo que permitan detectar la mayor cantidad de especies, estos valores son obtenidos a través de distintos experimentos jugando con valores de umbralización y los píxeles permitidos por cada muestra. Para obtener los valores, los experimentos como la umbralización y píxeles permitidos del capítulo 6, reflejan en las figuras \ref{Comparación de umbralización} y \ref{Comparación de píxeles permitidos} que porcentajes obtienen la mayor cantidad de especies de árboles en cada experimento, lo cual sirve para tener un criterio de que valores son útiles para la solución propuesta.
 
-La solución desarrollada se pensó en realizar con el aprendizaje máquina y la visión computacional como parte de una solución eficiente que pueda ahorrar tiempos y costos a las personas expertas del área en que se va a aplicar la solución. Los métodos tradicionales son bastante costos y tardados por la complejidad de recolectar muestras, además de lo que implica viajar con un equipo eficiente a las zonas forestales, por tal, la solución propone reducir tiempos y automatizar tareas como el procesamiento y la clasificación de muestras para hacer más eficiente el generar un inventario un forestal a partir de la visión computacional. 
+El software desarrollado se realizó con el aprendizaje máquina y la visión computacional como innovación a las técnicas ya existentes para generar inventarios forestales, no obstante, el software desarrollado también genera una solución eficiente que pueda ahorrar tiempos y costos en comparación a las técnicas tradicionales. Los métodos tradicionales son bastante costos y tardados por la complejidad de recolectar muestras además de lo que implica viajar con un equipo profesional a las zonas forestales. Por tal, la solución propone reducir tiempos y automatizar tareas de la generación de inventarios forestales utilizando el procesamiento de imágenes y la clasificación de muestras a partir de la visión computacional. 
 \clearpage
-Esta solución además, está desarrollada con el lenguaje Python en su versión 3, la cual no requiere de muchos recursos para ejecutarse, sin embargo, la ejecución y el tiempo de resultados dependerá en gran medida del equipo en que se ejecute. Esto último puede que no sea una limitante debido a que las computadoras actuales ya son bastante eficientes para ejecutar un script de Python en segundo plano, sin embargo, si es un factor a considerar en cuanto al tiempo de procesamiento para garantizar que esta pueda ser ejecutada sin muchos inconvenientes. 
+Esta solución además, está desarrollada con el lenguaje Python en su versión 3, la cual no requiere de muchos recursos para ejecutarse, sin embargo, la ejecución y el tiempo de resultados dependerá en gran medida del equipo en que se ejecute. Esto último puede que no sea una limitante debido a que las computadoras actuales ya son bastante eficientes para ejecutar software que requieran especificaciones técnicas muy exageradas, sin embargo, esto último  si es un factor a considerar en cuanto al tiempo de procesamiento para garantizar que esta pueda ser ejecutada sin muchos inconvenientes. 
 
-En cuanto a la parte técnica de la solución, ésta se apoya de bibliotecas como Scikit, OpenCV, Scipy y Pillow, mismas que están documentadas por versión en el repositorio donde se alojan los scripts utilizados para la generación del inventario forestal y la tesis escrita \citep{rf18}.
+En cuanto a la parte técnica de la solución, el software desarollado se apoya de bibliotecas de la figura \ref{Bibliotecas utilizadas en el software desarrollado}, mismas que están documentadas por versión en el repositorio donde se alojan los scripts utilizados para la generación del inventario forestal y la tesis escrita \citep{rf18}.
 
+\begin{table}[H]
+	{\centering
+		\caption{Bibliotecas utilizadas en el software desarrollado}
+		\begin{tabular}{|c|c|}
+			\hline
+			Biblioteca & Versión\\
+			\hline
+			Scikit & 0.23.2\\
+			\hline
+			OpenCV & 4.4.0\\
+			\hline
+			Scipy & 1.5.2\\
+			\hline
+			Pillow & 7.2.0\\
+			\hline
+			Numpy & 1.19.1\\
+			\hline
+		\end{tabular}
+
+	\label{Bibliotecas utilizadas en el software desarrollado}}
+\end{table}
+\clearpage
 \section{Trabajo a futuro}
 La solución propuesta en la tesis no está sujeta a un objetivo en particular, como es descrito en la sección 7.1, por lo que bien podría tomar otro objetivo si así se requiere. La visión computacional tiene tantas aplicaciones que limitarla a un objetivo sería desperdiciar su potencial, por lo que el objetivo que tome, debe ser enfocado a utilizarse con propósitos de automatizar algún procedimiento manual o que implique el análisis abstracto de imágenes por medio de la visión. No obstante, esta solución, aunque es eficiente, puede ser mejorada si se encuentran métodos óptimos para encontrar parámetros exactos en relación a los umbrales, tamaño de imágenes y una arquitectura de la solución que pueda aprovechar todos los recursos de la computadora para generar lo más rápido posible, un resultado.
 
-En general, también podrían reducirse algunos procesos e ir recopilando cada el resultado de cada fase para aumentar la productividad del algoritmo e ir generando secuencialmente la solución que se vaya a implementars.
+En general, también podrían reducirse algunos procesos e ir recopilando cada el resultado de cada fase para aumentar la productividad del algoritmo e ir generando secuencialmente la solución que se vaya a implementar.
+
+Otra de las cosas que se podría estudiar de mejor forma, sería la robustez de la solución propuesta, esto con apoyo de la recolección de más muestras, capturar muestras en distintas fechas y  utilizar distintas alturas en vuelos para obtener una mejor perspectiva de la zona forestal que se va analizar.
 %Después de haber obtenido los resultados del algoritmo se concluye algunas cosas respecto a las zonas analizadas, una de ellas es que evidentemente existe una especie predominante en ambas zonas, Pino, la cual en la figura \ref{Numero especies} se detectaron 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas.
 %
 %Otra de las cosas que se pudo concluir al aunar los resultados fue que el proceso de detección no hubiese sido posible de no ser removido el suelo en la fase previa al entrenamiento, esto debido a que el suelo provoca que el modelo de entrenamiento hubiera sido cargado con información no útil. Con esto se puede inferir que el algoritmo hubiera clasificado de alguna forma en forma de especie las partes que contienen suelo dentro de cada muestra, haciendo que el método propuesto no clasificara correctamente.
