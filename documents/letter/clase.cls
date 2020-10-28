@@ -25,8 +25,8 @@
 
 \def\fecha{22 de Octubre de 2020}
 \def\asesor{Dra. Satu Elisa Schaeffer}
-\def\revisorA{Dr. Sara Elena Garza Villarreal}
-\def\revisorB{Dra. Sara Verónica Rodríguez Sánchez}
+\def\revisorA{Dra.\ Sara Elena Garza Villarreal}
+\def\revisorB{Dra.\ Sara Verónica Rodríguez Sánchez}
 \def\director{Dr. Fernando Banda Muñoz}
 
 %%%%%%%%%%%%%%%%%%%%
