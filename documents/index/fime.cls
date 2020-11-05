@@ -3,8 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{fime}
-\LoadClass[12pt,oneside]{book}
-
+\LoadClass[7pt,oneside]{book}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Cargando paquetes y definiendo opciones %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,11 +34,12 @@
 \newtheorem{proposicion}[teorema]{\sc Proposici\'on}
 \newenvironment{demostracion}[1][\sc Demostraci\'on]{\noindent\textbf{#1:} }{\ \rule{0.5em}{0.5em}}
 
+
 %%%%%%%%%%%%%%%%%%%%
 % Diseño de página %
 %%%%%%%%%%%%%%%%%%%%
 \voffset = -2.0cm
-\topmargin = 0.6cm
+\topmargin = -4cm
 \headheight = 0.6cm
 \headsep = 0.66cm
 \textheight = 22.94cm
@@ -55,7 +55,7 @@
 	{\filcenter \Huge}[\titlerule\vspace{-0.4em}]
 \titleformat{\section}[hang]{\filcenter \Large \scshape}
 	{}{0mm}{\thesection\hspace{1em}}
-\titleformat{\subsection}[hang]{\vspace{0.9em}\large \scshape}
+\titleformat{\subsection}[hang]{\vspace{-1em}\large \scshape}
 	{}{0mm}{\filright \thesubsection\hspace{1em}}
 \titleformat{\subsubsection}[hang]{\vspace{0.9em}\scshape}
 	{}{0mm}{\filright \hspace{10mm}\thesubsubsection\hspace{1em}}

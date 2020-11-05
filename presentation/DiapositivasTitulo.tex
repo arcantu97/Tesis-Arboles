@@ -1,0 +1,182 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+\usepackage{lmodern}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usetheme{warsaw} %tema beamer
+
+\useinnertheme{rounded}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{fancybox}
+\usepackage{ragged2e} %para justificar el texto
+\setbeamertemplate{caption}[numbered]% agregar númeración a tablas y figuras
+\begin{document}
+\renewcommand{\figurename}{Figura} %para poner etiqueta Figura
+\renewcommand{\tablename}{Tabla} %para poner etiqueta Tabla
+
+
+\title[Defensa de Tesis  \hspace{35mm} \insertframenumber/\inserttotalframenumber]{Inventarios forestales a través del procesamiento de imágenes}
+\author{José Angel Ramírez Cantú \hspace{45mm}}
+\institute[Institución]{\\Universidad Autónoma de Nuevo León \\Facultad de Ingeniería Mecánica y Eléctrica}
+\begin{frame}
+\begin{center}
+\end{center}
+\vspace{-1cm}
+\titlepage
+\end{frame}
+
+\begin{frame}{Índice}
+\transdissolve
+\begin{center}
+\footnotesize{\tableofcontents}	
+\end{center}
+\end{frame}
+
+%\section*{Preámbulo a la guía}
+%\begin{frame}[allowframebreaks]{Preámbulo a la guía}
+%\begin{block}{Importante} \justifying
+%Este documento no pretende ser un estándar sino únicamente una guía que puede ser enriquecida con los lineamientos particulares de cada institución.
+%\end{block}
+%\begin{block}{Objetivo general} \justifying
+%Proporcionar una guía para la elaboración de presentaciones de tesis o trabajos formales usando el paquete beamer de \LaTeX \mbox{.}
+%\end{block}
+%\begin{block}{Alcances} \justifying
+%\begin{itemize}
+%\item Guía básica de contenido.
+%\item Numeración de las diapositivas.
+%\item Numeración de las figuras y tablas.
+%\item Referencias en varias diapositivas (frames).
+%\end{itemize}
+%\end{block}
+%
+%\begin{block}{Limitaciones} \justifying
+%\begin{itemize}
+%\item Personalización del tema beamer.
+%\item Efectos de animación.
+%\item Conceptos básicos de programación en \LaTeX \mbox{.}
+%\end{itemize}
+%\end{block}
+%
+%\bigskip
+%
+%El código fuente de este documento está disponible en el blog.
+%
+%\end{frame}
+
+\section{Introducción}
+\begin{frame}{Introducción}
+Los siguientes subtemas denotan la causa por la que se plantea que el procesamiento de imágenes ayuda a solucionar este problema:
+\begin{itemize}
+
+\item Motivación.
+\item Hipótesis.
+\item Objetivos generales y específicos.
+\end{itemize}
+\begin{figure}%
+\includegraphics[scale=0.3]{./figura.png}%
+\caption{Visite Chiapas, México}%
+\label{fig:BCI}%
+\end{figure}
+\end{frame}
+
+\subsection{Motivación}
+\begin{frame}{Motivación}
+\begin{block}{Motivación} \justifying
+Describa brevemente cuáles son los problemas técnico y de las personas que motiva su trabajo de investigación.
+\end{block}
+\end{frame}
+
+\subsection{Objetivos}
+\begin{frame}{Objetivos} 
+\begin{block}{Objetivo general} \justifying
+Describa el objetivo general de su trabajo de tesis.
+\end{block}
+\end{frame}
+
+\subsection{Alcances y limitaciones}
+\begin{frame}{Alcances y limitaciones}
+\begin{block}{Alcances} \justifying
+Describa brevemente algunos aspectos relevantes que sí serán tomados en cuenta en la tesis.
+\end{block}
+
+\begin{block}{Limitaciones} \justifying
+Describa brevemente aspectos que no han sido tomado en cuenta en su trabajo de tesis o que no serán parte medular de la misma.
+\end{block}
+\end{frame}
+
+\section{Estado del Arte}
+\begin{frame}{Estado del Arte}
+\begin{itemize}
+\item Es recomendable colocar una tabla que muestre los trabajos más similares al suyo y que permita diferenciarlo de forma rápida.
+\item  Asimismo, está tabla podría guiar una discusión en otra diapositiva.
+\end{itemize}
+
+\begin{table}[ht]
+\centering
+\caption{Estado del Arte en el área de trabajo}
+\label{tab:estadoArte}
+\begin{tabular}{lc}
+\hline
+Trabajo&diferencias\\\hline
+ \cite{poetaBreve}  & poesía breve \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\section{Método propuesto}
+\begin{frame}{Método propuesto}
+\begin{block}{Método propuesto}
+En esta sección es la más importante de su presentación pues debe quedar claro el método que usted propone.
+\end{block}
+\end{frame}
+
+\section{Experimentación y resultados}
+\begin{frame}{Experimentación y resultados}
+Presente los experimentos y resultados relevantes del trabajo.
+\begin{itemize}
+\item Enriquezcalo con gráficas.
+\item No olvide colocar las unidades de las medidas de evaluación utilizadas.
+\end{itemize}
+\end{frame}
+
+\section{Conclusiones y trabajo futuro}
+\subsection{Conclusiones}
+\begin{frame}{Conclusiones y trabajo futuro}
+\begin{block}{Conclusiones}
+Describa las principales conclusiones derivadas de su trabajo en forma de puntos.
+\end{block}
+\end{frame}
+
+\subsection{Trabajo futuro}
+\begin{frame}{Conclusiones y trabajo futuro}
+\begin{block}{Trabajo futuro}
+Describa algunos de los pendientes o tendencias que su trabajo puede seguir en forma de puntos.
+\end{block}
+\end{frame}
+
+\section*{Referencias}
+\begin{frame}[allowframebreaks]{Referencias}
+\begin{itemize}
+\item No olvide citar las principales referencias usadas en la presentación.
+\end{itemize}
+\bibliography{referencias}
+\bibliographystyle{apalike}
+\end{frame}
+
+\begin{frame}
+		\transdissolve
+		\begin{center}
+			\Huge \textcolor{blue}{¡Gracias por su atención!}\\
+			\bigskip
+			\large \textcolor{black}{¿Dudas y comentarios?}
+		\end{center}
+		\begin{center}
+		\end{center}
+\end{frame}
+
+\end{document}
