@@ -4,8 +4,11 @@
 \usepackage[ansinew]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[numbers, sort, compress]{natbib}
+\usepackage{adjustbox}
 \usetheme{warsaw} %tema beamer
-
+\bibliographystyle{unsrtnat}
 \useinnertheme{rounded}
 \usepackage{color}
 \usepackage{colortbl}
@@ -32,7 +35,9 @@
 \begin{frame}{Índice}
 \transdissolve
 \begin{center}
-\footnotesize{\tableofcontents}	
+\begin{multicols}{2}
+  \footnotesize{\tableofcontents}	
+\end{multicols}
 \end{center}
 \end{frame}
 
@@ -110,64 +115,82 @@ Automatizar procesos de las técnicas tradicionales para realizar inventarios for
 \centering Inicios de visión computacional
 \begin{figure}
 \includegraphics[scale=0.2]{vc_inicios.jpg}
-\caption{Primeros experimentos utilizando la visión computacional}
+\caption{Primeros experimentos utilizando la visión computacional, 1960}
 \end{figure}
 \end{frame}
 
 \begin{frame}{Características globales}
-\centering Color
+\centering ¿Existe una diferencia?
+\begin{figure}
+\includegraphics[width=.45\textwidth]{encino.jpg}
+\includegraphics[width=.45\textwidth]{cerezo.jpg}
+\caption{Encino y Cerezo}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Características globales}
-\centering Forma
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{DSC06100.pdf}
+\includegraphics[width=0.45\textwidth]{histograma.pdf}
+\caption{Característica de color}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Características globales}
-\centering Textura
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{Anotaciones-ex.pdf}
+\caption{Característica de forma}
+\end{figure}
 \end{frame}
 
-\begin{frame}{Uso de características loclaes}
-\centering Escalamiento
-\end{frame}
-
-
-\begin{frame}{Uso de características locales}
-\centering Normalización
-\end{frame}
-
-\begin{frame}{Uso de características locales}
-\centering SIFT
-\end{frame}
-
-\begin{frame}{Uso de características locales}
-\centering SURF
+\begin{frame}{Características globales}
+\begin{figure}
+\includegraphics[width=0.25\textwidth]{1_res.pdf}
+\includegraphics[width=0.25\textwidth]{2_res.pdf}
+\includegraphics[width=0.25\textwidth]{3_res.pdf}
+\caption{Característica de textura}
+\end{figure}
 \end{frame}
 
 \begin{frame}{Uso de características locales}
-\centering BRIEF
+\begin{block}{Objetivo} \justifying
+Describir los puntos de interés de un sector de o una imagen.
+\end{block}
 \end{frame}
 
-\begin{frame}{Uso de características locales}
-\centering ORB
-\end{frame}
 
+\begin{frame}{Características locales}
+\begin{description}
+\footnotesize \item[Escalamiento:]{Transforma los datos de las características en rangos específicos de cero a uno.}
+\item[Normalización:]{Desplaza y re-escala valores para alcanzar un rango entre cero y uno.}
+
+\item[Escala invariante (SIFT):]{Extrae la información y adecua en comparaciones.}
+
+\item[Acelarado robusto (SURF):]{Toma un vecino al rededor del punto seleccionado en la imagen y es dividido en sub-regiones para cada sub-región.}
+
+\item[Independientes Binarias robustas (BRIEF):]{Orientación y menor numero de diferencias a su alrededor.}
+
+\item[ORB* Rotada y orientada rápida:]{Determina estos puntos clave de una imágen.}
+\end{description}
+\end{frame}
 
 \section{Estado del Arte}
 \begin{frame}{Estado del Arte}
-\begin{itemize}
-\item 16 y 17 (por qué?)
-\end{itemize}
 
 \begin{table}[ht]
 \centering
 \caption{Estado del Arte en el área de trabajo}
 \label{tab:estadoArte}
-\begin{tabular}{lc}
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{lccc}
 \hline
-Trabajo&diferencias\\\hline
- \cite{poetaBreve}  & poesía breve \\
+Trabajo & Inventarios forestales & Visión computacional & Detección de objetos\\\hline
+ \citet{rf9}& \checkmark & \checkmark & \checkmark\\
+ \hline
+ \citet{rf15}& \checkmark & \checkmark & $\times$\\
 \hline
 \end{tabular}
+\end{adjustbox}
 \end{table}
 \end{frame}
 
@@ -179,31 +202,28 @@ blabla
 \section{Solución propuesta}
 \begin{frame}{Solución propuesta}
 \begin{block}{Solución propuesta}
-Cuantas fases, cuales y porque
+La solución propuesta se compone de cinco fases compuestas: \textbf{recolección de muestras, procesamiento de muestras, entrenamiento, detección y combinación}.
 \end{block}
 \end{frame}
 
-\subsection{Fase blabla}
 \begin{frame}{Fase blabla}
 5
 \end{frame}
 
-\subsection{Fase blabla}
 \begin{frame}{Fase blabla}
 4
 \end{frame}
 
-\subsection{Fase blabla}
 \begin{frame}{Fase blabla}
 3
 \end{frame}
 
-\subsection{Fase blabla}
+
 \begin{frame}{Fase blabla}
 1
 \end{frame}
 
-\subsection{Fase blabla}
+
 \begin{frame}{Fase blabla}
 2
 \end{frame}

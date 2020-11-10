@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: DiapositivasTitulo.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: unsrtnat.bst
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Illegal, another \bibstyle command---line 143 of file DiapositivasTitulo.aux
+ : \bibstyle
+ :          {apalike}
+I'm skipping whatever remains of this command
+Database file #1: referencias.bib
+You've used 2 entries,
+            2481 wiz_defined-function locations,
+            562 strings with 4805 characters,
+and the built_in function-call counts, 702 in all, are:
+= -- 62
+> -- 22
+< -- 3
++ -- 10
+- -- 6
+* -- 37
+:= -- 114
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 5
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 41
+empty$ -- 67
+format.name$ -- 10
+if$ -- 150
+int.to.chr$ -- 1
+int.to.str$ -- 3
+missing$ -- 1
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 18
+preamble$ -- 1
+purify$ -- 2
+quote$ -- 0
+skip$ -- 29
+stack$ -- 0
+substring$ -- 20
+swap$ -- 9
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 14
+warning$ -- 0
+while$ -- 7
+width$ -- 0
+write$ -- 33
+(There was 1 error message)
