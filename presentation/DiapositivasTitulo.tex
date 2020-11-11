@@ -7,6 +7,7 @@
 \usepackage{multicol}
 \usepackage[numbers, sort, compress]{natbib}
 \usepackage{adjustbox}
+\usepackage{subfig}
 \usetheme{warsaw} %tema beamer
 \bibliographystyle{unsrtnat}
 \useinnertheme{rounded}
@@ -23,7 +24,7 @@
 
 
 \title[Defensa de Tesis  \hspace{35mm} \insertframenumber/\inserttotalframenumber]{Inventarios forestales a través del procesamiento de imágenes}
-\author{José Angel Ramírez Cantú \hspace*{45mm}}
+\centering \author{José Angel Ramírez Cantú}
 \institute[Institución]{\\Universidad Autónoma de Nuevo León \\Facultad de Ingeniería Mecánica y Eléctrica}
 \begin{frame}
 \begin{center}
@@ -74,7 +75,12 @@
 
 \section{Introducción}
 \begin{frame}{Introducción}
-Poner zonas que se clasificaron
+\begin{figure}
+ \centering
+  \subfloat[Cilantrillo\label{fig:a}]{\includegraphics[height=4cm,width=4cm]{lejos_c}}\qquad
+  \subfloat[Trinidad\label{fig:b}]{\includegraphics[height=4cm,width=4cm]{lejos_t}}
+\caption{Zonas que se analizaron}
+\end{figure}
 \end{frame}
 
 \subsection{Motivación}
@@ -194,11 +200,6 @@ Trabajo & Inventarios forestales & Visión computacional & Detección de objetos\\
 \end{table}
 \end{frame}
 
-\subsection{Áreas de oportunidad}
-\begin{frame}{Áreas de oportunidad}
-blabla
-\end{frame}
-
 \section{Solución propuesta}
 \begin{frame}{Solución propuesta}
 \begin{block}{Solución propuesta}
@@ -206,57 +207,113 @@ La solución propuesta se compone de cinco fases compuestas: \textbf{recolección 
 \end{block}
 \end{frame}
 
-\begin{frame}{Fase blabla}
-5
+\begin{frame}{Fase de recolección de muestras}
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{grid_Cilantrillo.pdf}
+\includegraphics[width=0.45\textwidth]{grid_Trinidad.pdf}
+\caption{Recolección de muestras}
+\end{figure}
 \end{frame}
 
-\begin{frame}{Fase blabla}
-4
+\begin{frame}{Fase de recolección de muestras}
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{no_util.pdf}
+\includegraphics[width=0.45\textwidth]{util.pdf}
+\caption{Muestra no útil y muestra útil}
+\end{figure}
 \end{frame}
 
-\begin{frame}{Fase blabla}
-3
+\begin{frame}{Fase de procesamiento de muestras}
+\begin{figure}
+\includegraphics[width=0.60\textwidth]{Anotaciones-ex.pdf}
+\caption{Identificando especies por color (azul: pino, amarrillo: encino, verde: abies)}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Fase de procesamiento de muestras}
+\begin{figure}
+\includegraphics[width=0.35\textwidth]{grid_Muestras_2.pdf}
+\caption{Especies identificadas y separadas}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Fase de procesamiento de muestras}
+\begin{figure}
+\includegraphics[width=0.35\textwidth]{islas_Rect.pdf}
+\caption{Recorte de isla con interpolación de vecinos más cercanos}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Fase de entrenamiento}
+\begin{block}{Objetivo específico} \justifying
+Obtener muestras separadas por islas y generar modelo de entrenamiento.
+\end{block}
 \end{frame}
 
 
-\begin{frame}{Fase blabla}
-1
+\begin{frame}{Fase de detección}
+\begin{figure}
+\includegraphics[width=0.70\textwidth]{fase_deteccion.pdf}
+\caption{Determinando especies por color}
+\end{figure}
 \end{frame}
 
 
-\begin{frame}{Fase blabla}
-2
+\begin{frame}{Fase de combinación}
+\begin{figure}
+\includegraphics[width=0.70\textwidth]{fase_combinacion.pdf}
+\caption{Combinando resultado con muestra original}
+\end{figure}
 \end{frame}
 
 
 \section{Experimentación y resultados}
 \begin{frame}{Experimentación y resultados}
-Presente los experimentos y resultados relevantes del trabajo.
-\begin{itemize}
-\item Enriquezcalo con gráficas.
-\item No olvide colocar las unidades de las medidas de evaluación utilizadas.
-\end{itemize}
+\begin{block}{Experimentos}
+Para la fase de experimentación se establecieron cinco experimentos, en dos de ellos se encuentran experimentos clave para la obtención de un valor clave (Umbralización y píxeles admitidos).
+\end{block}
 \end{frame}
 
-\subsection{Exp1}
-\begin{frame}{Exp1}
-1
+\subsection{Misma cantidad de especies por tamaño de clase}
+\begin{frame}{Misma cantidad de especies por tamaño de clase}
+\begin{figure}
+\includegraphics[width=0.60\textwidth]{exp1.pdf}
+\caption{Resultado del experimento de tamaño de clases}
+\end{figure}
 \end{frame}
 
-\subsection{Exp2}
-\begin{frame}{Exp1}
-2
+\subsection{Cantidad total de especies por tamaño de clase}
+\begin{frame}{Cantidad total de especies por tamaño de clase}
+\begin{figure}
+\includegraphics[width=0.60\textwidth]{exp2.pdf}
+\caption{Resultado del experimento de tamaño total de clases}
+\end{figure}
 \end{frame}
 
 
-\subsection{Exp3}
-\begin{frame}{Exp1}
-3
+\subsection{Misma cantidad de especies utilizando espejos de muestras}
+\begin{frame}{Misma cantidad de especies utilizando espejos de muestras}
+\begin{figure}
+\includegraphics[width=0.60\textwidth]{exp3.pdf}
+\caption{Resultado del experimento de espejos de muestras}
+\end{figure}
 \end{frame}
 
-\subsection{Exp4}
-\begin{frame}{Exp1}
-4
+\subsection{Umbralización}
+\begin{frame}{Umbralización}
+\begin{figure}
+\includegraphics[width=0.60\textwidth]{exp4.pdf}
+\caption{Resultado del experimento de Umbralización}
+\end{figure}
+\end{frame}
+
+
+\subsection{Píxeles permitidos}
+\begin{frame}{Píxeles permitidos}
+\begin{figure}
+\includegraphics[width=0.60\textwidth]{exp5.pdf}
+\caption{Resultado del experimento de Píxeles permitidos}
+\end{figure}
 \end{frame}
 
 
@@ -265,24 +322,28 @@ Presente los experimentos y resultados relevantes del trabajo.
 \subsection{Conclusiones}
 \begin{frame}{Conclusiones y trabajo futuro}
 \begin{block}{Conclusiones}
-Describa las principales conclusiones derivadas de su trabajo en forma de puntos.
+\begin{itemize}
+\item Cumple los objetivos.
+\item Puede aplicarse en otra clase especies.
+\item La visión computacional resuelve problemas reduciendo el margen de error.
+\end{itemize}
 \end{block}
 \end{frame}
 
 \subsection{Trabajo futuro}
 \begin{frame}{Conclusiones y trabajo futuro}
 \begin{block}{Trabajo futuro}
-Describa algunos de los pendientes o tendencias que su trabajo puede seguir en forma de puntos.
+\begin{itemize}
+\item Otro objetivo.
+\item Robustez del software propuesto.
+\end{itemize}
 \end{block}
 \end{frame}
 
 \section*{Referencias}
 \begin{frame}[allowframebreaks]{Referencias}
-\begin{itemize}
-\item No olvide citar las principales referencias usadas en la presentación.
-\end{itemize}
 \bibliography{referencias}
-\bibliographystyle{apalike}
+\bibliographystyle{unsrtnat}
 \end{frame}
 
 \begin{frame}
