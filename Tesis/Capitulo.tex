@@ -38,10 +38,10 @@ En las figura \ref{Zona-cilantrillo} se aprecia la zona de Trinidad desde distin
 
 \clearpage
 \section{Motivación}
-Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfocas puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilantrillo y Trinidad.
+Pese a que ya existen mecanismos de detección de objetos, muchos de ellos no funcionan con la precisión o la meta que deseamos, puesto que no se enfocan en un objetivo en particular, más sin embargo, la investigación se enfoca puramente en la detección de especies arbóreas utilizando muestras recolectadas en las zonas del Cilantrillo y Trinidad.
 
 \section{Hipótesis}
-Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en la búsqueda de un elemento en particular, las especies arbóreas (presente trabajo) se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
+Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en la búsqueda de un elemento en particular, las especies arbóreas (presente trabajo). Se plantea demostrar que el procesamiento de imágenes permitiría reducir tiempos de recorrido a pie y optimizar costos en cuanto a la realización de inventarios forestales por medio de técnicas tradicionales.
 
 \section{Objetivos}
 En esta sección se establece el objetivo general y los objetivos específicos sobre los que se enfoca la tesis.
@@ -50,7 +50,7 @@ En esta sección se establece el objetivo general y los objetivos específicos s
 El objetivo de realizar el inventario forestal por medio del procesamiento de
 imágenes tiene un propósito más práctico que técnico. El algoritmo permitiría a quienes se encarguen de analizar las zonas forestales, reducir el tiempo invertido en aplicar técnicas tradicionales por técnicas de procesamiento de imágenes.
 
-Estas técnicas  basadas en el aprendizaje máquina, el cual permitir
+Estas técnicas  basadas en el aprendizaje máquina, las cuales van permitir
 generar un inventario forestal mediante el recorrido de un dron y a su vez, analizarlo por medio de la inteligencia artificial con la finalidad de indicar las cantidad de especies reconocidas sobre una zona.
 
 \subsection{Objetivos específicos}
@@ -93,7 +93,7 @@ El procesamiento de imágenes surge en el año 1920 de los primeros intentos de 
 
 El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}. 
 
-La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, en la sección 2.2 descriptores de características, describe a detalle como es que la visión computacional hace uso de ellas \citep{rf6}.
+La \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático. No obstante, en la sección 2.2 descriptores de características se describe a detalle como es que la visión computacional hace uso de ellas \citep{rf6}.
 
 Por otro lado, los \emph{inventarios forestales} surgen como respuesta a ciertas interrogantes como lo son el manejo sostenible de un bosque y los elementos que lo conforman. Estos se definen como sistemas de recolección de características del área sobre el que se trabaja \citep{rf7}.
 
@@ -120,10 +120,8 @@ Los momentos de una imagen son los pesos promedio de la intensidad de píxel sob
 
 \begin{figure}[h!]
   \centering
-  \begin{minipage}[b]{0.8\textwidth}
-    \includegraphics[width=\textwidth]{Anotaciones-ex}
+    \includegraphics[width=0.8\textwidth]{Anotaciones-ex}
     \caption[Formas de cada especie arbórea.]{Formas de cada especie arbórea (verde: Abies, azúl: Pino, amarillo: Encino).}
-  \end{minipage}
 \end{figure}
 
 Por ejemplo, el canal $I$ de una imagen contiene una intensidad en los ejes $(x,y)$ dados por la ecuación $I(x,y)$ donde $I(x,y)$ hace referencia una imagen binaria donde sólo es posible tomar un valor cero o uno. En otras palabras, los momentos de una imagen son un conjunto de siete números calculados del movimiento central que son invariantes para las transformaciones de una imagen
@@ -153,7 +151,7 @@ La figura 2.3 ilustra las distintas texturas que tienen los especies arbóreas e
 \end{figure}
 \clearpage
 \section{Descriptores de características locales}
-Las características mencionadas en la sección 2.2 cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor es el óptimo para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. 
+Las características mencionadas en la sección 2.2 cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor es el mejor para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. 
 
 \begin{description}
 \item[SIFT (Característica de transformación de escala invariante)]{Extra la información de una imagen para posteriormente, permita adecuarla cuando se desee compararla con diferentes muestras de un objeto o escena.}
@@ -164,7 +162,7 @@ Las características mencionadas en la sección 2.2 cuantifican globalmente una 
 \end{description}
  
 \begin{description}
-\item[BRIEF (Características elementales  independientemente binarias robustas)]{Se enfoca en la orientación de una imagen y depende del menor numero de diferencias (puntos) a su alrededor.}
+\item[BRIEF (Característica de diferencias en forma de cadena binaria)]{Se enfoca en la orientación de una imagen y depende del menor numero de diferencias (puntos) a su alrededor.}
 \end{description}
 
 \begin{description}
@@ -179,7 +177,7 @@ Existen varias formas de utilizar los descriptores pero hay dos maneras de mezcl
 
 \paragraph{•} Para las características locales del vector también puede hacerse una combinación de las características locales y globales del vector, es necesario algo llamado \emph{modelo de la bolsa de palabras} (BOVW). Este enfoque se utiliza normalmente en constructores de vocabularios, agrupamiento de $K$-medias, etc.
 
-\paragraph{•} El \emph{escalamiento} es también otra de los descriptores utilizados en las características de los vectores, este sirve para transformar los datos de las características en rangos específicos de cero a uno, por ejemplo. Esta característica suele ser bastante usada en máquina de soporte vectorial y en el $K$-vecinos cercanos (KNN) donde la distancia entre dos puntos es importante.
+\paragraph{•} El \emph{escalamiento} es también otro de los descriptores utilizados en las características de los vectores, este sirve para transformar los datos de las características en rangos específicos de cero a uno, por ejemplo. Esta característica suele ser bastante usada en máquina de soporte vectorial y en el $K$-vecinos cercanos (KNN) donde la distancia entre dos puntos es importante.
 
 \paragraph{•} La \emph{normalización} es utilizada en los descriptores también, esta última es una técnica donde los valores son desplazados y re-escalados  para que puedan alcanzar un rango entre cero y uno, a esta característica también se le conoce como \emph{escalamiento mínimo-máximo}.
 
@@ -189,12 +187,11 @@ En este capítulo se explica la relación de la investigación en curso con inve
 \section{Investigaciones relacionadas}
 Existen algunos trabajos que no están completamente relacionados con el objetivo de identificar especies arbóreas, pero si existen investigaciones que toman como objetivo el analizar zonas forestales.
 
-Este artículo menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. 
+\citet{rf14} Este artículo menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. 
 \newline
 \break
 
-
-\citet{rf1} utilizan una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza por medio de visión computacional sino por técnicas tradicionales.
+\citet{rf1}  utilizan una gran cantidad de entradas para definir manualmente la especie, no obstante, la principal diferencia es que este trabajo no realiza un inventario forestal por medio de visión computacional sino por técnicas tradicionales.
  
 \citet{rf2} tienen como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana. En este no se trata con inteligencia artificial como tal, pero si hacen uso de tecnologías de detección como sensores remotos que permitan evaluar correctamente y obtengan la información concreta de las zonas donde habitan  árboles.
 
@@ -245,7 +242,7 @@ En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desgl
 
 \begin{table}[hbt!]
 \centering
-\caption{Comparación de trabajos frente al desarrollado. Donde \checkmark indica que cumple con esta característica y  $\times$ no cumple con esta característica.}
+\caption{Comparación de trabajos frente al desarrollado, donde \checkmark indica que cumple con esta característica y  $\times$ no cumple con esta característica.}
 \vspace{0.5cm}
 \begin{adjustbox}{width=0.5\textwidth}
 \begin{tabular}{|l|c|c|c|}
@@ -280,7 +277,7 @@ Trabajo & \rotatebox[origin=c]{90}{Inventarios forestales}& \rotatebox[origin=c]
 \end{table}
 \clearpage
 \subsection{Áreas de oportunidad}
-En el cuadro 3.1 se puede apreciar que características tiene la investigación con respecto a la de otros autores, y es que pudiera ser que otros trabajos tengan las mismas características o al menos casi todas pero por lo que respecta a la investigación, además de generar un inventario forestal de manera eficiente y proporcionar su código, este puede ser modificado o estudiado con otros propósitos sin necesidad de esperar una retribución de por medio debido a que es un software libre.
+En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado} se puede apreciar que características tiene la investigación con respecto a la de otros autores, y es que pudiera ser que otros trabajos tengan las mismas características o al menos casi todas pero por lo que respecta a la investigación, además de generar un inventario forestal de manera eficiente y proporcionar su código, este puede ser modificado o estudiado con otros propósitos sin necesidad de esperar una retribución de por medio debido a que es un software libre.
 
 Por otro lado, también se puede apreciar que el trabajo de \citet{rf10} tiene las mismas características que el método propuesto, sin embargo va orientado a otro objetivo, que es tomar decisiones. Sin embargo, las herramientas descritas en el artículo no son de uso gratuito, permitiendo así, otorgar la ventaja de que la investigación sea de licencia abierta respecto a esta investigación.
 
@@ -317,7 +314,7 @@ Como se mencionó al inicio de la sección 4.2, es importante recolectar una gra
 
 La información de cada muestra es analizada píxel por píxel, por lo que a simple vista se puede percibir la clase de información que contiene cada muestra, pero el analizar cada una de ellas llevaría demasiado tiempo, por lo que, se puede concluir que hay píxeles dentro de ellas que no sean útiles. 
 
-En la figura 4.3 y 4.4 se muestra un ejemplo de cómo se verían las muestras que son de utilidad y destacando que el siguiente capítulo define el procedimiento realizado para poder obtener muestras útiles.
+En la figura \ref{Comparación de muestras} se muestra un ejemplo de cómo se verían las muestras que son de utilidad y destacando que el siguiente capítulo define el procedimiento realizado para poder obtener muestras útiles.
 
 
 \begin{figure}[h!]
@@ -336,14 +333,13 @@ En cada una de las muestras recolectadas está presente el suelo ya que es una i
 
 Para efectos prácticos, se declaran los colores de las especies arbóreas, esto con el fin de decirle a el método propuesto que información no debe remover de las muestras. A su vez se tiene que declarar que la información se reemplaza con píxeles transparentes. Cabe destacar que nuestras imágenes no cuentan con un canal de transparencia, mismo que es necesario para llevar a cabo el método propuesto de reemplazar la información, por lo que se tiene que convertir cada muestra primero, a un formato \texttt{.png} para que la muestra admita este canal. Después se convierte la muestra a un canal RGBA (rojo, verde, azúl y transparencia, siglas en inglés).
 
- Una vez que la muestra tenga el canal transparente, se recorren todos los píxeles de la imagen con el fin de encontrar y asignar a una variable, todos los pixeles que no correspondan con los colores de los árboles y posteriormente, descartar estos píxeles con el fin de guardar la muestra con la información útil como se muestra en la figura 2.5.
+ Una vez que la muestra tenga el canal transparente, se recorren todos los píxeles de la imagen con el fin de encontrar y asignar a una variable, todos los pixeles que no correspondan con los colores de los árboles y posteriormente, descartar estos píxeles con el fin de guardar la muestra con la información útil como se muestra en la figura \ref{Resultado de remover píxeles}.
 
 \begin{figure} [!h]
 	\centering
-	\begin{minipage}[b]{0.65\textwidth}
-		\includegraphics[width=\textwidth]{DSC06080-sf-2}
+		\includegraphics[width=0.65\textwidth]{DSC06080-sf-2}
 		\caption{Resultado de remover píxeles}
-	\end{minipage}
+		\label{Resultado de remover píxeles}
 \end{figure}
 
 \break
@@ -357,14 +353,13 @@ Primeramente hay reconocer las secciones o partes de la muestra que son de inter
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[b]{0.65\textwidth}
-        \includegraphics[width=\textwidth]{Anotaciones-ex}
+      \includegraphics[width=0.65\textwidth]{Anotaciones-ex}
     \caption{Muestra con anotaciones}
-  \end{minipage}
+    \label{Muestra con anotaciones}
 \end{figure}
 \clearpage
 
-En la figura 4.6 se aprecia que tiene secciones delimitadas por colores, por lo que se recorre la muestra por píxeles hasta encontrar la zona que esté dentro del rango de colores previamente establecido.
+En la figura \ref{Muestra con anotaciones} se aprecia que tiene secciones delimitadas por colores, por lo que se recorre la muestra por píxeles hasta encontrar la zona que esté dentro del rango de colores previamente establecido.
 
 La idea de hacer recortes de las anotaciones por colores es de agilizar el procesamiento a la hora de entrenar el modelo con todas las muestras. Cada muestra a su vez, tiene un porcentaje de admisión que permite establecer si la anotación cumple o no con los criterios establecidos.
 
@@ -372,27 +367,25 @@ Ya con las muestras de colores obtenidas, se procede a separar por islas de acue
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[b]{0.6\textwidth}
-        \includegraphics[width=\textwidth]{grid_Muestras_2}
+       \includegraphics[width=0.6\textwidth]{grid_Muestras_2}
     \caption{Isla separada por color}
-  \end{minipage}
+    \label{Isla separada por color}
 \end{figure}
 
-En la figura 4.7 se aprecian las islas separadas por color, en cada una de estas muestras, se hacen recortes interiores de cada zona recortada para que se procesen de mejor forma por el modelo que se entrena. 
+En la figura \ref{Isla separada por color} se aprecian las islas separadas por color, en cada una de estas muestras, se hacen recortes interiores de cada zona recortada para que se procesen de mejor forma por el modelo que se entrena. 
 
 Los rectángulos generados por medio de las islas tienen un tamaño fijo de 150  $\times$ 150, donde a su vez, cada 25 píxeles, se va buscando rectángulos con un porcentaje de 0.005 píxeles no transparentes.
 
 
 \begin{figure}[h]
   \centering
-  \begin{minipage}[b]{0.7\textwidth}
-        \includegraphics[width=\textwidth]{rectangulo_isla_ex}
+          \includegraphics[width=0.7\textwidth]{rectangulo_isla_ex}
     \caption{Rectángulo del interior de una isla}
-  \end{minipage}
+    \label{Rectángulo del interior de una isla}
 \end{figure}
 
 
-En la figura 4.8 se puede apreciar uno de los rectángulos generados por medio de una muestra. Estos no sólo se quedan como tal fijos, sino que se rotan en tres orientaciones, 90, 180 y 270, permitiendo que el conjunto de datos generado esté compuesto por distintos ángulos de la muestra y permita tener mejor perspectiva de lo que se utiliza.
+En la figura \ref{Rectángulo del interior de una isla} se puede apreciar uno de los rectángulos generados por medio de una muestra. Estos no sólo se quedan como tal fijos, sino que se rotan en tres orientaciones, 90, 180 y 270, permitiendo que el conjunto de datos generado esté compuesto por distintos ángulos de la muestra y permita tener mejor perspectiva de lo que se utiliza.
 
 \break
 
@@ -502,11 +495,9 @@ Esta fase es la más importante de todas debido a que se utiliza el modelo gener
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[b]{0.8\textwidth}
-        \includegraphics[width=\textwidth]{result_new}
+         \includegraphics[width=0.8\textwidth]{result_new}
     \caption{Clasificación de especies arbóreas en una muestra}
     \label{Clasificación de especies arbóreas en una muestra}
-  \end{minipage}
 \end{figure}
 
 Tal y como se muestra en la figura \ref{Clasificación de especies arbóreas en una muestra}  se puede notar como una especie es detectada según su color a lo largo de una muestra, no obstante, se destaca que cada especie también tiene encima de su cuadro un nombre distinto debido a que las especies arbóreas con las que se trabaja son: Abies, Pino y Encino. 
@@ -519,17 +510,15 @@ El proceso de combinarlas consta en tomar la información del directorio origina
 
 \begin{figure}[H]
   \centering
-  \begin{minipage}[b]{0.8\textwidth}
-        \includegraphics[width=\textwidth]{result_combination}
+  \includegraphics[width=0.8\textwidth]{result_combination}
     \caption{Combinación de detección y una muestra original}
     \label{Combinación de detección y una muestra original}
-  \end{minipage}
 \end{figure}
 \clearpage
 
 Respecto a la figura \ref{Combinación de detección y una muestra original} se puede destacar que la muestra original sirve como base y la muestra que contiene las especies arbóreas detectadas como mascara para poder combinar ambas capas. El objetivo de comparar las muestras generadas respecto a una muestra original es que se pueda comparar  cuántos árboles de cada especie acertan contra las muestras con anotaciones manuales hechas por los expertos en especies. En la figura \ref{Combinación de detección y una muestra original} se muestran también, las instancias otorgadas de rectángulos (green, blue, yellow) que el conjunto de datos determinó que existe alguna especie en el rectángulo insertado sobre la muestra. 
 
-En la figura 5.4 determina la diferencia entre una anotación realizada por el aprendizaje máquina a partir del modelo de datos previamente generado y la muestra con anotación hecha por un experto en el tema. \\
+En la figura \ref{Comparación de anotaciones} determina la diferencia entre una anotación realizada por el aprendizaje máquina a partir del modelo de datos previamente generado y la muestra con anotación hecha por un experto en el tema. \\
 
 \begin{figure}[h!]
   \centering
@@ -574,76 +563,66 @@ Ya sea reduciendo, aumentando o simplemente tanteando el valor de un parámetro 
 \section{Resultados}
 Establecidos los experimentos que se van a realizar, se reporta los resultados obtenidos en el transcurso de las pruebas del capítulo 6.1 donde explica en que consiste cada una de ellas.
 
-\subsection{Misma cantidad de especies por clase}
+\subsection{Experimento $A$: Misma cantidad de especies por clase}
 En este experimento se probaran 5592 muestras por clase (abies, encino y pino) para tener un estándar de muestras obtenidas.
 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{0.7\textwidth}
-        \includegraphics[width=\textwidth]{results}
+        \includegraphics[width=0.7\textwidth]{results}
     \caption{Porcentaje de especies por clase} 
-    \label{Porcentaje de especies por clase}
-  \end{minipage}
+        \label{Porcentaje de especies por clase}
 \end{figure}
 
 La figura \ref{Porcentaje de especies por clase} muestra la cantidad de especies detectadas a lo largo de la fase de detección, a simple vista se aprecia que el porcentaje de pino da a entender que esa especie es predominante en las zonas del Cilantrillo y Trinidad. Posteriormente los números de la especie abies y encino muestran en su respectivo orden que tan predominantes son, siendo claramente 4\% mayor encino.
 
-\subsection{Cantidad total de especies por tamaño de clase}
+\subsection{Experimento $B$: Cantidad total de especies por tamaño de clase}
 Este experimento obtiene el tamaño de cada clase, siendo que cada clase (\texttt{encino}: 5592 muestras, \texttt{abies}: 7647 muestras y \texttt{pino}: 8859 muestras), para generar el modelo de la solución propuesta el cual se prueba para ver si mejora el desempeño de la solución desarrollada.
 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{0.75\textwidth}
-        \includegraphics[width=\textwidth]{results_totalclases}
+    \includegraphics[width=0.75\textwidth]{results_totalclases}
     \caption{Porcentaje de especies totales por clase} 
     \label{Porcentaje de especies totales por clase}
-  \end{minipage}
 \end{figure}
 
 \clearpage
-\subsection{Misma cantidad de especies utilizando espejos de muestras}
+\subsection{Experimento $C$: Misma cantidad de especies utilizando espejos de muestras}
 Dado que cada clase  de arbórea tiene un tamaño distinto, \texttt{pino} con 8859 muestras, rebasa en muestras a las clases de abies  y encino, por tanto, el experimento va a generar espejos de muestras de árboles  en las clases que no cuentan con un tamaño de 8859 muestras, esto va a permitir tener la misma cantidad de muestras en todas las especies de árboles. 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{0.75\textwidth}
-        \includegraphics[width=\textwidth]{results_reflexion}
+    \includegraphics[width=0.75\textwidth]{results_reflexion}
     \caption{Porcentaje de mismas especies por clase} 
     \label{Porcentaje de mismas especies por clase}
-  \end{minipage}
 \end{figure}
 
 \clearpage
-\subsection{Umbralización}
+\subsection{Experimento $D$: Umbralización}
 En este experimento se prueban tres combinaciones distintas por cada clase (0.15\%, 0.25\% y 0.50\%), generando 27 posibles para cada especie de árboles, esto con el fin de determinar umbral con mejor desempeño y pueda determinar un umbral eficiente otros experimentos para obtener un mejor resultado en la solución propuesta. Este experimento sirve para determinar también, el umbral que servirá como base para experimentos que tengan que utilizar un nivel de umbral eficiente determinado a partir de este.
 
 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{1\textwidth}
-        \includegraphics[width=\textwidth]{result_umbralización}
+    \includegraphics[width=1\textwidth]{result_umbralización}
     \caption{Comparación de umbralización} 
     \label{Comparación de umbralización}
-  \end{minipage}
 \end{figure}
 
 \clearpage
 
-\subsection{Píxeles permitidos}
+\subsection{Experimento $E$: Píxeles permitidos}
 Para este experimento se van a utilizar tres distintos valores de píxeles permitidos (0.75\%, 0.80\% y 0.85\%) donde se va a utilizar el umbral con mejor desempeño obtenido por el experimento de umbralización (0.50\%) el cual sera puesto a prueba en cada iteración con la que se utilice un nuevo valor de píxeles permitidos. Para esta prueba se recolecta un subconjunto de muestras para agilizar el proceso de resultados, tomando únicamente una tercera parte de las muestras totales.
 %En comparación con el valor anterior de 0.5\% en el experimento anterior, el aumentar a 0.85\% el porcentaje de píxeles ausentes por muestra no demostró una mejora significativa en resultados, apenas se incrementaron algunos valores en las especies detectadas como es representado en la figura 
 
 \begin{figure}[h!]
   \centering  
-  \begin{minipage}[b]{1\textwidth}
-        \includegraphics[width=\textwidth]{resultado_pixelesausentes}
+\includegraphics[width=1\textwidth]{resultado_pixelesausentes}
     \caption{Comparación de píxeles permitidos} 
     \label{Comparación de píxeles permitidos}
-  \end{minipage}
 \end{figure}
 
 \clearpage
 \section{Discusión}
-Todos los experimentos son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}:
+Todos los experimentos son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}.
 
 \begin{table}[H]
 	{\centering
@@ -668,15 +647,15 @@ El tiempo que tardan en procesarse las muestras ejecutando los experimentos var�
 
 %Respecto a la ejecución de las pruebas, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso se discute en la sección 6.1  de este capítulo, que hace y que parámetro varía en cada experimento. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los algoritmos.
 
-Para la prueba de especies por tamaño de clase es evidentemente que existe una especie predominante en ambas zonas forestales, Pino, la cual en la figura \ref{Porcentaje de especies por clase} se detectan 35273 muestras de esta clase, un resultado bastante superior al de las otras especies arbóreas. En esta prueba se consideran la mayor cantidad de muestras posibles considerando también, un número de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completa en 18 horas.
+En el experimento A (misma cantidad de especies por clase), Pino es claramente un especie predominante, con 35273 muestras (véase la figura \ref{Porcentaje de especies por clase}) un resultado bastante superior al de las otras especies arbóreas. En esta prueba también se consideran la clase con mayor número de muestras  considerando que se debe tener un tamaño de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completa en 18 horas.
 
-En la prueba de cantidad total de espcies por tamaño de clases se aprecia que si afecta bastante fijar el tamaño de cada clase, en la figura \ref{Porcentaje de especies totales por clase} de la página \pageref{Porcentaje de especies totales por clase} es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo, sin embargo, pese a que encino tomo un porcentaje mayor de especies detectadas, abies sigue siendo la especie menos predominante.
+En el experimento B (cantidad total de especies por tamaño de clase) se aprecia que si afecta bastante fijar el tamaño de cada clase, en la figura \ref{Porcentaje de especies totales por clase} de la página \pageref{Porcentaje de especies totales por clase} es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo, sin embargo, pese a que encino tomo un porcentaje mayor de especies detectadas, abies sigue siendo la especie menos predominante.
 
-En contra parte, el experimento de misma cantidad de especies utilizando espejos de muestras hace uso de la especie de árbol que mayor tiene muestras (pino con 8859 muestras) para determinar el valor que deben tener las demás especies arbóreas, sin embargo, si se hace una comparación con el experimento de misma cantidad de especies por clase del capítulo 6.2.1, la diferencia con la especie predominante es poca, mismo caso para las especies con menos porcentaje de especies detectadas. Debido a esto, se entiende que tener un tamaño fijo de especies y un valor total de cada especie si impacta en el experimento.
+En contra parte, el experimento C (misma cantidad de especies utilizando espejos de muestras) hace uso de la especie de árbol que mayor tiene muestras (pino con 8859 muestras) para determinar el valor que deben tener las demás especies arbóreas, sin embargo, si se hace una comparación con el experimento de misma cantidad de especies por clase del capítulo 6.2.1, la diferencia con la especie predominante es poca, mismo caso para las especies con menos porcentaje de especies detectadas. Debido a esto, se entiende que tener un tamaño fijo de especies y un valor total de cada especie si impacta en el experimento.
 
-En el experimento de umbralización únicamente se toman en cuenta la cantidad de especies detectadas por porcentaje de píxeles permitidos, el experimento más equilibrado fue el de utilizar 0.50\% de píxeles permitidos, debido a que otorga un mejor rendimiento entre todas las muestras. Este porcentaje es utilizado como umbral para la generación del modelo que sirve como base para probar y detectar las especies en las muestras útiles como la de la figura \ref{Comparación de muestras} (b) página \pageref{Comparación de muestras}.
+En el experimento D (umbralización) únicamente se toman en cuenta la cantidad de especies detectadas por porcentaje de píxeles permitidos, el experimento más equilibrado fue el de utilizar 0.50\% de píxeles permitidos, debido a que otorga un mejor rendimiento entre todas las muestras. Este porcentaje es utilizado como umbral para la generación del modelo que sirve como base para probar y detectar las especies en las muestras útiles como la de la figura \ref{Comparación de muestras} (b) página \pageref{Comparación de muestras}.
 
-Finalmente para el experimento de píxeles permitidos, se hace uso del modelo generado a partir de las muestas con el umbral óptimo, donde se hace una comparación de las especies detectas por porcentaje de píxeles de permitidos mostrado en la figura \ref{Comparación de píxeles permitidos} de la página \pageref{Comparación de píxeles permitidos}, donde se aprecia que el experimento con 85\% de pixeles permitidos es el que otorga mayor cantidad de especies arbóreas siendo ligeramente superior al experimento al experimento con 80\% de píxeles permitidos.
+Finalmente para el experimento de E (píxeles permitidos), se hace uso del modelo generado a partir de las muestras con el mejor umbral probado, donde se hace una comparación de las especies detectas por porcentaje de píxeles de permitidos mostrado en la figura \ref{Comparación de píxeles permitidos} de la página \pageref{Comparación de píxeles permitidos}, donde se aprecia que el experimento con 85\% de pixeles permitidos es el que otorga mayor cantidad de especies arbóreas siendo ligeramente superior al experimento al experimento con 80\% de píxeles permitidos.
 
 Respecto a la hipótesis que se plantea, se busca como objetivo particular el optimizar tiempos y costos de generar el inventario forestal por técnicas generadas por procesamiento de imágenes, en cuanto a tiempos definitivamente ahorrara en términos de duración si se consideran los tiempos de procesamiento y recolección de muestras, esto debido a que con un conjunto de datos relativamente grande, se puede obtener una solución en menos de tres días; en el apartado económico se puede considerar que esta técnica reduce muchos gastos en relación a equipos de trabajo, gastos en viajes a zonas particulares, etc. En cuanto a la parte de los objetivos, se cumplieron tanto el objetivo general que era generar un inventario forestal, así como los objetivos específicos. En el caso de los objetivos específicos, la solución propuesta divide por fases cada etapa de en un procedimiento secuencial, desde la generación del conjunto de muestras hasta la parte de la prueba utilizando un modelo para detectar las especies. En resumen, la solución propuesta cumple con ambos objetivos.
 
@@ -690,7 +669,7 @@ El objetivo de desarrollar el inventario forestal por medio de la visión comput
 \section{Contribuciones}
 La solución propuesta surgió a partir de un problema de clasificación de flores \citep{rf17},  donde originalmente solamente se utilizaban muestras de flores para determinar un tipo individual de flora pero gracias a la base, se modificó el planteamiento para utilizarlo en un entorno distinto al original. En este caso, utilizarlo para generar inventarios forestales donde una muestra de una zona forestal, es recortada por colores para posteriormente y almacenada en una carpeta que corresponde al color detectado de la especie arbórea. Posteriormente en cada carpeta de la especie detectada, hace un análisis de la información de la muestra para generar un modelo  o conjunto de datos que sirve para almacenar la información general de todas las muestras y sirva como base para detectar especies arbóreas en las muestras originales. 
 
-Las muestras son generadas utilizando parámetros de umbral optimo que permitan detectar la mayor cantidad de especies, estos valores son obtenidos a través de distintos experimentos jugando con valores de umbralización y los píxeles permitidos por cada muestra. Para obtener los valores, los experimentos como la umbralización y píxeles permitidos del capítulo 6, reflejan en las figuras \ref{Comparación de umbralización} y \ref{Comparación de píxeles permitidos} que porcentajes obtienen la mayor cantidad de especies de árboles en cada experimento, lo cual sirve para tener un criterio de que valores son útiles para la solución propuesta.
+Las muestras son generadas utilizando parámetros del mejor umbral obtenido y que permitan detectar la mayor cantidad de especies, estos valores son obtenidos a través de distintos experimentos jugando con valores de umbralización y los píxeles permitidos por cada muestra. Para obtener los valores, los experimentos como la umbralización y píxeles permitidos del capítulo 6, reflejan en las figuras \ref{Comparación de umbralización} y \ref{Comparación de píxeles permitidos} que porcentajes obtienen la mayor cantidad de especies de árboles en cada experimento, lo cual sirve para tener un criterio de que valores son útiles para la solución propuesta.
 
 El software desarrollado se realizó con el aprendizaje máquina y la visión computacional como innovación a las técnicas ya existentes para generar inventarios forestales, no obstante, el software desarrollado también genera una solución eficiente que pueda ahorrar tiempos y costos en comparación a las técnicas tradicionales. Los métodos tradicionales son bastante costos y tardados por la complejidad de recolectar muestras además de lo que implica viajar con un equipo profesional a las zonas forestales. Por tal, la solución propone reducir tiempos y automatizar tareas de la generación de inventarios forestales utilizando el procesamiento de imágenes y la clasificación de muestras a partir de la visión computacional. 
 \clearpage
@@ -721,7 +700,7 @@ En cuanto a la parte técnica de la solución, el software desarollado se apoya 
 \end{table}
 \clearpage
 \section{Trabajo a futuro}
-La solución propuesta en la tesis no está sujeta a un objetivo en particular, como es descrito en la sección 7.1, por lo que bien podría tomar otro objetivo si así se requiere. La visión computacional tiene tantas aplicaciones que limitarla a un objetivo sería desperdiciar su potencial, por lo que el objetivo que tome, debe ser enfocado a utilizarse con propósitos de automatizar algún procedimiento manual o que implique el análisis abstracto de imágenes por medio de la visión. No obstante, esta solución, aunque es eficiente, puede ser mejorada si se encuentran métodos óptimos para encontrar parámetros exactos en relación a los umbrales, tamaño de imágenes y una arquitectura de la solución que pueda aprovechar todos los recursos de la computadora para generar lo más rápido posible, un resultado.
+La solución propuesta en la tesis no está sujeta a un objetivo en particular, como es descrito en la sección 7.1, por lo que bien podría tomar otro objetivo si así se requiere. La visión computacional tiene tantas aplicaciones que limitarla a un objetivo sería desperdiciar su potencial, por lo que el objetivo que tome, debe ser enfocado a utilizarse con propósitos de automatizar algún procedimiento manual o que implique el análisis abstracto de imágenes por medio de la visión. No obstante, esta solución, aunque es eficiente, puede ser mejorada si se encuentran mejores métodos para encontrar parámetros exactos en relación a los umbrales, tamaño de imágenes y una arquitectura de la solución que pueda aprovechar todos los recursos de la computadora para generar lo más rápido posible, un resultado.
 
 En general, también podrían reducirse algunos procesos e ir recopilando cada el resultado de cada fase para aumentar la productividad del algoritmo e ir generando secuencialmente la solución que se vaya a implementar.
 
