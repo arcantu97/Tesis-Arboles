@@ -72,11 +72,6 @@
 %El código fuente de este documento está disponible en el blog.
 %
 %\end{frame}
-\begin{frame}{Agradecimientos}
-Agradecimientos al Dr. Manuel Jiménez, al Fondo Sectorial de Investigación Ambiental SEMARNAT-CONACYT, No. de proyecto 263080 y a la Dra.Elisa Schaeffer.\\
-\vspace*{5mm}
-Agradecimientos especiales a mis padres José Angel y Bertha Alicia, a mis hermanas y abuelos, sobretodo a mi abuelo José Reyes Ramírez García.
-\end{frame}
 
 \section{Introducción}
 \begin{frame}{Introducción}
@@ -91,7 +86,7 @@ Agradecimientos especiales a mis padres José Angel y Bertha Alicia, a mis herman
 \subsection{Motivación}
 \begin{frame}{Motivación}
 \begin{block}{Motivación} \justifying
-Aplicar técnicas avanzadas de inteligencia artificial y la visión computacional en problemas forestales.
+Aplicar técnicas avanzadas de \textbf{inteligencia artificial} y la \textbf{visión computacional} en \textbf{problemas forestales}.
 \end{block}
 \end{frame}
 
@@ -109,7 +104,7 @@ El procesamiento de imágenes automatiza procesos y reduce tiempos.
 Generar un inventario forestal mediante el procesamiento de imágenes.
 \end{block}
 \begin{block}{Objetivo específico} \justifying
-Automatizar procesos de las técnicas tradicionales para realizar inventarios forestales.
+Automatizar procesos de las técnicas tradicionales para realizar \textbf{inventarios forestales}.
 \end{block}
 \end{frame}
 
@@ -117,7 +112,7 @@ Automatizar procesos de las técnicas tradicionales para realizar inventarios for
 \begin{frame}{Antecedentes históricos}
 \centering Inicios del aprendizaje máquina
 \begin{figure}
-\includegraphics[scale=0.2]{ml_banco.jpg}
+\includegraphics[scale=0.30]{ml_banco.jpg}
 \caption{Sector financiero, año 1900}
 \end{figure}
 \end{frame}
@@ -125,7 +120,7 @@ Automatizar procesos de las técnicas tradicionales para realizar inventarios for
 \begin{frame}{Antecedentes históricos}
 \centering Inicios de visión computacional
 \begin{figure}
-\includegraphics[scale=0.2]{vc_inicios.jpg}
+\includegraphics[scale=0.04]{vc_inicios.jpg}
 \caption{Primeros experimentos utilizando la visión computacional, 1960}
 \end{figure}
 \end{frame}
@@ -139,9 +134,9 @@ Automatizar procesos de las técnicas tradicionales para realizar inventarios for
 \end{figure}
 \end{frame}
 
-\begin{frame}{Características globales}
+\begin{frame}{Características ggglobales}
 \begin{figure}
-\includegraphics[width=0.45\textwidth]{DSC06100.pdf}
+\includegraphics[width=0.45\textwidth]{6100.jpg}
 \includegraphics[width=0.45\textwidth]{histograma.pdf}
 \caption{Característica de color}
 \end{figure}
@@ -179,7 +174,7 @@ Describir los puntos de interés de un sector de o una imagen.
 
 \item[Acelarado robusto (SURF):]{Toma un vecino al rededor del punto seleccionado en la imagen y es dividido en sub-regiones para cada sub-región.}
 
-\item[Independientes Binarias robustas (BRIEF):]{Orientación y menor numero de diferencias a su alrededor.}
+\item[Diferencias en forma de cadena binaria (BRIEF):]{Orientación y menor numero de diferencias a su alrededor.}
 
 \item[ORB* Rotada y orientada rápida:]{Determina estos puntos clave de una imágen.}
 \end{description}
@@ -199,6 +194,8 @@ Trabajo & Inventarios forestales & Visión computacional & Detección de objetos\\
  \citet{rf9}& \checkmark & \checkmark & \checkmark\\
  \hline
  \citet{rf15}& \checkmark & \checkmark & $\times$\\
+  \hline
+ Presente trabajo &  \checkmark & \checkmark & \checkmark\\
 \hline
 \end{tabular}
 \end{adjustbox}
@@ -275,14 +272,16 @@ Obtener muestras separadas por islas y generar modelo de entrenamiento.
 \section{Experimentación y resultados}
 \begin{frame}{Experimentación y resultados}
 \begin{block}{Experimentos}
-Para la fase de experimentación se establecieron cinco experimentos, en dos de ellos se encuentran experimentos clave para la obtención de un valor clave (Umbralización y píxeles admitidos).
+Para la fase de experimentación se establecieron cinco experimentos, en dos de ellos se encuentran experimentos clave para la obtención de un valor clave (umbralización y píxeles admitidos).
 \end{block}
 \end{frame}
 
 \subsection{Misma cantidad de especies por tamaño de clase}
 \begin{frame}{Misma cantidad de especies por tamaño de clase}
+
 \begin{figure}
-\includegraphics[width=0.60\textwidth]{exp1.pdf}
+\vspace*{-2mm}
+\includegraphics[width=0.75\textwidth]{exp1.pdf}
 \caption{Resultado del experimento de tamaño de clases}
 \end{figure}
 \end{frame}
@@ -290,7 +289,8 @@ Para la fase de experimentación se establecieron cinco experimentos, en dos de e
 \subsection{Cantidad total de especies por tamaño de clase}
 \begin{frame}{Cantidad total de especies por tamaño de clase}
 \begin{figure}
-\includegraphics[width=0.60\textwidth]{exp2.pdf}
+\vspace*{-2mm}
+\includegraphics[width=0.75\textwidth]{exp2.pdf}
 \caption{Resultado del experimento de tamaño total de clases}
 \end{figure}
 \end{frame}
@@ -299,7 +299,8 @@ Para la fase de experimentación se establecieron cinco experimentos, en dos de e
 \subsection{Misma cantidad de especies utilizando espejos de muestras}
 \begin{frame}{Misma cantidad de especies utilizando espejos de muestras}
 \begin{figure}
-\includegraphics[width=0.60\textwidth]{exp3.pdf}
+\vspace*{-2mm}
+\includegraphics[width=0.75\textwidth]{exp3.pdf}
 \caption{Resultado del experimento de espejos de muestras}
 \end{figure}
 \end{frame}
@@ -307,8 +308,9 @@ Para la fase de experimentación se establecieron cinco experimentos, en dos de e
 \subsection{Umbralización}
 \begin{frame}{Umbralización}
 \begin{figure}
-\includegraphics[width=0.60\textwidth]{exp4.pdf}
-\caption{Resultado del experimento de Umbralización}
+\vspace*{-2mm}
+\includegraphics[width=0.90\textwidth]{exp4.pdf}
+\caption{Resultado del experimento de umbralización}
 \end{figure}
 \end{frame}
 
@@ -316,8 +318,9 @@ Para la fase de experimentación se establecieron cinco experimentos, en dos de e
 \subsection{Píxeles permitidos}
 \begin{frame}{Píxeles permitidos}
 \begin{figure}
-\includegraphics[width=0.60\textwidth]{exp5.pdf}
-\caption{Resultado del experimento de Píxeles permitidos}
+\vspace*{-2mm}
+\includegraphics[width=0.90\textwidth]{exp5.pdf}
+\caption{Resultado del experimento de píxeles permitidos}
 \end{figure}
 \end{frame}
 
@@ -345,10 +348,17 @@ Para la fase de experimentación se establecieron cinco experimentos, en dos de e
 \end{block}
 \end{frame}
 
-\section*{Referencias}
-\begin{frame}[allowframebreaks]{Referencias}
+\phantomsection 
+\begin{frame}{Referencias}
 \bibliography{referencias}
-\bibliographystyle{unsrtnat}
+\end{frame}
+
+\appendix
+\begin{frame}{Agradecimientos}
+\vspace*{-10mm}
+Agradecimientos al Dr. Manuel Jiménez, al Fondo Sectorial de Investigación Ambiental SEMARNAT-CONACYT, No. de proyecto, 263080 y a la Dra.Elisa Schaeffer.\\
+\vspace*{5mm}
+Agradecimientos especiales a mis padres José Angel y Bertha Alicia, a mis hermanas y abuelos, sobretodo a mi abuelo José Reyes Ramírez García.
 \end{frame}
 
 \begin{frame}
@@ -361,5 +371,6 @@ Para la fase de experimentación se establecieron cinco experimentos, en dos de e
 		\begin{center}
 		\end{center}
 \end{frame}
+
 
 \end{document}
