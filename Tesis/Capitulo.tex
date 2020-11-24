@@ -187,7 +187,7 @@ En este capítulo se explica la relación de la investigación en curso con inve
 \section{Investigaciones relacionadas}
 Existen algunos trabajos que no están completamente relacionados con el objetivo de identificar especies arbóreas, pero si existen investigaciones que toman como objetivo el analizar zonas forestales.
 
-\citet{rf14} Este artículo menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. 
+\citet{rf14} menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. Con estas tecnologías, hacen una búsqueda buscando los tipos predominantes en una zona y con ayuda del \emph{análisis de imágenes basado en objetos} se pudo admitir la delineación automática de árboles, la clasificación de especies arbóreas y la definición de atributos estructurales a nivel de árbol. 
 \newline
 \break
 
@@ -237,7 +237,7 @@ La mayoría de los trabajos citados hacen uso de otra clase de tecnología que n
 \clearpage
 
 \subsection{Comparaciones}
-En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado}, se desglosan que características presentes  que se pueden encontrar en las investigaciones citadas y su relación con la investigación con la que se está trabajando actualmente.\\
+En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado} se desglosan que características presentes  que se pueden encontrar en las investigaciones citadas y su relación con la investigación con la que se está trabajando actualmente.\\
 \renewcommand{\tablename}{Cuadro}
 
 \begin{table}[hbt!]
@@ -296,7 +296,7 @@ Clasificación es quizás el punto más importante de la investigación debido a
 Habiendo conocido las características que mejor describen a los atributos del presente trabajo, se puede decir que la base del método propuesto se puede desarrollar.
 
 \section{Fase de recolección de muestras}
-La primera fase en el desarrollo de la solución propuesta sería recolectar muestras de el objeto(s) a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que el presente trabajo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que se necesita información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
+La primera fase en el desarrollo de la solución propuesta sería recolectar muestras de el objeto a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que el presente trabajo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que se necesita información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
 
 \clearpage
 \section{Muestras recolectadas}
@@ -633,7 +633,7 @@ Todos los experimentos son ejecutados en una laptop con las especificaciones del
 			\hline
 			Procesador & Intel Core i5-7300HQ\\
 			\hline
-			Ram & 8 GB RAM DDR4 2133 MHz\\
+			RAM & 8 GB RAM DDR4 2133 MHz\\
 			\hline
 		\end{tabular}
 
@@ -647,17 +647,17 @@ El tiempo que tardan en procesarse las muestras ejecutando los experimentos var�
 
 %Respecto a la ejecución de las pruebas, es cierto que puede llegar a ser confuso el ejecutarlos si no se tiene un contexto previo de para que sirve cada uno, por eso se discute en la sección 6.1  de este capítulo, que hace y que parámetro varía en cada experimento. En cuanto a limitaciones, estos pueden ser llegar a ser ejecutados en cualquier sistema operativo que permita el uso del lenguaje de programación python 3 y a su vez, las distintas bibliotecas que son necesarias para la ejecución de los algoritmos.
 
-En el experimento A (misma cantidad de especies por clase), Pino es claramente un especie predominante, con 35273 muestras (véase la figura \ref{Porcentaje de especies por clase}) un resultado bastante superior al de las otras especies arbóreas. En esta prueba también se consideran la clase con mayor número de muestras  considerando que se debe tener un tamaño de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completa en 18 horas.
+En el experimento $A$ (misma cantidad de especies por clase), Pino es claramente un especie predominante, con 35273 muestras (véase la figura \ref{Porcentaje de especies por clase}) un resultado bastante superior al de las otras especies arbóreas. En esta prueba también se consideran la clase con mayor número de muestras  considerando que se debe tener un tamaño de muestras iguales para cada una de las clases. Como dato adicional, el experimento se completa en 18 horas.
 
-En el experimento B (cantidad total de especies por tamaño de clase) se aprecia que si afecta bastante fijar el tamaño de cada clase, en la figura \ref{Porcentaje de especies totales por clase} de la página \pageref{Porcentaje de especies totales por clase} es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo, sin embargo, pese a que encino tomo un porcentaje mayor de especies detectadas, abies sigue siendo la especie menos predominante.
+En el experimento $B$ (cantidad total de especies por tamaño de clase) se aprecia que si afecta bastante fijar el tamaño de cada clase, en la figura \ref{Porcentaje de especies totales por clase} de la página \pageref{Porcentaje de especies totales por clase} es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo, sin embargo, pese a que encino tomo un porcentaje mayor de especies detectadas, abies sigue siendo la especie menos predominante.
 
-En contra parte, el experimento C (misma cantidad de especies utilizando espejos de muestras) hace uso de la especie de árbol que mayor tiene muestras (pino con 8859 muestras) para determinar el valor que deben tener las demás especies arbóreas, sin embargo, si se hace una comparación con el experimento de misma cantidad de especies por clase del capítulo 6.2.1, la diferencia con la especie predominante es poca, mismo caso para las especies con menos porcentaje de especies detectadas. Debido a esto, se entiende que tener un tamaño fijo de especies y un valor total de cada especie si impacta en el experimento.
+En contra parte, el experimento $C$ (misma cantidad de especies utilizando espejos de muestras) hace uso de la especie de árbol que mayor tiene muestras (pino con 8859 muestras) para determinar el valor que deben tener las demás especies arbóreas, sin embargo, si se hace una comparación con el experimento de misma cantidad de especies por clase del capítulo 6.2.1, la diferencia con la especie predominante es poca, mismo caso para las especies con menos porcentaje de especies detectadas. Debido a esto, se entiende que tener un tamaño fijo de especies y un valor total de cada especie si impacta en el experimento.
 
-En el experimento D (umbralización) únicamente se toman en cuenta la cantidad de especies detectadas por porcentaje de píxeles permitidos, el experimento más equilibrado fue el de utilizar 0.50\% de píxeles permitidos, debido a que otorga un mejor rendimiento entre todas las muestras. Este porcentaje es utilizado como umbral para la generación del modelo que sirve como base para probar y detectar las especies en las muestras útiles como la de la figura \ref{Comparación de muestras} (b) página \pageref{Comparación de muestras}.
+En el experimento $D$ (umbralización) únicamente se toman en cuenta la cantidad de especies detectadas por porcentaje de píxeles permitidos, el experimento más equilibrado fue el de utilizar 0.50\% de píxeles permitidos, debido a que otorga un mejor rendimiento entre todas las muestras. Este porcentaje es utilizado como umbral para la generación del modelo que sirve como base para probar y detectar las especies en las muestras útiles como la de la figura \ref{Comparación de muestras} (b) página \pageref{Comparación de muestras}.
 
-Finalmente para el experimento de E (píxeles permitidos), se hace uso del modelo generado a partir de las muestras con el mejor umbral probado, donde se hace una comparación de las especies detectas por porcentaje de píxeles de permitidos mostrado en la figura \ref{Comparación de píxeles permitidos} de la página \pageref{Comparación de píxeles permitidos}, donde se aprecia que el experimento con 85\% de pixeles permitidos es el que otorga mayor cantidad de especies arbóreas siendo ligeramente superior al experimento al experimento con 80\% de píxeles permitidos.
+Finalmente para el experimento de $E$ (píxeles permitidos), se hace uso del modelo generado a partir de las muestras con el mejor umbral probado, donde se hace una comparación de las especies detectas por porcentaje de píxeles de permitidos mostrado en la figura \ref{Comparación de píxeles permitidos} de la página \pageref{Comparación de píxeles permitidos}, donde se aprecia que el experimento con 85\% de pixeles permitidos es el que otorga mayor cantidad de especies arbóreas siendo ligeramente superior al experimento al experimento con 80\% de píxeles permitidos.
 
-Respecto a la hipótesis que se plantea, se busca como objetivo particular el optimizar tiempos y costos de generar el inventario forestal por técnicas generadas por procesamiento de imágenes, en cuanto a tiempos definitivamente ahorrara en términos de duración si se consideran los tiempos de procesamiento y recolección de muestras, esto debido a que con un conjunto de datos relativamente grande, se puede obtener una solución en menos de tres días; en el apartado económico se puede considerar que esta técnica reduce muchos gastos en relación a equipos de trabajo, gastos en viajes a zonas particulares, etc. En cuanto a la parte de los objetivos, se cumplieron tanto el objetivo general que era generar un inventario forestal, así como los objetivos específicos. En el caso de los objetivos específicos, la solución propuesta divide por fases cada etapa de en un procedimiento secuencial, desde la generación del conjunto de muestras hasta la parte de la prueba utilizando un modelo para detectar las especies. En resumen, la solución propuesta cumple con ambos objetivos.
+Respecto a la hipótesis que se plantea, se busca como objetivo particular el optimizar tiempos y costos de generar el inventario forestal por técnicas generadas por procesamiento de imágenes, en cuanto a tiempos definitivamente ahorrara en términos de duración si se consideran los tiempos de procesamiento y recolección de muestras, esto debido a que con un conjunto de datos relativamente grande, se puede obtener una solución en menos de tres días; en el apartado económico se puede considerar que esta técnica reduce muchos gastos en relación a equipos de trabajo, gastos en viajes a zonas particulares, etc. En cuanto a la parte de los objetivos, se cumplieron tanto el objetivo general que era generar un inventario forestal, así como los objetivos específicos, que abarcan desde la generación del conjunto de muestras hasta la parte de la prueba utilizando un modelo para detectar las especies.
 
 \chapter{Conclusiones}
 Este capítulo describe la tesis a partir de la manera que cumple los objetivos generales y específicos para determinar si la hipótesis se comprueba, trata también del porque se realizó la tesis, porque se realizó un inventario forestal utilizando la visión computacional y el aprendizaje máquina, además de cómo se evaluó el funcionamiento de la solución propuesta.
@@ -682,7 +682,7 @@ En cuanto a la parte técnica de la solución, el software desarollado se apoya 
 		\caption{Bibliotecas utilizadas en el software desarrollado}
 		\begin{tabular}{|c|c|}
 			\hline
-			Biblioteca & Versión\\
+			\textbf{Biblioteca} & \textbf{Versión}\\
 			\hline
 			Scikit & 0.23.2\\
 			\hline

@@ -1,17 +1,19 @@
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import pandas as pd
 import numpy as np
 
+mpl.rcParams['font.size'] = 14.0
 X_AXIS = ('0.75', '0.80', '0.85')
 index = pd.Index(X_AXIS, name='Porcentaje de píxeles permitidos')
 colors=['#004de5',  '#fee600', '#26e600']
-data = {'Pino': (70.0, 63.0, 66.0),
-'Encino': (20.0, 25.0, 22.0), 
-'Abies': (10.0, 12.0, 12.0)}
+data = {'Pino': (66.0, 62.0, 67.0),
+'Encino': (17.0, 24.0, 15.0), 
+'Abies': (17.0, 14.0, 18.0)}
 df = pd.DataFrame(data, index=index)
 
-ax = df.plot(kind='bar', stacked=True, color=colors, figsize=(11, 7))
-ax.xaxis.label.set_size(12)
+ax = df.plot(kind='bar', stacked=True, color=colors, figsize=(14, 7))
+ax.xaxis.label.set_size(15)
 for rect in ax.patches:
     # Find where everything is located
     height = rect.get_height()
@@ -28,9 +30,9 @@ for rect in ax.patches:
 
     # plot only when height is greater than specified value
     if height > 0:
-        ax.text(label_x, label_y, label_text, ha='center', va='center', fontsize=10, fontweight='bold')
-ax.set_ylabel('Cantidad de especies detectadas', fontsize=12)
+        ax.text(label_x, label_y, label_text, ha='center', va='center', fontsize=15, fontweight='bold')
+ax.set_ylabel('Cantidad de especies detectadas', fontsize=15)
 plt.xticks(rotation=0)
 plt.legend(title='Especie', bbox_to_anchor=(1.0, 1), loc='upper left')
-plt.savefig('resultado_pixelesausentes.eps')  # if needed
+plt.savefig('exp4.pdf')  # if needed
 #plt.show()
