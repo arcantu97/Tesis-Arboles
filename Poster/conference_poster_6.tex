@@ -16,7 +16,8 @@
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
-
+\usepackage{tikz}
+\usepackage{subfigure}
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -31,9 +32,9 @@
 \begin{minipage}[b]{1\linewidth}
 \centering \veryHuge \color{Black} \textbf{Inventarios forestales a través del procesamiento de imágenes}\\ % Title
 \huge \textbf{José Angel Ramírez Cantú \& Satu Elisa Schaeffer}\\[0.5cm] % Author(s)
-\huge Universidad Autónoma de Nuevo León\\[0.4cm] % University/organization
 \huge Facultad de Ingeniería Mecánica y Eléctrica\\[0.4cm] % University/organization
-\Large \texttt{jose\_ramirezcantu@outlook.com}\\
+\huge Universidad Autónoma de Nuevo León\\[0.4cm] % University/organization
+\Large \texttt{jose.ramirezcnt@uanl.edu.mx}\\
 \end{minipage}
 %
 \begin{minipage}[b]{0.25\linewidth}
@@ -70,8 +71,7 @@ Se sabe que el procesamiento de imágenes tiene como finalidad enfocarse en la b
 
 
 \section*{Objetivos}
-\subsection*{Objetivo general}
-El objetivo de realizar el inventario forestal por medio del procesamiento de
+El \textbf{objetivo} de realizar el inventario forestal por medio del procesamiento de
 imágenes tiene un propósito más práctico que técnico. El algoritmo permitiría a quienes se encarguen de analizar las zonas forestales, reducir el tiempo invertido en aplicar técnicas tradicionales por técnicas de procesamiento de imágenes.\\
 
 Estas técnicas  basadas en el aprendizaje máquina, las cuales van permitir
@@ -88,28 +88,32 @@ generar un inventario forestal mediante el recorrido de un dron y a su vez, anal
 \begin{itemize}
 \item El algoritmo debe ser capaz de detectar por si mismo las especies encontradas en cada una de las muestras recolectadas.
 \end{itemize}
-\bigskip
 
 \section*{Descriptores de características globales}
-La idea de que el color presente en las muestras recolectadas sea el único diferenciador de una especie respecto a otra es un pensamiento incorrecto debido a que además de este criterio, existen otros criterios que permiten apreciar e identificar las características de una especie arbórea, no obstante, estas características pueden ser útiles en otras fases de la investigación. 
+Son los criterios que determinan la información más relevante al momento analizar cada imagen
+\begin{description}
 
-\subsection*{Color}
-La característica de clasificación de color hace uso del \emph{histograma de color}\footnote{Cantidad de pixeles en listas de rangos de colores presentes en una imagen.}, el cual es utilizado para determinar la intensidad de un color en un \emph{pixel}\footnote{Es la unidad básica más pequeña de las imágenes.}.
+\item[Color]{Utiliza un histograma para determinar la intensidad de un color en un pixel.}\\
 
-\subsection*{Forma}
-La característica de forma cuenta también con varias métricas, se hace énfasis en los \emph{momentos de una imagen}. 
-Los momentos de una imagen son los pesos promedio de la intensidad de píxel sobre una imagen.  
+\hspace*{50mm}\includegraphics[width=0.15\textwidth]{6100.jpg}
+   \includegraphics[width=0.15\textwidth]{histograma.pdf}
+\item[Forma]{Determina los pesos promedio de la intensidad de píxel sobre una imagen.}\\
 
+   \hspace*{80mm}\includegraphics[width=0.15\textwidth]{Anotaciones-ex.pdf}
+   
+\item[Textura]{Identifica el patrón de las hojas que están sobre un árbol.}\\
 
-\subsection*{Textura} 
-Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en el presente trabajo, al identificar las muestras de los árboles.
+\hspace*{25mm}\includegraphics[width=0.10\textwidth]{1_res.pdf}
+\includegraphics[width=0.10\textwidth]{2_res.pdf}
+\includegraphics[width=0.10\textwidth]{3_res.pdf}\\
+\hspace*{50mm}(a) Encino \hspace*{40mm} (b) Pino \hspace*{30mm} (c) Abies
+\end{description}
 
-\bigskip
 \section*{Descriptores de características locales}
-Estas cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor es el mejor para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen. \\
+Estas cuantifican globalmente una imagen, sin embargo, para poder determinar las características que cuantifican localmente las regiones de una imagen es necesario determinar que descriptor es el mejor para describir los puntos de interés de una imagen completa o los puntos de interés de cierta región de la imagen.
 
 \begin{description}
-\footnotesize \item[Escalamiento:]{Transforma los datos de las características en rangos específicos de cero a uno.}
+\item[Escalamiento:]{Transforma los datos de las características en rangos específicos de cero a uno.}
 \item[Normalización:]{Desplaza y re-escala valores para alcanzar un rango entre cero y uno.}
 
 \item[Escala invariante (SIFT):]{Extrae la información y adecua en comparaciones.}
@@ -118,42 +122,33 @@ Estas cuantifican globalmente una imagen, sin embargo, para poder determinar las
 
 \item[Característica de diferencias en forma de cadena binaria (BRIEF):]{Orientación y menor numero de diferencias a su alrededor.}
 
-\item[ORB* Rotada y orientada rápida:]{Determina estos puntos clave de una imágen.}
+\item[ORB* rotada y orientada rápida:]{Determina estos puntos clave de una imágen.}
 \end{description}
-
+\vspace*{-15mm}
 \section*{Solución propuesta}
-\subsubsection*{Fase de recolección de muestras}
-La primera fase en el desarrollo de la solución propuesta sería recolectar muestras de el objeto(s) a identificar por medio del aprendizaje máquina. Si bien es necesario tener una gran cantidad de muestras para que el presente trabajo tenga una perspectiva más amplia de lo que se necesita reconocer, también hay que considerar que se necesita información que contenga la menor cantidad de información no útil dado que esto podría sobre entrenar al modelo que se encargue de la clasificación.
+\begin{description}
+\item[Fase de recolección de muestras]{Se recolectan la muestras que serán utilizadas en fases posteriores.}
 
-\subsubsection*{Fase de procesamiento  de muestras}
-Una vez recolectadas las muestras con información relevante, se procede a  entrenar a el modelo con esa información para que sea en fases posteriores este sea capaz de entender y clasificar donde estén presentes las especies arbóreas almacenadas en el modelo.
+\item[Fase de procesamiento  de muestras]{Se modifican las muestras para únicamente dejar las muestras con información útil en fases posteriores.}\\
+\hspace*{60mm}\includegraphics[width=0.15\textwidth]{DSC06080.pdf}  \includegraphics[width=0.15\textwidth]{DSC06080-sf-2.pdf}
+\item[Fase de entrenamiento]{Se genera un modelo con las muestras obtenidas en la fase de procesamiento con la información recolectada de cada especie.}
 
-\subsubsection*{Fase de entrenamiento}
-Originalmente se conocen las distintas especies arbóreas de la colección o conjunto de imágenes, pero al momento de clasificar, el algoritmo encargado de recorrer la carpeta que contiene las muestras útiles  necesita conocer que imágenes se van a tomar en cuenta. 
-
-\subsubsection*{Fase de detección}
- En esta fase se utilizan las características globales de extracción de características de la sección 2.3 donde se hace uso del modelo clasificador de {\em bosque aleatorio} (inglés: random forest)\footnotemark, donde se establece un valor estimado de árboles por cada muestra donde se vaya a probar el modelo, en la investigación se va a utilizar un valor de 100.  
-\footnotetext{Clasificador de múltiples decisiones que funciona en conjunto.}
-
-\subsubsection*{Fase de combinación}
-La fase de combinación trabaja indirectamente con las muestras para poder ver los resultados en una muestra con su contenido original. Para realizar una comparación, primero se necesita obtener una muestra del directorio de muestras original donde se pueda apreciar la información no útil en ella, posteriormente se necesita obtener la muestra con las especies arbóreas detectadas en ella (producto de la fase de detección).\\ 
-
-
-%----------------------------------------------------------------------------------------
-%	RESULTS 
-%----------------------------------------------------------------------------------------
+\item[Fase de detección]{El modelo generado previamente en la fase de entrenamiento es utilizado para identificar y clasificar cada especie sobre una muestra útil.}
+\item[Fase de combinación]{La muestra útil con las especies clasificadas en la fase de detección es combinada con la muestra original para poder determinar cuales muestras fueron detectadas sobre cada parte del sector forestal.}\\
+  \hspace*{120mm}\includegraphics[width=0.15\textwidth]{result_combination.pdf}
+\end{description}
 \vspace*{-25mm}
 \section*{Resultados}
 \begin{description}
-\item[Experimento $A$: Misma cantidad de especies por tamaño de clase.]{El número de especies por tamaño de clase determinará que tantas imágenes podrían ser consideradas por el modelo a la hora de hacer el entrenamiento, por lo que dependiendo de este, el modelo puede tener una mejor o peor predicción en la fase de detección.}
+\item[Experimento $A$: Misma cantidad de especies por tamaño de clase.]{Toma la misma cantidad de muestras para cada clase.}
 
-\item[Experimento $B$:  Cantidad total de especies por tamaño de clase.]{Debido a que no todas las especies de árboles generan la misma cantidad de muestras, se van a utilizar las muestras totales de cada clase para determinar si esto repercute de forma positiva en el desarrollo de este experimento.}
+\item[Experimento $B$:  Cantidad total de especies por tamaño de clase.]{Toma todas las especies disponibles en cada clase.}
 
-\item[Experimento $C$: Misma cantidad de especies utilizando espejos de muestras.]{En el experimento de cantidad total de especies por tamaño de clase, se utilizaban la cantidad total de muestra generadas para cada clase, sin embargo, el impacto que pueda tener la misma cantidad de especies para cada clase considerando la especie que obtuvo más muestras generadas (\texttt{pino} con 8859 muestras) puede repercutir de cierta manera en que también se haga una mejor detección de esta, es por esta razón que se van a utilizar reflejos de las clases que tengan una cantidad de muestras menor a la de pino para completar esas especies faltantes.}
+\item[Experimento $C$: Misma cantidad de especies utilizando espejos de muestras.]{Utiliza espejos de las muestras recolectadas en las clases que tengan una cantidad de muestras inferior al de la clase con más muestras para tener el mismo tamaño de muestras en todas las clases.}
 
-\item[Experimento $D$: Umbralización.]{En la umbralización se considera la porción de píxeles admitidos al momento de generar los rectángulos que posteriormente serán utilizados durante la fase de entrenamiento del modelo de la solución propuesta, por tanto, se comparan tres niveles distintos de umbral  (0.15\%, 0.25\%, 0.50\%) para comparar el que mejor resultados proporciona, mismo que servirá para definir el umbral ideal en otros experimentos.} 
+\item[Experimento $D$: Umbralización.]{Compara tres niveles distintos de umbral  (0.15\%, 0.25\%, 0.50\%) para comparar el que mejor resultados proporciona.} 
 
-\item[Experimento $E$: Límite de píxeles ausentes.]{El límite de píxeles ausentes determina que a menor número de píxeles ausentes, detectará menos especies arbóreas. Este limite debe ser un valor considerable debido a que si se utiliza un valor bastante alto puede detectar zonas que no corresponden a una especie arbórea correcta, en caso contrario, detectaría una menor cantidad de especies en las muestras. En este caso, se van a utilizar tres porcentajes de píxeles ausentes (0.75\%, 0.80\% y 0.85\%).}
+\item[Experimento $E$: Límite de píxeles ausentes.]{Utiliza tres porcentajes de píxeles ausentes (0.75\%, 0.80\% y 0.85\%) para determinar la mayor cantidad de especies posibles en una muestra.}
 \end{description}
 
 \begin{center}
@@ -182,19 +177,17 @@ La fase de combinación trabaja indirectamente con las muestras para poder ver l
 		\end{tabular}
 \end{center}
 
-\vspace*{-5mm}
+\vspace*{-15mm}
 \section*{Conclusiones}
 El objetivo de desarrollar el inventario forestal por medio de la visión computacional, fue para que se puedan analizar las muestras que se utilicen en la solución propuesta por medio del aprendizaje máquina, que esta aprenda, lea, analice y por último, sea posible etiquetar y contar las especies detectadas a lo largo de una zona forestal. No obstante, dependerá en gran medida de los parámetros utilizados el alcance que tenga la ejecución de la solución, para efectos prácticos, en desarrollo de la tesis sugiere utilizar algunos valores con buen resultado tanto para el umbral adaptativo así como para los píxeles admitidos por muestra analizada.
+\vspace*{-10mm}
+\section*{Bibliografía}
+Ilango, G. (2017), (Image classification using Python and Scikit-learn), URL https://gogul.dev/software/image-classification-python.
 
+Ramírez, J. A. (2020), ((Inventarios forestales a través del procesamiento de
+imágenes)), URL https://github.com/arcantu97/Tesis-Arboles.
 
- %----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-
-%\nocite{*} % Print all references regardless of whether they were cited in the poster or not
-%\bibliographystyle{plain} % Plain referencing style
-%\bibliography{sample} % Use the example bibliography file sample.bib
-%
-
+\hspace*{120mm}\includegraphics[width=0.15\textwidth]{frame.png}
+ 
 \end{multicols}
 \end{document}
