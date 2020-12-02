@@ -137,14 +137,14 @@ La \emph{inteligencia artificial}\footnote{Ciencia encargada de desarrollar algo
 El procesamiento de imágenes puede enfocarse en la búsqueda de un elemento en particular, por lo que permitiría reducir el tiempo que se invierte en clasificar individualmente cada especie de árbol y podría, paralelamente, identificar cada especie presente  a lo largo de un sector forestal no centrándose únicamente en una sola especie. Cabe destacar que el procesamiento de imágenes no sería posible sin la intervención de la \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} la cual es la que permitiría el detectar automáticamente cada especie en la solución propuesta.\\
 
 %duda 2, puedo citar a alguien en un footnote?
-En el caso de los \emph{inventarios forestales}\footnote{ref... lo define como sistemas de recolección de características del área sobre el que se trabaja}, se va utilizar el procesamiento de imágenes para analizar las características de \textit{forma, color, bordes, textura} en las muestras, posteriormente el aprendizaje máquina tendrá que establecer en un modelo de información el análisis obtenido a partir de las características previamente mencionadas.
+En el caso de los \emph{inventarios forestales}\footnote{\citet{rf9} lo define como sistemas de recolección de características del área sobre el que se trabaja}, se va utilizar el procesamiento de imágenes para analizar las características de \textit{forma, color, bordes, textura} en las muestras, posteriormente el aprendizaje máquina tendrá que establecer en un modelo de información el análisis obtenido a partir de las características previamente mencionadas.
 
 \subsection{Antecedentes históricos}
-El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos (incluir cita).\\
+El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \citep{rf4}.\\
 
-El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones (incluir cita).\\ 
+El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}.\\ 
 
-La visión computacional llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático.
+La visión computacional llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático \citep{rf6}.
 
 \subsection{Descriptores de características globales}
 Existen dos tipos de características utilizados en el presente trabajo, las características globales que son las que pueden percibirse fácilmente (color, forma, textura) y las características locales, que cuantifican globalmente una imagen, estas últimas son necesarias son necesarias para determinar que descriptor de características es el mejor para describir los puntos de interés o cierta región de una imagen.
@@ -177,7 +177,7 @@ La característica de forma cuenta también con varias métricas, se hace énfas
 \subsubsection{Textura}
 Esta característica tiene una gran relevancia dado que es de las más usadas al momento de identificar objetos en regiones de interés en fotografías aéreas, micrográficas y de satélite y en el presente trabajo, al identificar las muestras de los árboles. En este caso se emplea la métrica de \emph{textura de Haralick}.\\
 
-Esta métrica o conjunto de descriptores estadísticos de textura realizada por (citar), se utiliza como parte de un conjunto de descriptores estadísticos de textura para determinar 14 descriptores de textura haciendo uso de la matriz de concurrencia de los valores de intensidad de la imagen (COM).
+Esta métrica o conjunto de descriptores estadísticos de textura realizada por \citep{rf16}, se utiliza como parte de un conjunto de descriptores estadísticos de textura para determinar 14 descriptores de textura haciendo uso de la matriz de concurrencia de los valores de intensidad de la imagen (COM).
 
 \begin{figure}[h!]
   \centering
