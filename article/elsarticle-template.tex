@@ -86,7 +86,9 @@
 
 \begin{abstracts}
 \begin{abstract}[spanish]
-El impacto de la visión computacional en distintas áreas tiene un impacto positivo dando como resultado el poder resolver problemas de sectores diferentes a los de la tecnología. Es por eso que este trabajo propone utilizar la visión computacional en conjunto con el aprendizaje máquina para automatizar la clasificación de especies arbóreas y generación de inventarios forestales con el fin de reemplazar a las técnicas tradicionales que se utilizan en el sector forestal.
+El impacto de la visión computacional en distintas áreas tiene un impacto positivo dando como resultado el poder resolver problemas de sectores diferentes a los de la tecnología. Es por eso que este trabajo propone utilizar la visión computacional en conjunto con el aprendizaje máquina para automatizar la clasificación de especies arbóreas y generación de inventarios forestales con el fin de reemplazar a las técnicas tradicionales que se utilizan en el sector forestal.\\
+
+Este trabajo comprende el procedimiento  realizado para generar un inventario forestal de dos áreas forestales: el cilantrillo y la trinidad. En dichas zonas es clasificada cada una de las especies detectadas en las muestras recolectadas de su respectiva zona forestal, generando así, el inventario forestal por medio del procesamiento de imágenes.
 \end{abstract}
 
 \textit{Palabras clave: } Procesamiento de imágenes, Aprendizaje máquina, Inteligencia artificial, Visión Computacional, Inventarios forestales.
@@ -97,14 +99,13 @@ El impacto de la visión computacional en distintas áreas tiene un impacto posi
 \end{frontmatter}
 
 \section{Introducción}
-
-Este trabajo explica el funcionamiento de la solución propuesta para generar inventarios forestales utilizando el procesamiento de imágenes para la generación de inventarios forestales. Dicha solución consta de seis fases en las que se las que hace uso de muestras generadas a partir del recorrido de un dron en la zona del Cilantrillo y Trinidad (véanse las figuras \ref{Zona-cilantrillo} y \ref{Zona-trinidad} de la página \pageref{Zona-trinidad}). 
-
-%%Duda #1, puedo referirme a las figuras de la misma página en una misma frase?
+Las técnicas tradicionales para generar un inventario forestal comprenden más que tiempo, el análisis de cada zona utilizando métodos que implican una gran cantidad de horas de recorrido a lo largo de una zona forestal, el tomar fotografías de la zona, el hacer un análisis profundo de que especies de arboles están disponibles en dicha zona, por lo que este trabajo ponen utilizar técnicas que impliquen utilizar el procesamiento de imágenes para reducir tiempos y automatizar tareas de clasificación en sectores forestales.
+\clearpage
+ 
+Este trabajo explica el funcionamiento de la solución propuesta para generar inventarios forestales utilizando el procesamiento de imágenes para la generación de inventarios forestales. Dicha solución consta de seis fases en las que se las que hace uso de muestras generadas a partir del recorrido de un dron en la zona del Cilantrillo y Trinidad (véanse las figuras \ref{Zona-cilantrillo} y \ref{Zona-trinidad} de la página \pageref{Zona-trinidad}).\\ 
 
 Aunque ya existen algunas software de computadora que ya tienen la facultad de poder detectar objetos, hay pocas soluciones que vayan totalmente enfocadas a generar inventarios forestales utilizando haciendo uso de tecnologías innovadoras que necesiten la menor interacción posible con el usuario que necesite generar un inventario forestal.
-\clearpage
-
+\vspace*{5mm}
 \begin{figure}[h!]
   \centering
 \begin{tabular}{@{}ccc@{}}
@@ -126,25 +127,25 @@ Aunque ya existen algunas software de computadora que ya tienen la facultad de p
   \caption[Mapa de Trinidad.]{La Trinidad, Santiago, Nuevo León (25.225939, -100.1431609).}
   \label{Zona-trinidad}
 \end{figure}
-
+\clearpage
 El objetivo de este trabajo es demostrar que la solución propuesta puede reducir tiempos a la hora de procesar las muestras recolectadas por el recorrido de un dron e identificar por sí misma, cada especie presente en las muestras recolectadas haciendo uso del procesamiento de imágenes. Otro de los objetivos es extraer la información de cada especie con el fin de generar un modelo a partir de la información recolectada en las especies de arboles definidas.\\
 
 El artículo está divido en seis secciones, la sección 2 define los conceptos clave para el entendimiento del artículo, la sección 3 se presenta los artículos relacionados al presente trabajo y su diferencia, la sección 4 detalla la solución propuesta así como su metodología, la sección 5 se expone los resultados que apoyan a la hipótesis planteada  y los experimentos que permiten reafirmar la hipótesis inicial, finalmente la sección 6 presenta las conclusiones del artículo desarrollado y la contribución del presente artículo.
 
 \section{Antecedentes}
-La \emph{inteligencia artificial}\footnote{Ciencia encargada de desarrollar algoritmos capaces de imitar capacidades humanas} es una de las tecnologías que más ha acaparado la atención no sólo de las personas, sino también de las compañías que la utilizan con distintos fines, tanto cotidianos como industriales. Sin embargo, el porque de utilizarlas no sólo es con el fin de reemplazar las capacidades de un ser humano, sino que buscan facilitar las acciones con las que interactúa cada persona. En el caso del artículo se detalla como es que se busca utilizar la técnica de  \emph{procesamiento de imágenes}\footnote{Su función es capturar y procesar por medio de imágenes las información más relevante} para trabajar en conjunto con el \emph{aprendizaje máquina}\footnote{Campo de la inteligencia artificial que desarrolla algoritmos capaces de aprender por medio de información.} en el análisis de zonas forestales haciendo uso de \emph{clasificación de imágenes}\footnote{Es una técnica del aprendizaje máquina que consiste en identificar un objeto por medio de propiedades o características propias de un elemento.}.\\
+La \emph{inteligencia artificial}\footnote{\citet{rf19} menciona que tiene por objetivo, hacer que los ordenadores hagan lo mismo que hace la mente.} es una de las tecnologías que más ha acaparado la atención no sólo de las personas, sino también de las compañías que la utilizan con distintos fines, tanto cotidianos como industriales. Sin embargo, el porque de utilizarlas no sólo es con el fin de reemplazar las capacidades de un ser humano, sino que buscan facilitar las acciones con las que interactúa cada persona. En el caso del artículo se detalla como es que se busca utilizar la técnica de  \emph{procesamiento de imágenes}\footnote{\citet{rf20} mencionan que surge como respuesta a problemas que tiene que ver con el trabajar con imágenes. (Digitalización, codificación, mejora, restauración y segmentación de imágenes.) } para trabajar en conjunto con el \emph{aprendizaje máquina}\footnote{ \citet{rf21} Lo definen como una rama evolutiva de los algoritmos de computación que fueron diseñados para emular la inteligencia humana basada en el aprendizaje de su al rededor.} en el análisis de zonas forestales haciendo uso del procesamiento de imágenes.\\
 
-El procesamiento de imágenes puede enfocarse en la búsqueda de un elemento en particular, por lo que permitiría reducir el tiempo que se invierte en clasificar individualmente cada especie de árbol y podría, paralelamente, identificar cada especie presente  a lo largo de un sector forestal no centrándose únicamente en una sola especie. Cabe destacar que el procesamiento de imágenes no sería posible sin la intervención de la \emph{visión computacional}\footnote{Técnica de la inteligencia artificial que intenta emular la capacidad visual de los humanos.} la cual es la que permitiría el detectar automáticamente cada especie en la solución propuesta.\\
+El procesamiento de imágenes puede enfocarse en la búsqueda de un elemento en particular, por lo que permitiría reducir el tiempo que se invierte en clasificar individualmente cada especie de árbol y podría, paralelamente, identificar cada especie presente  a lo largo de un sector forestal no centrándose únicamente en una sola especie. Cabe destacar que el procesamiento de imágenes no sería posible sin la intervención de la \emph{visión computacional}\footnote{\citet{rf22} lo describen como la forma en la que las computadoras puedan reconocer diversos objetos en el ambiente y su posición en el espacio.} la cual es la que permitiría el detectar automáticamente cada especie en la solución propuesta.\\
 
 %duda 2, puedo citar a alguien en un footnote?
 En el caso de los \emph{inventarios forestales}\footnote{\citet{rf9} lo define como sistemas de recolección de características del área sobre el que se trabaja}, se va utilizar el procesamiento de imágenes para analizar las características de \textit{forma, color, bordes, textura} en las muestras, posteriormente el aprendizaje máquina tendrá que establecer en un modelo de información el análisis obtenido a partir de las características previamente mencionadas.
 
-\subsection{Antecedentes históricos}
-El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \citep{rf4}.\\
-
-El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}.\\ 
-
-La visión computacional llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático \citep{rf6}.
+%\subsection{Antecedentes históricos}
+%El procesamiento de imágenes surge en el año 1920 de los primeros intentos de transmisión de imágenes por medio de un cable transatlántico usando códigos telegráficos, permitiendo la codificación de una imagen en cinco niveles de gris para posteriormente, en 1929, el ya mencionado sistema de transmisión permitía codificar a quince niveles de gris, a su vez, este sistema redujo el tiempo de transmisión de imágenes a quince minutos \citep{rf4}.\\
+%
+%El aprendizaje máquina surge a principios del año 1990 como un proceso para la extracción de información y modelos de predicción, esto último fue bastante utilizado por los sectores bancarios, que eran los que mayormente le sacaban un provecho a la hora de tomar decisiones \citep{rf5}.\\ 
+%
+%La visión computacional llevaba bastante más tiempo que había sido desarrollada, pero no empleada; y es que en el año 1960 es cuando la inteligencia artificial apenas se estaba desarrollando y fue cuando se planteo el como es que una computadora iba a razonar como lo haría una persona. Los problemas recaen sobre factores de innovación y procesamiento de imágenes automático \citep{rf6}.
 
 \subsection{Descriptores de características globales}
 Existen dos tipos de características utilizados en el presente trabajo, las características globales que son las que pueden percibirse fácilmente (color, forma, textura) y las características locales, que cuantifican globalmente una imagen, estas últimas son necesarias son necesarias para determinar que descriptor de características es el mejor para describir los puntos de interés o cierta región de una imagen.
@@ -218,17 +219,13 @@ Existen varias formas de utilizar los descriptores pero hay dos maneras de mezcl
 \section{Trabajos relacionados}
 Existen algunos trabajos que no están completamente relacionados con el objetivo de identificar especies arbóreas, pero si existen investigaciones que toman como objetivo el analizar zonas forestales.\\
 
-\citet{rf14} menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser.\\
+Los trabajos citados tienen una o varias relaciones directas con el presente trabajo, sin embargo existen diferencias que hacen que su objetivo vaya orientado a otro tema, por ejemplo, \citet{rf14} menciona como hacen uso de combinar datos para realizar inventarios forestales por medio de sistemas digitales aéreos de fotogrametría y escáneres láser. 
 
-\citet{rf1}  utilizan una gran cantidad de entradas para definir manualmente la especie utilizando técnicas tradicionales.\\
- 
-\citet{rf2} tienen como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana.\\ 
+En cuanto a objetivos similares tenemos a \citet{rf1} que utilizan una gran cantidad de entradas para definir manualmente la especie utilizando técnicas tradicionales y a \citet{rf2} que tienen como meta evaluar artículos para actualizar los inventarios de árboles en un área metropolitana.\\ 
 
-\citet{rf3} tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional.\\
+En contraste a objetivos más especificos y cercanos a los del presente trabajo tenemos a \citet{rf3} que tienen como objetivo detectar objetos además de hacer uso del umbral adaptativo, el cual es muy utilizado en la visión computacional y a \citet{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal.\\
 
-\citet{rf9} hace simulaciones para la gestión de modelos forestales que podría ser requeridos para la toma de decisiones en un sector forestal.\\
-
-\citet{rf10} hacen uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN).\\
+El trabajo más cercano al desarrollado es el de \citet{rf10} en el cual hacen uso de técnicas de inteligencia artificial para la identificación  de especies forestales haciendo uso de multidatos espectrales tomando como punto de partida, los vecinos más cercanos (KNN).\\
 \vspace*{-4mm}
 \begin{table}[h!]
 \centering
@@ -267,12 +264,12 @@ Trabajo & \rotatebox[origin=c]{90}{Inventarios forestales}& \rotatebox[origin=c]
 \clearpage
 
 \subsection{Áreas de oportunidad}
-En el método propuesto la visión computacional hace uso del modelo generado previamente por el aprendizaje máquina, el cual se encarga de clasificar cada árbol mediante una etiqueta que define a su especie por color. Esto último no ha sido aplicado en las investigaciones encontradas puesto que tienen un enfoque en hacer clasificaciones de múltiples objetos de un sólo tipo, o bien, sólo se enfocan en hacer anotaciones manuales por medio de inputs previamente establecidos y esto únicamente se enfoca en comparaciones.\\
+En el método propuesto la visión computacional hace uso del modelo generado previamente por el aprendizaje máquina, el cual se encarga de clasificar cada árbol mediante una etiqueta que define a su especie por color. Esto último no ha sido aplicado en las investigaciones encontradas puesto que tienen un enfoque en hacer clasificaciones de múltiples objetos de un sólo tipo, o bien, sólo se enfocan en hacer anotaciones manuales por medio de entradas previamente establecidas y esto únicamente se enfoca en comparaciones.\\
 
 En el cuadro \ref{tab:Comparación de trabajos frente al desarrollado} se puede apreciar que características comparte el trabajo desarrollado con el de otros autores. También se puede percibir que otros trabajos tengan las mismas características o al menos casi todas de las que tiene el trabajo desarrollado, sin embargo, el presente trabajo además de generar un inventario forestal de forma automatizada, el código fuente del trabajo puede ser modificado o estudiado con otros propósitos sin necesidad de esperar una retribución de por medio debido a que es un software libre.
 
 \section{Solución propuesta}
-La solución propuesta se va a divir en siete fases, en dicha solución se parte de la recolección de muestras y finaliza en la generación de un inventario forestal con muestras detectadas por medio del aprendizaje máquina y la visión computacional.
+La solución propuesta se divide en siete fases, en dicha solución se parte de la recolección de muestras y finaliza en la generación de un inventario forestal con muestras detectadas por medio del aprendizaje máquina y la visión computacional.
 
 \subsection{Fase de recolección de muestras}
 La primera fase en el desarrollo de la solución consiste en recolectar muestras de el objeto a identificar por medio del aprendizaje máquina. 
@@ -317,7 +314,7 @@ En la figura \ref{Muestra con anotaciones} se aprecia que tiene secciones delimi
 Previo a la detección de especies en las muestras se genera el modelo encargado de clasificar las muestras, para esto, el algoritmo necesita saber que imágenes o carpetas de imágenes tomará en cuenta para analizar la información que va a estar presente en el modelo de información de especies de arboles. 
 
 \subsection{Fase de detección}
-En esta fase se utilizan las características globales y el modelo clasificador de {\em bosque aleatorio}\footnote{Clasificador de múltiples decisiones que funciona en conjunto.} (inglés: random forest), donde se establece un valor estimado de árboles por cada muestra donde se vaya a probar el modelo y posteriormente clasificar cada especie por color y nombre como en la figura \ref{Clasificación de especies arbóreas en una muestra}.
+En esta fase se utilizan las características globales y el modelo clasificador de {\em bosque aleatorio}\footnote{Clasificador de múltiples decisiones que funciona en conjunto \citep{rf23}.} (inglés: random forest classifier), donde se establece un valor estimado de árboles por cada muestra donde se vaya a probar el modelo y posteriormente clasificar cada especie por color y nombre como en la figura \ref{Clasificación de especies arbóreas en una muestra}.
 \\
 
 \begin{figure}[H]
@@ -328,7 +325,7 @@ En esta fase se utilizan las características globales y el modelo clasificador 
 \end{figure}
 
 \subsection{Fase de combinación}
-La fase de combinación consta en tomar la muestra del directorio original de imágenes, asignarlo como base y posteriormente, la muestra con información útil del directorio que se genero como resultado de la fase de detección, es incrustado encima de la muestra original para obtener un resultado como el de la figura \ref{Combinación de detección y una muestra original}.
+La fase de combinación consta en tomar la muestra del directorio original de imágenes, asignarlo como base y posteriormente, la muestra con información útil del directorio que se generó como resultado de la fase de detección, es incrustado encima de la muestra original para obtener un resultado como el de la figura \ref{Combinación de detección y una muestra original}.
 
 
 \begin{figure}[H]
@@ -355,26 +352,7 @@ Después de clasificar todas las muestras que pasan por las fases de entrenamien
 \end{description}
 \clearpage
 
-Todos los experimentos son ejecutados en una laptop con las especificaciones del cuadro \ref{tab:Especificaciones técnicas del PC}.
-
-\begin{table}[H]
-	{\centering
-		\caption{Especificaciones técnicas del equipo de cómputo}
-		\begin{tabular}{|c|c|c|}
-			\hline
-			Sistema Operativo & Windows 10 64 bits\\
-			\hline
-			Procesador & Intel Core i5-7300HQ\\
-			\hline
-			RAM & 8 GB RAM DDR4 2133 MHz\\
-			\hline
-		\end{tabular}
-
-	\label{tab:Especificaciones técnicas del PC}
-	}
-\end{table}
-
-Los resultados  del cuadro \ref{Resultados-obtenidos} reportan las especies detectadas por cada experimento realizado.
+Todos los experimentos son ejecutados en una laptop con el sistema operativo Windows 10 (64 bits), un procesador Intel core i5-7300HQ y 8 GB de RAM DDR4 de 2133 MHz. Los resultados  del cuadro \ref{Resultados-obtenidos} reportan las especies detectadas por cada experimento realizado.
 
 \begin{table}[h!]
 \caption{Resultados obtenidos por experimento.}
@@ -383,11 +361,11 @@ Los resultados  del cuadro \ref{Resultados-obtenidos} reportan las especies dete
 			\hline
 			 \textbf{Experimento} & \textbf{Pino} & \textbf{Encino} & \textbf{Abies}\\
 			\hline
-			Experimento A & 67.3 & 18.4 & 14.4\\
+			Experimento A & 67 & 19 & 14\\
 			\hline
-			Experimento B & 50.2 & 41.6 & 8.2\\
+			Experimento B & 50 & 42 & 8\\
 			\hline
-			Experimento C & 58.1 & 34.3 & 7.7\\
+			Experimento C & 58 & 34 & 8\\
 			\hline
 			Experimento D (0.75) & 66 & 17 & 17\\
 			\hline
@@ -407,7 +385,7 @@ Los resultados  del cuadro \ref{Resultados-obtenidos} reportan las especies dete
 
 En el experimento $A$ (misma cantidad de especies por clase), Pino es claramente un especie predominante debido a que esta especie era predominante en las muestras. Como dato adicional, el experimento se completa en 18 horas.\\
 
-En el experimento $B$ (cantidad total de especies por tamaño de clase) se aprecia que si afecta bastante fijar el tamaño de cada clase, es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo.
+En el experimento $B$ (cantidad total de especies por tamaño de clase) se aprecia que si afecta bastante fijar el tamaño de cada clase, es posible diferenciar que la especie pino ya no es tan predominante como lo era en un experimento con un valor fijo.\\
 
 El experimento $C$ (misma cantidad de especies utilizando espejos de muestras) hace uso de la especie de árbol que mayor tiene muestras, donde comparando con el experimento $A$ y el experimento $B$ se puede ver  que tener un tamaño fijo de especies y un valor total de cada especie si impacta en el experimento.\\
 
@@ -416,7 +394,7 @@ En el experimento $D$ (umbralización) únicamente se toman en cuenta la cantida
 Finalmente para el experimento de $E$ (píxeles permitidos), se hace uso del modelo generado a partir de las muestras con el mejor umbral probado, donde se aprecia que el experimento con 85\% de pixeles permitidos es el que otorga mayor cantidad de especies arbóreas siendo ligeramente superior al experimento al experimento con 80\% de píxeles permitidos.\\
 
 Respecto a la hipótesis que se plantea, se busca como objetivo particular el optimizar tiempos y costos de generar el inventario forestal por técnicas generadas por procesamiento de imágenes, en cuanto a tiempos definitivamente ahorrara en términos de duración si se consideran los tiempos de procesamiento y recolección de muestras, esto debido a que con un conjunto de datos relativamente grande, se puede obtener una solución en menos de tres días; en el apartado económico se puede considerar que esta técnica reduce muchos gastos en relación a equipos de trabajo, gastos en viajes a zonas particulares, etc. En cuanto a la parte de los objetivos, se cumplieron tanto el objetivo general que era generar un inventario forestal, así como los objetivos específicos, que abarcan desde la generación del conjunto de muestras hasta la parte de la prueba utilizando un modelo para detectar las especies.
-
+\clearpage
 \section{Conclusiones}
 El objetivo de desarrollar el inventario forestal por medio de la visión computacional fue para que por medio del aprendizaje máquina se lea, analice y clasifique las especies detectadas a lo largo de una zona forestal. No obstante, dependerá en gran medida de los parámetros utilizados el alcance que tenga la ejecución de la solución, para efectos prácticos, en desarrollo de la tesis sugiere utilizar algunos valores con buen resultado tanto para el umbral adaptativo así como para los píxeles admitidos por muestra analizada.\\
 
