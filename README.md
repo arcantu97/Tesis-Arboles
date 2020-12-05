@@ -6,7 +6,7 @@ Este repositorio esta constituido por los archivos utilizados durante el desarro
 
 ### Bibliotecas utilizadas
 
-Los scripts generados para la investigación fueron escritos en Python 3, el cual a su vez, utiliza distintas bibliotecas de procesamiento de imagenes e Inteligencia Artificial. Recomiendo utilizar un gestor de paquetes para la instalación de bibliotecas, yo recomiendo utilizar pip.
+Los scripts generados para la investigación fueron escritos en Python 3, el cual a su vez, utiliza distintas bibliotecas de procesamiento de imagenes e Inteligencia Artificial. Recomiendo utilizar un gestor de paquetes para la instalación de bibliotecas como pip.
 
 | Librería | Sitio oficial | Versión |
 | ------ | ------ | ------ |
